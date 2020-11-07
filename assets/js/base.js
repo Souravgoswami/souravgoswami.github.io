@@ -4,11 +4,11 @@ $(function() {
 
 	// Handle the navbar text animation
 	const codes = [
-		`IO.new(STDOUT.fileno).puts "I love jekyll"`,
 		`puts "Hello World"`,
 		`print "My name is Sourav\\n"`,
-		`STDOUT.write "I love Ruby\\n"`,
+		`IO.new(STDOUT.fileno).puts "I love Ruby"`,
 		`printf "I love Ruby on Rails\\n"`,
+		`STDOUT.write "I love Jekyll\\n"`,
 		`printf "%s", "I love <Web Designing/>\\n"`,
 	].map(el => el.split(''))
 
@@ -109,9 +109,7 @@ $(function() {
 					i.state = true
 					_style.visibility = 'visible'
 					_style.animation = `slideAnim 0.5s ease forwards ${_delay}ms`
-
-					if (observer)
-						observer.unobserve(i)
+					if (observer) observer.unobserve(i)
 				}
 			}
 		})

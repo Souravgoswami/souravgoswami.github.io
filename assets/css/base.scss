@@ -61,12 +61,14 @@ body, html {
 }
 
 .code-logo {
-	font-size: 11px ;
+	font-size: 10px ;
 	color: #888 ;
 }
 
 .min-250 {
-	width: 320px !important ;
+	overflow: hidden ;
+	display: block !important ;
+	position: relative ;
 }
 
 .align-items-center, .align-items-center-col {

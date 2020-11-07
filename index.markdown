@@ -1,11 +1,10 @@
 ---
 layout: home
 title:  "Sourav Goswami | Home"
-categories: about sourav
+categories: about souravgoswami
 active: "home"
 info: "home_info.html"
 ---
-
 
 <div class="main">
 	<div class="row">

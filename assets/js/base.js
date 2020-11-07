@@ -2,7 +2,7 @@ $(function() {
 	// Tooltips
 	$(function () { $('[data-toggle="tooltip"]').tooltip() })
 
-	// Handle the navbar animation
+	// Handle the navbar text animation
 	const codes = [
 		`IO.new(STDOUT.fileno).puts "I love jekyll"`,
 		`puts "Hello World"`,

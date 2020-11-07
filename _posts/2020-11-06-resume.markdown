@@ -12,7 +12,7 @@ info: "resume_info.html"
 	<div class="row">
 		<div class="col-md-6 div-dp">
 			<div class="div-dp-container">
-				{% include hi.html %}
+				{% include hi.svg.html %}
 			</div>
 		</div>
 

@@ -4,9 +4,9 @@ $(function() {
 
 	// Handle the navbar text animation
 	const codes = [
-		`IO.new(STDOUT.fileno).puts "I love Ruby"`,
 		`puts "Hello World"`,
 		`print "My name is Sourav\\n"`,
+		`IO.new(STDOUT.fileno).puts "I love Ruby"`,
 		`printf "I love Ruby on Rails\\n"`,
 		`STDOUT.write "I love Jekyll\\n"`,
 		`printf "%s", "I love <Web Designing/>\\n"`,

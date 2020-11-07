@@ -384,8 +384,8 @@ rgb-splitter {
 }
 
 #toggleDarkMode {
-	background-color: transparent ;
 	border: 0 ;
+	display: inline-block ;
 	cursor: pointer ;
 	transition: all 0.25s ease ;
 
@@ -482,4 +482,13 @@ rgb-splitter {
 		box-shadow: 4px 4px 6px #222a ;
 		background-position: 100% ;
 	}
+}
+
+ul.navbar-nav {
+	display: inline-flex ;
+	align-items: end ;
+	justify-content: end ;
+	flex-direction: row ;
+	width: 100% ;
+	flex-wrap: wrap ;
 }

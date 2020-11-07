@@ -63,11 +63,12 @@ body, html {
 .code-logo {
 	font-size: 10px ;
 	color: #888 ;
+	display: inline-block ;
 }
 
-.min-250 {
-	overflow: hidden ;
-	display: block !important ;
+#code-contain {
+	min-width: 285px ;
+	display: block ;
 	position: relative ;
 }
 
@@ -479,10 +480,9 @@ rgb-splitter {
 }
 
 ul.navbar-nav {
-	display: inline-flex ;
-	align-items: end ;
-	justify-content: end ;
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
 	flex-direction: row ;
-	width: 100% ;
 	flex-wrap: wrap ;
 }

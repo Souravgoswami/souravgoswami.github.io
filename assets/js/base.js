@@ -4,9 +4,9 @@ $(function() {
 
 	// Handle the navbar text animation
 	const codes = [
+		`IO.new(STDOUT.fileno).puts "I love Ruby"`,
 		`puts "Hello World"`,
 		`print "My name is Sourav\\n"`,
-		`IO.new(STDOUT.fileno).puts "I love Ruby"`,
 		`printf "I love Ruby on Rails\\n"`,
 		`STDOUT.write "I love Jekyll\\n"`,
 		`printf "%s", "I love <Web Designing/>\\n"`,
@@ -160,6 +160,7 @@ $(function() {
 				_s.color = 'transparent'
 				_s.background = 'linear-gradient(45deg, #ff0, #f55, #55f)'
 				_s.backgroundClip = 'text'
+				_s.webkitBackgroundClip = 'text'
 			}
 
 			for(let i of Array.from(document.getElementsByClassName('invert')))

@@ -1,8 +1,6 @@
 $(function() {
 	// Tooltips
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip()
-	})
+	$(function () { $('[data-toggle="tooltip"]').tooltip() })
 
 	// Handle the navbar animation
 	const codes = [
@@ -136,30 +134,29 @@ $(function() {
 
 			// to darken
 			document.body.style.backgroundColor = '#111'
-			let oc = document.querySelectorAll('.other-container')
-			for(let i of oc)
+			for(let i of Array.from(document.getElementsByClassName('other-container')))
 				i.style.backgroundColor = '#111'
 
-			for(let i of document.querySelectorAll('.head'))
+			for(let i of Array.from(document.getElementsByClassName('head')))
 				i.style.backgroundColor = '#111'
 
-			for(let i of document.querySelectorAll('.background'))
+			for(let i of Array.from(document.getElementsByClassName('background')))
 				i.style.backgroundColor = "#222"
 
 			// to whiten
-			for(let i of document.querySelectorAll('.text'))
+			for(let i of Array.from(document.getElementsByClassName('text')))
 				i.style.color = "#fff"
 
-			for(let i of document.querySelectorAll('.text-glow')) {
+			for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
 				let _s = i.style
 				_s.color = "#fff"
 				_s.textShadow = "0 0 6px currentColor"
 			}
 
-			for(let i of document.querySelectorAll('.object-glow'))
+			for(let i of Array.from(document.getElementsByClassName('object-glow')))
 				i.style.filter = `drop-shadow(0 0 8px #3eba)`
 
-			for(let i of document.querySelectorAll('.text-code')) {
+			for(let i of Array.from(document.getElementsByClassName('text-code'))) {
 				let _s = i.style
 				_s.textShadow = `0 0 4px #3eba`
 				_s.color = 'transparent'
@@ -167,7 +164,7 @@ $(function() {
 				_s.backgroundClip = 'text'
 			}
 
-			for(let i of document.querySelectorAll('.invert'))
+			for(let i of Array.from(document.getElementsByClassName('invert')))
 				i.style.filter = 'invert(100)'
 		} else {
 			mode = 1
@@ -176,36 +173,36 @@ $(function() {
 
 			// to lighten
 			document.body.style.backgroundColor = '#fff'
-			for(let i of document.querySelectorAll('.other-container'))
+			for(let i of Array.from(document.getElementsByClassName('other-container')))
 				i.style.backgroundColor = '#fff'
 
-			for(let i of document.querySelectorAll('.head'))
+			for(let i of Array.from(document.getElementsByClassName('head')))
 				i.style.backgroundColor = '#f5f5f5'
 
-			for(let i of document.querySelectorAll('.background'))
+			for(let i of Array.from(document.getElementsByClassName('background')))
 				i.style.backgroundColor = "#efeff5"
 
 			// to darken
-			for(let i of document.querySelectorAll('.text'))
+			for(let i of Array.from(document.getElementsByClassName('text')))
 				i.style.color = "#000"
 
-			for(let i of document.querySelectorAll('.text-glow')) {
+			for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
 				let _s = i.style
 				_s.color = "#111"
 				_s.textShadow = "none"
 			}
 
-			for(let i of document.querySelectorAll('.object-glow'))
+			for(let i of Array.from(document.getElementsByClassName('object-glow')))
 				i.style.filter = `none`
 
-			for(let i of document.querySelectorAll('.text-code')) {
+			for(let i of Array.from(document.getElementsByClassName('text-code'))) {
 				let _s = i.style
 				_s.textShadow = `none`
 				_s.color = '#888'
 				_s.background = 'transparent'
 			}
 
-			for(let i of document.querySelectorAll('.invert'))
+			for(let i of Array.from(document.getElementsByClassName('invert')))
 				i.style.filter = 'invert(0)'
 		}
 	}

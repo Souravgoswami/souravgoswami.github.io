@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light mb-5">
+	<div class="navbar-brand">
+		<div class="row">
+			<div style="margin-right: 8px">
+				<a class="display-block object-glow" href="/home">{% include logo.html %}</a>
+			</div>
+
+			<div class="align-items-center min-250">
+				<code class="code-logo text-code">irb>&nbsp;</code>
+				<code class="code-logo text-code" id="code">
+					puts "Hello World!"
+				</code>
+				<span class="code-logo text-code" id="caret">&#x258B;</span>
+			</div>
+		</div>
+	</div>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item {% if page.active == 'home' %} active {% endif %}">
+				<a class="nav-link object-glow" href="/home">Home <span class="sr-only">(current)</span></a>
+			</li>
+
+			<li class="nav-item {% if page.active == 'contact' %} active {% endif %}">
+				<a class="nav-link object-glow" href="/contact" id="contact">Contact</a>
+			</li>
+
+			<li class="nav-item {% if page.active == 'resume' %} active {% endif %}">
+				<a class="nav-link object-glow" href="/resume">Resumé</a>
+			</li>
+
+			<li class="nav-item object-glow">
+				<a class="nav-link" href="//github.com/souravgoswami/">
+					<img src="assets/images/linkedin.svg" class="icon24">
+
+				</a>
+			</li>
+
+			<li class="nav-item object-glow">
+				<a class="nav-link" href="//wa.me/+918335830664">
+					<img src="assets/images/whatsapp.svg" class="icon24">
+				</a>
+			</li>
+
+			<li class="nav-item object-glow">
+				<a class="nav-link" href="//www.quora.com/profile/Sourav-Goswami-17">
+					<img src="assets/images/quora.svg" class="icon24">
+				</a>
+			</li>
+
+			<li class="nav-item object-glow">
+				<div id="toggleDarkMode" class="nav-link">
+					<div id="lamp">
+						{% include lamp.svg.html %}
+					</div>
+
+					<div id="night">
+						{% include night.svg.html %}
+					</div>
+				</div>
+			</li>
+
+
+			<li class="nav-item object-glow">
+			</li>
+		</ul>
+	</div>
+</nav>

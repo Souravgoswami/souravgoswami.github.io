@@ -1,0 +1,37 @@
+---
+layout: home
+title:  "Sourav Goswami | Resume"
+date:   2020-11-04 10:22:58 +0530
+categories: jekyll update
+permalink: "resume"
+active: "resume"
+info: "resume_info.html"
+---
+
+<div class="main">
+	<div class="row">
+		<div class="col-md-6 div-dp">
+			<div class="div-dp-container">
+				{% include hi.html %}
+			</div>
+		</div>
+
+		<div class="col-md-6 align-items-center justify-content-center head-content">
+			<div>
+				<h1 class="text-glow">My Name is Sourav Goswami</h1>
+				<p class="text-glow">
+					Thanks for taking interest in viewing my resume!
+				</p>
+
+				<p class="text-glow">
+					Please feel free to contact me on demand...
+				</p>
+
+				<div class="justify-content-center object-glow">
+					<a href="/contact" class="btn-outline-success-animated" data-content="Contact Me"></a>
+				</div>
+				<rgb-splitter class="object-glow"></rgb-splitter>
+			</div>
+		</div>
+	</div>
+</div>

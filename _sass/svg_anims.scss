@@ -1,0 +1,51 @@
+.inline {
+	display: inline-block ;
+}
+
+.man-hand, .man-palm, .man-finger {
+	animation: hand-waving 3s ease infinite ;
+}
+
+.man-eye {
+	animation: eye-blink 3s ease infinite ;
+	transform-origin: center 20% ;
+}
+
+.spark1, .spark2, .spark3, .spark4 {
+	animation: twinkle 0.25s ease infinite alternate ;
+	transform-origin: 0% 0% ;
+}
+
+.spark2, .spark4 {
+	animation-delay: 0.125s ;
+}
+
+@keyframes twinkle {
+	0% {
+		opacity: 0 ;
+	}
+
+	100% {
+		opacity: 1 ;
+	}
+}
+
+@keyframes hand-waving {
+	0%, 17%, 22%, 25%, 35%, 45%, 55%, 100% {
+		transform: translate(-1%, -5%) ;
+	}
+
+	20%, 30%, 40%, 50% {
+		transform: translate(-3%, 0%) ;
+	}
+}
+
+@keyframes eye-blink {
+	0%, 45%, 55%, 68%, 75%, 100% {
+		transform: scaleY(1) ;
+	}
+
+	50%, 70% {
+		transform: scaleY(0.1) ;
+	}
+}

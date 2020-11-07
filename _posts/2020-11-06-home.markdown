@@ -1,0 +1,100 @@
+---
+layout: home
+title:  "Sourav Goswami | Home"
+date:   2020-11-04 10:22:58 +0530
+categories: jekyll update
+permalink: "home"
+active: "home"
+info: "home_info.html"
+---
+
+
+<div class="main">
+	<div class="row">
+		<div class="col-md-6 div-dp">
+			<div class="div-dp-container">
+				<div id="carousel" class="carousel slide shadow">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="dp">
+								<img class="img-fluid img-fill" src="assets/images/cat.webp">
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<div class="dp">
+								<img class="image-fluid img-fill" src="assets/images/cat2.webp">
+							</div>
+						</div>
+
+						<div class="carousel-item">
+							<div class="dp">
+								<img class="image-fluid img-fill" src="assets/images/cat3.webp">
+							</div>
+						</div>
+
+						<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+							<img class="icon24 invert" src="/assets/images/chevron-left.svg">
+						</a>
+
+						<a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+							<img class="icon24 invert" src="/assets/images/chevron-right.svg">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
+					</div>
+
+					<ul class="carousel-indicators list-inline mx-auto border px-2">
+						<li class="list-inline-item active">
+							<a class="selected" data-slide-to="0" data-target="#carousel">
+								<img class="image-fluid img-fill" src="assets/images/cat.webp">
+							</a>
+						</li>
+
+						<li class="list-inline-item active">
+							<a class="selected" data-slide-to="1" data-target="#carousel">
+								<div style="height: 100%" class="align-items">
+									<img class="image-fluid img-fill" src="assets/images/cat2.webp">
+								</div>
+							</a>
+						</li>
+
+						<li class="list-inline-item active">
+							<a class="selected" data-slide-to="2" data-target="#carousel">
+								<img class="image-fluid img-fill" src="assets/images/cat3.webp">
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="py-2 social-icons justify-content-center">
+					<a class="icon32-div object-glow" data-content="linkedin" href="//www.linkedin.com/in/sourav-goswami0/" target="_blank">
+						<img src="assets/images/linkedin.svg">
+					</a>
+
+					<a class="icon32-div object-glow" data-content="quora" href="//www.quora.com/profile/Sourav-Goswami-17" target="_blank">
+						<img src="assets/images/quora.svg" class="icon32-p">
+					</a>
+
+					<a class="icon32-div object-glow" data-content="github" href="//github.com/souravgoswami/" target="_blank">
+						<img src="assets/images/github.svg" class="icon32-p invert">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6 align-items-center head-content">
+			<div class="align-items-center-col">
+				<h1 class="text-glow">Sourav Goswami</h1>
+				<p class="text-glow">
+					Computers shapes what we are today...
+				</p>
+
+				<div class="justify-content-center">
+					<a href="/resume" class="object-glow btn-filled">Hire Me</a>
+				</div>
+
+				<rgb-splitter class="object-glow"></rgb-splitter>
+			</div>
+		</div>
+	</div>
+</div>

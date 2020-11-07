@@ -1,0 +1,34 @@
+<!Doctype HTML>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>{{ page.title }}</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+
+		<script src="assets/js/jquery-3.5.1.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/base.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	</head>
+
+	<body>
+	<!-- <floater-container id="floaterContainer"></floater-container> -->
+	<canvas id="floaters"></canvas>
+
+		<div class="header-container">
+			<div class="container-fluid">
+				{% include navbar.html %}
+				{{ page.content }}
+			</div>
+
+		</div>
+
+		<div class="other-container">
+			{% include other_info.html %}
+		</div>
+	</body>
+</html>

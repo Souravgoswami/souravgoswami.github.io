@@ -1,0 +1,45 @@
+#footer {
+	background-color: #222 ;
+	color: #fff ;
+	padding: 24px ;
+	z-index: 1 ;
+	position: relative ;
+
+	ul {
+		margin: 0 ;
+		padding: 0 ;
+		display: flex ;
+
+		li {
+			list-style: none ;
+			color: #444 ;
+			font-size: 24px ;
+			font-family: 'Alice' ;
+			animation: lighting 1.2s linear infinite ;
+		}
+	}
+
+	p.glow {
+		filter: drop-shadow(0px 0px 2px #fff) ;
+	}
+
+	.icon24 {
+		width: 24px ;
+		height: 24px ;
+		display: inline-block ;
+		padding: 0 ;
+		margin: 0 ;
+	}
+}
+
+@keyframes lighting {
+	0%, 50% {
+		color: #444 ;
+		text-shadow: none ;
+	}
+
+	80% {
+		color: #ff0 ;
+		text-shadow: 0 0 12px #ff0, 0 0 40px #ff2 ;
+	}
+}

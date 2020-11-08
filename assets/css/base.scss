@@ -138,6 +138,13 @@ body, html {
 	min-height: 100% ;
 	overflow: hidden ;
 	transition: background-color 0.25s ease ;
+	position: relative ;
+	z-index: 100 ;
+}
+
+.z-1000 {
+	position: relative ;
+	z-index: 1000 ;
 }
 
 .container-fluid {

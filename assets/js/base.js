@@ -46,7 +46,7 @@ $(function() {
 	// Canvas painting
 	const canvas = document.getElementById('floaters')
 	const ctx = canvas.getContext('2d')
-	let N = Math.round(window.innerHeight * window.innerWidth / 200000)
+	let N = Math.round(window.innerHeight * window.innerWidth / 100000)
 	const squares = []
 
 	class Square {
@@ -58,14 +58,14 @@ $(function() {
 			this.b = Math.floor(Math.random() * 256)
 			this.a = a
 			this.size = Math.random() * 60 + 30
-			this.direction = Math.random() * 2 + 0.5
+			this.direction = Math.random() * 3 + 0.5
 		}
 	}
 
 	window.addEventListener('resize', () => {
 		canvas.height = window.innerHeight
 		canvas.width = window.innerWidth
-		N = Math.round(window.innerHeight * window.innerWidth / 200000)
+		N = Math.round(window.innerHeight * window.innerWidth / 100000)
 
 		for(let i = 0 ; i < N ; ++i) {
 			squares[i] = new Square(Math.random() * canvas.width, Math.random() * canvas.height, 1)

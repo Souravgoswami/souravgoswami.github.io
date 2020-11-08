@@ -28,7 +28,7 @@ info: "resume_info.html"
 				</p>
 
 				<div class="justify-content-center object-glow">
-					<a href="/contact" class="btn-outline-success-animated" data-content="Contact Me"></a>
+					<a href="/contact" class="btn-blade-anim"><span class="contact">Contact Me</span></a>
 				</div>
 				<rgb-splitter class="object-glow"></rgb-splitter>
 			</div>

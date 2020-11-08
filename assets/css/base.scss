@@ -362,6 +362,11 @@ rgb-splitter {
 	opacity: 0 ;
 }
 
+.slide-down {
+	transform: translateY(-50%) ;
+	opacity: 0 ;
+}
+
 .highlight {
 	font-size: 24px ;
 	font-weight: 500 ;
@@ -369,7 +374,7 @@ rgb-splitter {
 
 @keyframes slideAnim {
 	100% {
-		transform: translateX(0%) ;
+		transform: translate(0%) ;
 		opacity: 1 ;
 	}
 }

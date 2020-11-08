@@ -27,8 +27,8 @@ info: "resume_info.html"
 					Please feel free to contact me on demand...
 				</p>
 
-				<div class="justify-content-center object-glow">
-					<a href="/contact" class="btn-blade-anim"><span class="contact">Contact Me</span></a>
+				<div class="justify-content-center">
+					<a href="/contact" class="object-glow btn-blade-anim"><span class="contact">Contact Me</span></a>
 				</div>
 				<rgb-splitter class="object-glow"></rgb-splitter>
 			</div>

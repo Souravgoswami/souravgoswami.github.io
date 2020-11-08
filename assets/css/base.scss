@@ -18,11 +18,11 @@
 }
 
 .text-glow {
-	transition: text-shadow 1s ease-in ;
+	transition: text-shadow 2s ease-in ;
 }
 
 .object-glow {
-	transition: filter 3s ease-in ;
+	transition: filter 2s ease-in ;
 }
 
 body, html {
@@ -357,7 +357,6 @@ rgb-splitter {
 	height: 100% ;
 	top: 0 ;
 	left: 0 ;
-	z-index: 0 ;
 }
 
 .icon24 {

@@ -148,11 +148,17 @@ $(function() {
 			for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
 				let _s = i.style
 				_s.color = "#fff"
-				_s.textShadow = "0 0 6px currentColor"
+				_s.textShadow = "0 0 8px #fff8"
 			}
 
-			for(let i of Array.from(document.getElementsByClassName('object-glow')))
-				i.style.filter = `drop-shadow(0 0 8px #3eba)`
+			for(let i of Array.from(document.getElementsByClassName('text-glow-current'))) {
+				i.style.textShadow = "0 0 8px currentColor"
+			}
+
+			for(let i of Array.from(document.getElementsByClassName('object-glow'))) {
+				let _gc = i.getAttribute('glow-color') || '#3eb8'
+				i.style.filter = `drop-shadow(0 0 4px ${_gc})`
+			}
 
 			for(let i of Array.from(document.getElementsByClassName('text-code'))) {
 				let _s = i.style
@@ -191,6 +197,11 @@ $(function() {
 				_s.textShadow = "none"
 			}
 
+			for(let i of Array.from(document.getElementsByClassName('text-glow-current'))) {
+				i.style.textShadow = 'none'
+			}
+
+
 			for(let i of Array.from(document.getElementsByClassName('object-glow')))
 				i.style.filter = `none`
 
@@ -205,4 +216,16 @@ $(function() {
 				i.style.filter = 'invert(0)'
 		}
 	}
+
+	// Handle footer animation on intersection
+	const footerGlowAnim = document.querySelectorAll('.footer-glow-anim')
+
+	let observer = new IntersectionObserver(e => {
+		if(e[0].isIntersecting)
+			footerGlowAnim.forEach(_fga => _fga.style.animation = `lighting 1.25s linear infinite ${_fga.getAttribute('delay') || 0}ms`)
+		else
+			footerGlowAnim.forEach(_fga =>  _fga.style.animation = 'none')
+	})
+
+	footerGlowAnim.forEach(_i => observer.observe(_i) )
 })

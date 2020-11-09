@@ -44,13 +44,17 @@
 					Created with &#x1F496; with Jekyll <img src="/assets/images/jekyll_vile.svg" class="icon24">
 				</p>
 
-				{% if page.url != '/about' %}
-					<div class="sm-flex-center">
+				<div class="sm-flex-center">
+					{% if page.url == '/about' %}
+						<a href="/" class="btn-blade-anim btn-footer">
+							<span class="contact">Home</span>
+						</a>
+					{% else %}
 						<a href="/about" class="btn-blade-anim btn-footer">
 							<span class="contact">About</span>
 						</a>
-					</div>
-				{% endif %}
+					{% endif %}
+				</div>
 			</div>
 		</div>
 	</div>

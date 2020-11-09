@@ -29,4 +29,44 @@
 		padding: 0 ;
 		margin: 0 ;
 	}
+
+	.divider-horizontal {
+		position: relative ;
+		display: inline-block ;
+		height: 100% ;
+		width: 100% ;
+
+		& .line {
+			position: absolute ;
+			display: inline-block ;
+			left: 50% ;
+			top: 0 ;
+			bottom: 0 ;
+			transform: translate(-50%) ;
+			width: 2px ;
+			height: 100% ;
+			background: #fff ;
+			filter: drop-shadow(0 0 4px #fff) ;
+		}
+	}
+}
+
+@media(max-width: 768px) {
+	#footer .divider-horizontal .line {
+		width: 100% ;
+		height: 2px ;
+	}
+
+	#footer {
+		.sm-flex-center {
+			display: flex ;
+			align-items: center ;
+			justify-content: center ;
+			flex-direction: row ;
+		}
+
+		// div.footer-site-info {
+		// 	text-align: center ;
+		// }
+	}
 }

@@ -2,7 +2,7 @@
 	font-family: 'PT Serif';
 	font-style: normal;
 	font-weight: 400;
-	src: local('PT Serif'), local('PTSerif-Regular'), url('assets/PTSerif.woff2') format('woff2');
+	src: local('PT Serif'), local('PTSerif-Regular'), url('/assets/PTSerif.woff2') format('woff2');
 }
 
 

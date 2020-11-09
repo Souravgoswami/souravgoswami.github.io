@@ -512,6 +512,7 @@ ul.navbar-nav {
 	padding: 8px 12px ;
 	border: 3px solid #ff50a6 ;
 	position: relative ;
+	display: inline-block ;
 	overflow: hidden ;
 	transition: all 0.125s linear 0.25s ;
 	border-radius: 6px ;
@@ -561,6 +562,20 @@ ul.navbar-nav {
 	}
 }
 
+.btn-footer {
+	padding: 4px 6px ;
+	filter: drop-shadow(0 0 4px #0c0) ;
+	border: 2px solid #0c0 ;
+
+	& .contact {
+		color: #0c0 !important ;
+	}
+
+	&:hover {
+		background-color: #0c0 ;
+	}
+}
+
 .man-hand, .man-palm, .man-finger {
 	animation: hand-waving 3s ease infinite ;
 }
@@ -568,4 +583,23 @@ ul.navbar-nav {
 .man-eye {
 	animation: eye-blink 3s ease infinite ;
 	transform-origin: center 20% ;
+}
+
+.divider-horizontal {
+	position: relative ;
+	display: inline-block ;
+	height: 100% ;
+	width: 100% ;
+
+	& .line {
+		position: absolute ;
+		display: inline-block ;
+		left: 50% ;
+		top: 0 ;
+		bottom: 0 ;
+		transform: translate(-50%) ;
+		width: 2px ;
+		background: #fff ;
+		filter: drop-shadow(0 0 4px #fff) ;
+	}
 }

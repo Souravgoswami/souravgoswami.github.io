@@ -1,35 +1,57 @@
 <div id="footer">
-	<ul>
-		<li class="footer-glow-anim" delay="100">s</li>
-		<li class="footer-glow-anim" delay="100">o</li>
-		<li class="footer-glow-anim" delay="100">u</li>
-		<li class="footer-glow-anim" delay="100">r</li>
-		<li class="footer-glow-anim" delay="100">a</li>
-		<li class="footer-glow-anim" delay="100">v</li>
-		<li class="footer-glow-anim" delay="100">g</li>
-		<li class="footer-glow-anim" delay="100">o</li>
-		<li class="footer-glow-anim" delay="100">s</li>
-		<li class="footer-glow-anim" delay="100">w</li>
-		<li class="footer-glow-anim" delay="100">a</li>
-		<li class="footer-glow-anim" delay="100">m</li>
-		<li class="footer-glow-anim" delay="100">i</li>
-		<li class="footer-glow-anim" delay="250">.</li>
-		<li class="footer-glow-anim" delay="400">g</li>
-		<li class="footer-glow-anim" delay="400">i</li>
-		<li class="footer-glow-anim" delay="400">t</li>
-		<li class="footer-glow-anim" delay="400">h</li>
-		<li class="footer-glow-anim" delay="400">u</li>
-		<li class="footer-glow-anim" delay="400">b</li>
-		<li class="footer-glow-anim" delay="550">.</li>
-		<li class="footer-glow-anim" delay="700">i</li>
-		<li class="footer-glow-anim" delay="700">o</li>
-	</ul>
+	<div class="row">
+		<div class="col-md-5">
+			<ul>
+				<li class="footer-glow-anim" delay="100">s</li>
+				<li class="footer-glow-anim" delay="100">o</li>
+				<li class="footer-glow-anim" delay="100">u</li>
+				<li class="footer-glow-anim" delay="100">r</li>
+				<li class="footer-glow-anim" delay="100">a</li>
+				<li class="footer-glow-anim" delay="100">v</li>
+				<li class="footer-glow-anim" delay="100">g</li>
+				<li class="footer-glow-anim" delay="100">o</li>
+				<li class="footer-glow-anim" delay="100">s</li>
+				<li class="footer-glow-anim" delay="100">w</li>
+				<li class="footer-glow-anim" delay="100">a</li>
+				<li class="footer-glow-anim" delay="100">m</li>
+				<li class="footer-glow-anim" delay="100">i</li>
+				<li class="footer-glow-anim" delay="250">.</li>
+				<li class="footer-glow-anim" delay="400">g</li>
+				<li class="footer-glow-anim" delay="400">i</li>
+				<li class="footer-glow-anim" delay="400">t</li>
+				<li class="footer-glow-anim" delay="400">h</li>
+				<li class="footer-glow-anim" delay="400">u</li>
+				<li class="footer-glow-anim" delay="400">b</li>
+				<li class="footer-glow-anim" delay="550">.</li>
+				<li class="footer-glow-anim" delay="700">i</li>
+				<li class="footer-glow-anim" delay="700">o</li>
+			</ul>
 
-	<p class="footer-glow">
-		Created with &#x1F496; with Jekyll <img src="assets/images/jekyll_vile.svg" class="icon24">
-	</p>
 
-	<p class="footer-glow">
-		Copyright &copy; {{ 'now' | date: "%Y" }} Sourav Goswami
-	</p>
+			<p class="footer-glow">
+				Copyright &copy; {{ 'now' | date: "%Y" }} Sourav Goswami
+			</p>
+		</div>
+
+
+		<div class="col-md-2">
+			<div class="divider-horizontal">
+				<div class="line"></div>
+			</div>
+		</div>
+
+		<div class="col-md-5">
+			<div class="">
+				<p class="footer-glow">
+					Created with &#x1F496; with Jekyll <img src="/assets/images/jekyll_vile.svg" class="icon24">
+				</p>
+
+				{% if page.url != '/about' %}
+					<a href="/about" class="btn-blade-anim btn-footer">
+						<span class="contact">About</span>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </div>

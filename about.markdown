@@ -1,18 +1,42 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: home
+title:  "About"
+date:   2020-11-04 10:22:58 +0530
+categories: about
+permalink: "about"
+active: "resume"
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<div class="main">
+	<div class="row">
+		<div class="col-md-6 div-dp">
+			<div class="div-dp-container">
+				<img src="/assets/images/jekyll.svg" class="main-image" width="80%">
+			</div>
+		</div>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+		<div class="col-md-6 align-items-center justify-content-center head-content">
+			<div>
+				<h1 class="text-glow">Thanks for visiting the about page!</h1>
+				<p class="text-glow">
+					This page was created from scratch!
+				</p>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+				<p class="text-glow">
+					No other themes were used...
+					But there's nothing to hide...
+				</p>
 
+				<p class="text-glow">
+					Would you like to view the source code on<img src="/assets/images/github.svg" class="icon24 invert">now?
+				</p>
 
-[jekyll-organization]: https://github.com/jekyll
+				<div class="justify-content-center">
+					<a href="//github.com/Souravgoswami/souravgoswami.github.io" class="object-glow btn-blade-anim"><span class="contact">Source Code</span></a>
+				</div>
+
+				<rgb-splitter class="object-glow"></rgb-splitter>
+			</div>
+		</div>
+	</div>
+</div>

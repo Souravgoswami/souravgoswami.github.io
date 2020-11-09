@@ -14,19 +14,19 @@ info: "home_info.html"
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="dp">
-								<img class="img-fluid img-fill" src="assets/images/cat.webp">
+								<img class="img-fluid img-fill" src="/assets/images/cat.webp">
 							</div>
 						</div>
 
 						<div class="carousel-item">
 							<div class="dp">
-								<img class="image-fluid img-fill" src="assets/images/cat2.webp">
+								<img class="image-fluid img-fill" src="/assets/images/cat2.webp">
 							</div>
 						</div>
 
 						<div class="carousel-item">
 							<div class="dp">
-								<img class="image-fluid img-fill" src="assets/images/cat3.webp">
+								<img class="image-fluid img-fill" src="/assets/images/cat3.webp">
 							</div>
 						</div>
 
@@ -43,21 +43,21 @@ info: "home_info.html"
 					<ul class="carousel-indicators list-inline mx-auto border px-2">
 						<li class="list-inline-item active">
 							<a class="selected" data-slide-to="0" data-target="#carousel">
-								<img class="image-fluid img-fill" src="assets/images/cat.webp">
+								<img class="image-fluid img-fill" src="/assets/images/cat.webp">
 							</a>
 						</li>
 
 						<li class="list-inline-item active">
 							<a class="selected" data-slide-to="1" data-target="#carousel">
 								<div style="height: 100%" class="align-items">
-									<img class="image-fluid img-fill" src="assets/images/cat2.webp">
+									<img class="image-fluid img-fill" src="/assets/images/cat2.webp">
 								</div>
 							</a>
 						</li>
 
 						<li class="list-inline-item active">
 							<a class="selected" data-slide-to="2" data-target="#carousel">
-								<img class="image-fluid img-fill" src="assets/images/cat3.webp">
+								<img class="image-fluid img-fill" src="/assets/images/cat3.webp">
 							</a>
 						</li>
 					</ul>
@@ -65,15 +65,15 @@ info: "home_info.html"
 
 				<div class="py-2 social-icons justify-content-center">
 					<a class="icon32-div object-glow" data-content="linkedin" href="//www.linkedin.com/in/sourav-goswami0/" target="_blank">
-						<img src="assets/images/linkedin.svg">
+						<img src="/assets/images/linkedin.svg">
 					</a>
 
 					<a class="icon32-div object-glow" data-content="quora" href="//www.quora.com/profile/Sourav-Goswami-17" target="_blank">
-						<img src="assets/images/quora.svg" class="icon32-p">
+						<img src="/assets/images/quora.svg" class="icon32-p">
 					</a>
 
 					<a class="icon32-div object-glow" data-content="github" href="//github.com/souravgoswami/" target="_blank">
-						<img src="assets/images/github.svg" class="icon32-p invert">
+						<img src="/assets/images/github.svg" class="icon32-p invert">
 					</a>
 				</div>
 			</div>

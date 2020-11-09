@@ -36,19 +36,6 @@ plugins:
 sass:
   style: compressed
 
-assets:
-  source_maps: true
-  destination: "/assets/images"
-  compression: false
-  gzip: false
-  defaults:
-    integrity:
-      {css,img,js}: true
-  caching:
-    enabled: true
-    path: ".jekyll-cache/assets"
-    type: file
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

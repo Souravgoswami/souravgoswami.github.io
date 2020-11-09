@@ -39,7 +39,7 @@
 
 			#loader-head {
 				height: 100vh ;
-				width: 100% ;
+				width: 100vw ;
 				display: flex ;
 				justify-content: center ;
 				align-items: center ;
@@ -67,7 +67,6 @@
 				font-size: 48px ;
 				position: relative ;
 				color: #fff ;
-				overflow: hidden ;
 				text-shadow: 0 0 6px #fff ;
 			}
 
@@ -82,7 +81,7 @@
 				background-clip: text ;
 				-webkit-background-clip: text ;
 				color: transparent ;
-				animation: loaderTextAnim 1s ease infinite 0.75s ;
+				animation: loaderTextAnim 1s ease infinite ;
 			}
 
 			@keyframes loaderChase {
@@ -98,32 +97,47 @@
 				90%, 100% { background-position: 0% }
 			}
 		</style>
+
+		<link rel="preload" as="style" href="/assets/css/bootstrap.min.css">
+		<link rel="preload" as="style" href="/assets/css/base.css">
+		<link rel="preload" as="script" href="/assets/js/jquery-3.5.1.min.js">
+		<link rel="preload" as="script" href="/assets/js/bootstrap.min.js">
+		<link rel="preload" as="script" href="/assets/js/base.js">
+
+		<!-- Loading CSS and animating the loader... -->
+		<script>
+			const cssFiles = ['base', 'bootstrap.min']
+			for(let _cssFile of cssFiles) {
+				let _link = document.createElement('link')
+				_link.rel = 'stylesheet'
+				_link.type = 'text/css'
+				_link.href = `/assets/css/${_cssFile}.css`
+				document.head.appendChild(_link)
+			}
+
+			window.onload = function() {
+				document.getElementById('loader-head').remove()
+			}
+		</script>
 	</head>
 
 	<body>
 		<div id="loader-head">
 			<div id="loader">
-				<div class="loaders" style="animation-delay: 200ms"></div>
-				<div class="loaders" style="animation-delay: 900ms"></div>
-				<div class="loaders" style="animation-delay: 1600ms"></div>
+				<div class="loaders" style="animation-delay: 0ms"></div>
+				<div class="loaders" style="animation-delay: 700ms"></div>
+				<div class="loaders" style="animation-delay: 1400ms"></div>
 			</div>
 
 			<p>Loading...</p>
 		</div>
 
 		<noscript>
-			This website depends on JavaScript, quite heavily... Please make sure it's enabled!
+			This website depends on JavaScript, quite heavily...
+			Please make sure it's enabled and I promise that there will be no trackers and ads...
 		</noscript>
 
-		<script>
-			window.onload = function() {
-				document.getElementById('loader-head').remove()
-			}
-		</script>
-
-		<!-- Load all necessary files and libraries -->
-		<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/assets/css/base.css">
+		<!-- Load all necessary js files and libraries -->
 		<script src="/assets/js/jquery-3.5.1.min.js"></script>
 		<script src="/assets/js/bootstrap.min.js"></script>
 		<script src="/assets/js/base.js"></script>

@@ -22,8 +22,25 @@
 		<style>
 			html, body { margin: 0 ; padding: 0 }
 
+			noscript {
+				background-color: #222 ;
+				color: #fff ;
+				position: absolute ;
+				z-index: 10000 ;
+				font-size: 48px ;
+				text-align: center ;
+				display: flex ;
+				padding: 20px ;
+				text-shadow: 0 0 4px #fff ;
+				align-items: center ;
+				place-items: center ;
+				height: 100% ;
+			}
+
 			#loader-head {
-				height: 100vh ; width: 100% ; display: flex ;
+				height: 100vh ;
+				width: 100% ;
+				display: flex ;
 				justify-content: center ;
 				align-items: center ;
 				flex-direction: column ;
@@ -93,6 +110,10 @@
 
 			<p>Loading...</p>
 		</div>
+
+		<noscript>
+			This website depends on JavaScript, quite heavily... Please make sure it's enabled!
+		</noscript>
 
 		<script>
 			window.onload = function() {

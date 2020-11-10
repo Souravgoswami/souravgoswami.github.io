@@ -49,7 +49,12 @@
 			filter: drop-shadow(0 0 4px #fff) ;
 		}
 	}
+
+	.icon-h-36 {
+		height: 36px ;
+	}
 }
+
 
 @media(max-width: 768px) {
 	#footer .divider-horizontal .line {
@@ -64,9 +69,5 @@
 			justify-content: center ;
 			flex-direction: row ;
 		}
-
-		// div.footer-site-info {
-		// 	text-align: center ;
-		// }
 	}
 }

@@ -46,7 +46,6 @@ $(function() {
 	// Canvas painting
 	const canvas = document.getElementById('floaters')
 	const ctx = canvas.getContext('2d')
-	let N = Math.round(window.innerHeight * window.innerWidth / 100000)
 	const squares = []
 	const mainHeader = document.getElementById('mainHeader')
 
@@ -56,6 +55,8 @@ $(function() {
 
 	canvas.height = mainHeader.offsetHeight
 	canvas.width = mainHeader.offsetWidth
+
+	let N = Math.round(canvas.height * canvas.width / 200000)
 
 	class Square {
 		constructor(x, y, a = 1) {
@@ -78,7 +79,7 @@ $(function() {
 		floaters.style.height = `${_offsetHeight}px`
 		floaters.style.width = `${_offsetWidth}px`
 
-		N = Math.round(canvas.height * canvas.width / 100000)
+		N = Math.round(canvas.height * canvas.width / 200000)
 
 		for(let i = 0 ; i < N ; ++i) {
 			squares[i] = new Square(Math.random() * canvas.width, Math.random() * canvas.height, 1)

@@ -27,9 +27,6 @@
 
 body, html {
 	margin: 0 ;
-	padding: 0 ;
-	width: 100% ;
-	height: 100% ;
 	background-color: #fff ;
 	font-family: 'Alice' !important ;
 	color: #111 ;
@@ -254,7 +251,8 @@ li.active > a.nav-link {
 }
 
 .main-image {
-	width: 100% ;
+	width: 80% ;
+	height: 80% ;
 }
 
 .icon32-div {

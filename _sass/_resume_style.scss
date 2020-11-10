@@ -7,6 +7,7 @@
 
 a {
 	color: #55f !important ;
+	transition: all 0.25s ease ;
 }
 
 a:hover {
@@ -75,12 +76,11 @@ a:hover {
 	margin: 0px 8px ;
 }
 
-.icon16 {
-	width: 24px !important ;
-	height: 24px !important ;
-	margin: 0px 8px ;
-
-}
+// .icon16 {
+// 	width: 24px !important ;
+// 	height: 24px !important ;
+// 	margin: 0px 8px ;
+// }
 
 .info {
 	display: block ;

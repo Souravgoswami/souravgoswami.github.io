@@ -119,9 +119,14 @@
 				document.getElementById('loader-head').remove()
 			}
 		</script>
+
+		{% if page.stylesheet %}
+			<link rel="stylesheet" type="text/css" href="{{ page.stylesheet }}.css">
+		{% endif %}
 	</head>
 
 	<body>
+
 		<div id="loader-head">
 			<div id="loader">
 				<div class="loaders" style="animation-delay: 0ms"></div>

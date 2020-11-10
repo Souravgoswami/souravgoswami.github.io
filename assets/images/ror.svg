@@ -1,9 +1,168 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="411" height="155">
-  <g fill="#C00" fill-rule="evenodd">
-    <path d="M352.6 129.5v18.1h32.7c6.7 0 18.2-4.9 18.6-18.6v-7c0-11.7-9.6-18.6-18.6-18.6H369V95h32.3V76.8h-31c-8 0-18.7 6.6-18.7 18.9v6.3c0 12.3 10.6 18.6 18.7 18.6 22.5.1-5.4 0 15.4 0v8.8m-208.3-4.3s17.5-1.5 17.5-24.1-21.2-24.7-21.2-24.7h-38.2v71.3h19.2v-17.2l16.6 17.2h28.4l-22.3-22.5zm-7.4-14.6h-15.3V94.2h15.4s4.3 1.6 4.3 8.1-4.4 8.2-4.4 8.2zm72.3-33.7h-19.5c-13.9 0-18.6 12.6-18.6 18.6v52.2h19.5v-12.5H242v12.5h18.9V95.4c0-15.2-13.8-18.6-18.6-18.6zm-.3 38.1h-18.4V97.6s0-3.9 6.1-3.9h6.7c5.4 0 5.5 3.9 5.5 3.9v17.3h.1zM269.8 76.8h20.3v70.8h-20.3zM318.6 129.3V76.8h-20.2v70.8h47.5v-18.3z"/>
-    <path d="M15 147.6h79s-15.1-68.9 34.9-96.8c10.9-5.3 45.6-25.1 102.4 16.9 1.8-1.5 3.5-2.7 3.5-2.7s-52-51.9-109.9-46.1C95.8 21.5 60 48 39 83c-21 35-24 64.6-24 64.6z"/>
-    <path d="M15 147.6h79s-15.1-68.9 34.9-96.8c10.9-5.3 45.6-25.1 102.4 16.9 1.8-1.5 3.5-2.7 3.5-2.7s-52-51.9-109.9-46.1C95.8 21.5 60 48 39 83c-21 35-24 64.6-24 64.6z"/>
-    <path d="M15 147.6h79s-15.1-68.9 34.9-96.8c10.9-5.3 45.6-25.1 102.4 16.9 1.8-1.5 3.5-2.7 3.5-2.7s-52-51.9-109.9-46.1c-29.2 2.6-65 29.1-86 64.1-21 35-23.9 64.6-23.9 64.6zM179.6 24.5l.4-6.7c-.9-.5-3.4-1.7-9.7-3.5l-.4 6.6c3.3 1.1 6.5 2.3 9.7 3.6z"/>
-    <path d="M170.1 45.7l-.4 6.3c3.3.1 6.6.5 9.9 1.2l.4-6.2c-3.4-.7-6.7-1.1-9.9-1.3zm-37-31.2h1l-2-6.1c-3.1 0-6.3.2-9.6.6l1.9 5.9c2.9-.3 5.8-.4 8.7-.4zm4.8 36.8l2.3 6.9c2.9-1.4 5.8-2.6 8.7-3.5l-2.2-6.6c-3.4 1-6.3 2.1-8.8 3.2zM92.5 25L88 18.1c-2.5 1.3-5.1 2.7-7.8 4.3l4.6 7c2.6-1.6 5.1-3.1 7.7-4.4zM113 70l4.8 7.2c1.7-2.5 3.7-4.8 5.9-7.1l-4.5-6.8c-2.3 2.1-4.4 4.4-6.2 6.7zm-14.5 32.2l8.1 6.4c.4-3.9 1.1-7.8 2.1-11.7l-7.2-5.7c-1.3 3.7-2.2 7.4-3 11zM54.7 54.7l-7.1-6.2c-2.6 2.5-5.1 5-7.4 7.5l7.7 6.6c2.1-2.7 4.4-5.4 6.8-7.9zM24.5 99.4L13 95.2c-1.9 4.3-4 9.3-5 12l11.5 4.2c1.3-3.4 3.4-8.3 5-12zM97 127.6c.2 5.3.7 9.6 1.2 12.6l12 4.3c-.9-3.9-1.8-8.3-2.4-13L97 127.6z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="96"
+   height="96"
+   version="1.1"
+   id="svg81"
+   sodipodi:docname="linux.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata85">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview83"
+     showgrid="false"
+     inkscape:zoom="4"
+     inkscape:cx="72.907707"
+     inkscape:cy="27.352462"
+     inkscape:current-layer="svg81"
+     inkscape:document-rotation="0" />
+  <defs
+     id="defs29">
+    <filter
+       height="1.16"
+       y="-.08"
+       width="1.14"
+       x="-.07"
+       id="i"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         stdDeviation="3.67"
+         id="feGaussianBlur2" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="h"
+       x="-.19"
+       width="1.37"
+       y="-.18"
+       height="1.37">
+      <feGaussianBlur
+         stdDeviation=".59"
+         id="feGaussianBlur5" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="g"
+       x="-.3"
+       width="1.61"
+       y="-.3"
+       height="1.6">
+      <feGaussianBlur
+         stdDeviation=".97"
+         id="feGaussianBlur8" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="f"
+       x="-.25"
+       width="1.5"
+       y="-.25"
+       height="1.49">
+      <feGaussianBlur
+         stdDeviation=".8"
+         id="feGaussianBlur11" />
+    </filter>
+    <filter
+       height="1.16"
+       y="-.08"
+       width="1.14"
+       x="-.07"
+       id="e"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         stdDeviation="3.67"
+         id="feGaussianBlur14" />
+    </filter>
+    <filter
+       height="1.19"
+       y="-.09"
+       width="1.13"
+       x="-.06"
+       id="d"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         stdDeviation="2.13"
+         id="feGaussianBlur17" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="c"
+       x="-.13"
+       width="1.25"
+       y="-.09"
+       height="1.19">
+      <feGaussianBlur
+         stdDeviation="1.42"
+         id="feGaussianBlur20" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="b"
+       x="-.13"
+       width="1.25"
+       y="-.09"
+       height="1.19">
+      <feGaussianBlur
+         stdDeviation="1.42"
+         id="feGaussianBlur23" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="a"
+       x="-.06"
+       width="1.12"
+       y="-.04"
+       height="1.08">
+      <feGaussianBlur
+         stdDeviation="3.94"
+         id="feGaussianBlur26" />
+    </filter>
+  </defs>
+  <g
+     fill="#cc0000"
+     fill-rule="evenodd"
+     id="g12"
+     transform="matrix(0.21547051,0,0,0.21547051,3.6238485,31.1933)">
+    <path
+       d="m 352.6,129.5 v 18.1 h 32.7 c 6.7,0 18.2,-4.9 18.6,-18.6 v -7 c 0,-11.7 -9.6,-18.6 -18.6,-18.6 H 369 V 95 h 32.3 V 76.8 h -31 c -8,0 -18.7,6.6 -18.7,18.9 v 6.3 c 0,12.3 10.6,18.6 18.7,18.6 22.5,0.1 -5.4,0 15.4,0 v 8.8 m -208.3,-4.3 c 0,0 17.5,-1.5 17.5,-24.1 0,-22.6 -21.2,-24.7 -21.2,-24.7 h -38.2 v 71.3 h 19.2 v -17.2 l 16.6,17.2 h 28.4 z M 170,110.5 H 154.7 V 94.2 h 15.4 c 0,0 4.3,1.6 4.3,8.1 0,6.5 -4.4,8.2 -4.4,8.2 z m 72.3,-33.7 h -19.5 c -13.9,0 -18.6,12.6 -18.6,18.6 v 52.2 h 19.5 V 135.1 H 242 v 12.5 h 18.9 V 95.4 c 0,-15.2 -13.8,-18.6 -18.6,-18.6 z M 242,114.9 H 223.6 V 97.6 c 0,0 0,-3.9 6.1,-3.9 h 6.7 c 5.4,0 5.5,3.9 5.5,3.9 v 17.3 z m 27.8,-38.1 h 20.3 v 70.8 h -20.3 z m 48.8,52.5 V 76.8 h -20.2 v 70.8 h 47.5 v -18.3 z"
+       id="path2" />
+    <path
+       d="m 15,147.6 h 79 c 0,0 -15.1,-68.9 34.9,-96.8 10.9,-5.3 45.6,-25.1 102.4,16.9 1.8,-1.5 3.5,-2.7 3.5,-2.7 0,0 -52,-51.9 -109.9,-46.1 C 95.8,21.5 60,48 39,83 18,118 15,147.6 15,147.6 Z"
+       id="path4" />
+    <path
+       d="m 15,147.6 h 79 c 0,0 -15.1,-68.9 34.9,-96.8 10.9,-5.3 45.6,-25.1 102.4,16.9 1.8,-1.5 3.5,-2.7 3.5,-2.7 0,0 -52,-51.9 -109.9,-46.1 C 95.8,21.5 60,48 39,83 18,118 15,147.6 15,147.6 Z"
+       id="path6" />
+    <path
+       d="m 15,147.6 h 79 c 0,0 -15.1,-68.9 34.9,-96.8 10.9,-5.3 45.6,-25.1 102.4,16.9 1.8,-1.5 3.5,-2.7 3.5,-2.7 0,0 -52,-51.9 -109.9,-46.1 C 95.7,21.5 59.9,48 38.9,83 17.9,118 15,147.6 15,147.6 Z M 179.6,24.5 180,17.8 c -0.9,-0.5 -3.4,-1.7 -9.7,-3.5 l -0.4,6.6 c 3.3,1.1 6.5,2.3 9.7,3.6 z"
+       id="path8" />
+    <path
+       d="m 170.1,45.7 -0.4,6.3 c 3.3,0.1 6.6,0.5 9.9,1.2 L 180,47 c -3.4,-0.7 -6.7,-1.1 -9.9,-1.3 z m -37,-31.2 h 1 l -2,-6.1 c -3.1,0 -6.3,0.2 -9.6,0.6 l 1.9,5.9 c 2.9,-0.3 5.8,-0.4 8.7,-0.4 z m 4.8,36.8 2.3,6.9 c 2.9,-1.4 5.8,-2.6 8.7,-3.5 l -2.2,-6.6 c -3.4,1 -6.3,2.1 -8.8,3.2 z M 92.5,25 88,18.1 c -2.5,1.3 -5.1,2.7 -7.8,4.3 l 4.6,7 c 2.6,-1.6 5.1,-3.1 7.7,-4.4 z m 20.5,45 4.8,7.2 c 1.7,-2.5 3.7,-4.8 5.9,-7.1 l -4.5,-6.8 c -2.3,2.1 -4.4,4.4 -6.2,6.7 z m -14.5,32.2 8.1,6.4 c 0.4,-3.9 1.1,-7.8 2.1,-11.7 l -7.2,-5.7 c -1.3,3.7 -2.2,7.4 -3,11 z M 54.7,54.7 47.6,48.5 C 45,51 42.5,53.5 40.2,56 l 7.7,6.6 c 2.1,-2.7 4.4,-5.4 6.8,-7.9 z M 24.5,99.4 13,95.2 c -1.9,4.3 -4,9.3 -5,12 l 11.5,4.2 c 1.3,-3.4 3.4,-8.3 5,-12 z M 97,127.6 c 0.2,5.3 0.7,9.6 1.2,12.6 l 12,4.3 c -0.9,-3.9 -1.8,-8.3 -2.4,-13 z"
+       id="path10" />
   </g>
 </svg>

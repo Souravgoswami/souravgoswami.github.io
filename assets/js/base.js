@@ -48,6 +48,14 @@ $(function() {
 	const ctx = canvas.getContext('2d')
 	let N = Math.round(window.innerHeight * window.innerWidth / 100000)
 	const squares = []
+	const mainHeader = document.getElementById('mainHeader')
+
+	const floaters = document.getElementById('floaters')
+	floaters.style.height = `${mainHeader.offsetHeight}px`
+	floaters.style.width = `${mainHeader.offsetWidth}px`
+
+	canvas.height = mainHeader.offsetHeight
+	canvas.width = mainHeader.offsetWidth
 
 	class Square {
 		constructor(x, y, a = 1) {
@@ -58,22 +66,25 @@ $(function() {
 			this.b = Math.floor(Math.random() * 256)
 			this.a = a
 			this.size = Math.random() * 60 + 30
-			this.direction = Math.random() * 3 + 0.5
+			this.direction = Math.random() * 2 + 0.5
 		}
 	}
 
 	window.addEventListener('resize', () => {
-		canvas.height = window.innerHeight
-		canvas.width = window.innerWidth
-		N = Math.round(window.innerHeight * window.innerWidth / 100000)
+		let _offsetHeight = mainHeader.offsetHeight, _offsetWidth = mainHeader.offsetWidth
+		canvas.height = _offsetHeight
+		canvas.width = _offsetWidth
+
+		floaters.style.height = `${_offsetHeight}px`
+		floaters.style.width = `${_offsetWidth}px`
+
+		N = Math.round(canvas.height * canvas.width / 100000)
 
 		for(let i = 0 ; i < N ; ++i) {
 			squares[i] = new Square(Math.random() * canvas.width, Math.random() * canvas.height, 1)
 		}
 	})
 
-	canvas.height = window.innerHeight
-	canvas.width = window.innerWidth
 
 	for(let i = 0 ; i < N ; ++i) {
 		squares[i] = new Square(Math.random() * canvas.width, Math.random() * canvas.height, 1)
@@ -88,7 +99,7 @@ $(function() {
 
 			square.a = square.y / canvas.height
 
-			if (square.y < 0 || square.y > canvas.height)
+			if (square.y < 0)
 				squares[i] = new Square(Math.random() * canvas.width, canvas.height)
 
 			ctx.beginPath()
@@ -96,7 +107,7 @@ $(function() {
 			ctx.fillStyle= `rgba(${square.r},${square.g},${square.b},${square.a})`
 			ctx.fill()
 		}
-	}, 30)
+	}, 40)
 
 	// Handle the flying animation when the page is scrolled
 	for(let i of document.querySelectorAll('.slide-intersect-it')) {

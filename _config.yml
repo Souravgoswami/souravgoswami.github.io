@@ -29,7 +29,7 @@ url: "https://souravgoswami.github.io" # the base hostname & protocol for your s
 github_username:  souravgoswami
 
 # Build settings
-theme: home
+remote_theme: home
 plugins:
   - jekyll-feed
 

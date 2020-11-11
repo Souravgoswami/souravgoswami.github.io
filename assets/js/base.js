@@ -248,7 +248,7 @@ $(function() {
 
 		i.onclick = function() {
 			i.clickCounter++
-			console.log(i.clickCounter)
+
 			let dt = i.getAttribute('toggler-data-target')
 			let il = i.getAttribute('iframe-link')
 

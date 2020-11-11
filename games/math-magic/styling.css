@@ -1,3 +1,8 @@
+body, html {
+	margin: 0 ;
+	padding: 0 ;
+}
+
 #math-magic-container {
 	height: 90vh ;
 	overflow-y: auto ;

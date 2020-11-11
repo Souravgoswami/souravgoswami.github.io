@@ -451,7 +451,6 @@ ul.navbar-nav {
 	clear: both ;
 }
 
-
 #downloadResume {
 	transition: all 0.5s ease ;
 
@@ -588,50 +587,32 @@ ul.navbar-nav {
 }
 
 .game-container {
-	height: 50% ;
+	height: 20% ;
 	margin: 0 ;
-	overflow: hidden ;
+	overflow: auto ;
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
+
 }
 
 .iframe {
 	border: none ;
 	margin-top: 24px ;
+	min-height: 720px ;
 	height: 100vh ;
+	max-height: 750px ;
 	width: 100% ;
 }
 
-#joypadButton1 {
-	cursor: grab ;
-	transition: all 0.25s ease ;
-}
+@for $i from 1 through 5 {
+	#joypadButton#{$i} {
+		cursor: grab ;
+		transition: all 0.25s ease ;
 
-#joypadButton2 {
-	cursor: grab ;
-	transition: all 0.25s ease ;
-}
+		&:hover, &:active, &focus {
+			filter: brightness(10) drop-shadow(0 0 4px #fff) ;
 
-#joypadButton3 {
-	cursor: grab ;
-	transition: all 0.25s ease ;
-}
-
-#joypadButton4 {
-	cursor: grab ;
-	transition: all 0.25s ease ;
-}
-
-#joypadButton1:hover {
-	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
-}
-
-#joypadButton2:hover {
-	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
-}
-
-#joypadButton3:hover {
-	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
-}
-
-#joypadButton4:hover {
-	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
+		}
+	}
 }

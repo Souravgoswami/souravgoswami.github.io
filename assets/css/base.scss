@@ -596,6 +596,42 @@ ul.navbar-nav {
 .iframe {
 	border: none ;
 	margin-top: 24px ;
-	height: 80vh ;
+	height: 100vh ;
 	width: 100% ;
+}
+
+#joypadButton1 {
+	cursor: grab ;
+	transition: all 0.25s ease ;
+}
+
+#joypadButton2 {
+	cursor: grab ;
+	transition: all 0.25s ease ;
+}
+
+#joypadButton3 {
+	cursor: grab ;
+	transition: all 0.25s ease ;
+}
+
+#joypadButton4 {
+	cursor: grab ;
+	transition: all 0.25s ease ;
+}
+
+#joypadButton1:hover {
+	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
+}
+
+#joypadButton2:hover {
+	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
+}
+
+#joypadButton3:hover {
+	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
+}
+
+#joypadButton4:hover {
+	filter: brightness(10) drop-shadow(0 0 4px #fff) ;
 }

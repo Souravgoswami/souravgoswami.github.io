@@ -1,0 +1,82 @@
+body {
+	width: 100% ;
+	margin: 0 ;
+}
+
+.mt-3 {
+	padding-bottom: 3vmin ;
+}
+
+#container {
+	height: 90vh ;
+	width: 100% ;
+	background-color: #210f2e ;
+	border-radius: 8px ;
+}
+
+#score-div {
+	display: inline-block ;
+	color: #f55 ;
+	font-weight: 700 ;
+	letter-spacing: 1px ;
+}
+
+#h1 {
+	background-color: #c71e51 ;
+	margin: 0 ;
+	text-align: center ;
+	padding: 20px 0 ;
+	text-transform: uppercase ;
+	color: white ;
+	font-weight: normal ;
+}
+
+#displayColor {
+	font-size: 200% ;
+}
+
+#stripe {
+	width:100% ;
+	background-color: white ;
+	text-align: center ;
+	height: 30px ;
+}
+
+#message {
+	width: 20% ;
+	display: inline-block ;
+}
+
+button {
+	height: 100% ;
+	text-transform: uppercase ;
+	font-weight: 700 ;
+	letter-spacing: 1px ;
+	background: none ;
+	border: none ;
+	outline: none ;
+}
+
+button:hover {
+	background-color: #c71e51 ;
+	color: white ;
+}
+
+.selected {
+	background-color: #c71e51 ;
+	color: white ;
+}
+
+#square-container{
+	margin: 20px auto ;
+	max-width: 600px ;
+}
+
+.squares {
+	background-color: yellow ;
+	padding: 30% 30% 0 0 ;
+	float: left ;
+	margin: 1.66% ;
+	border-radius: 15% ;
+	transition: all 0.25s ease ;
+}

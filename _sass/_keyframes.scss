@@ -33,7 +33,6 @@
 }
 
 @keyframes dlAnimate {
-
 	0% {
 		transform: translateY(-100%) ;
 	}
@@ -87,5 +86,21 @@
 	80% {
 		color: #ff0 ;
 		text-shadow: 0 0 12px #ff0, 0 0 60px #ff2 ;
+	}
+}
+
+@keyframes appearing {
+	0% {
+		transform: translateY(-150%) ;
+	}
+
+	100% {
+		transform: translateY(0) ;
+	}
+}
+
+@keyframes hiding {
+	100% {
+		transform: translateY(150%) ;
 	}
 }

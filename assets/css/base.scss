@@ -36,19 +36,19 @@ body, html {
 	width: 36px ;
 
 	&:hover {
-		#path2, #path4, #path6, #path8, #path10, #path12, #path14, #path18, #path30, #path32 {
+		#logo-path2, #logo-path4, #logo-path6, #logo-path8, #logo-path10, #logo-path12, #logo-path14, #logo-path18, #logo-path30, #logo-path32 {
 			transform: scale(0) ;
 			transform-origin: center ;
 			animation: logoAnim1 10s ease forwards ;
 		}
 
-		#path20, #path24 {
+		#logo-path20, #logo-path24 {
 			transform: scale(0) ;
 			transform-origin: center ;
 			animation: logoAnim2 10s ease 0.5s forwards ;
 		}
 
-		#path22, #path26 {
+		#logo-path22, #logo-path26 {
 			transform: scale(0) ;
 			transform-origin: center ;
 			animation: logoAnim2 10s ease 0.65s forwards ;
@@ -101,7 +101,7 @@ body, html {
 
 .other-container {
 	background-color: #fff ;
-	min-height: 100% ;
+	min-height: 100vh ;
 	overflow: hidden ;
 	transition: background-color 0.25s ease ;
 	position: relative ;
@@ -243,7 +243,6 @@ li.active > a.nav-link {
 
 .social-icons {
 	height: 20% ;
-
 }
 
 .div-dp-container {
@@ -514,6 +513,7 @@ ul.navbar-nav {
 	overflow: hidden ;
 	transition: all 0.125s linear 0.25s ;
 	border-radius: 6px ;
+	cursor: pointer ;
 	user-select: none ;
 
 	& .contact {
@@ -574,11 +574,31 @@ ul.navbar-nav {
 	}
 }
 
-.man-hand, .man-palm, .man-finger {
+.man-hand, .man-palm {
 	animation: hand-waving 3s ease infinite ;
 }
 
 .man-eye {
 	animation: eye-blink 3s ease infinite ;
 	transform-origin: center 20% ;
+}
+
+.border-r-12 {
+	border-radius: 12px ;
+}
+
+.game-container {
+	height: 50% ;
+	margin: 0 ;
+	overflow: hidden ;
+}
+
+.iframe {
+	border: none ;
+	margin-top: 24px ;
+	// display: flex ;
+	// align-items: center ;
+	// justify-content: center ;
+	height: 80vh ;
+	width: 100% ;
 }

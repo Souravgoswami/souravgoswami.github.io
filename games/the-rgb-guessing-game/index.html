@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="RGB colour guessing game">
+		<meta name="author" content="Sourav Goswami">
+		<meta name="keywords=" content="" lang="en-GB">
+		<meta name="revisit-after" content="3days">
+		<meta name="robots" content="all">
+		<meta name="title" content="souravgoswami.github.io">
+		<meta property="og:description" content="RGB colour guessing game">
+		<meta property="og:title" content="Sourav Goswami">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://souravgoswami.github.io/games">
+		<meta property="og:image" itemprop="image" content="https://souravgoswami.github.io/assets/images/logo.png">
+
+		<title>The RGB Guessing Game</title>
+		<link rel="stylesheet" type="text/css" href="styling.css">
+	</head>
+
+	<body>
+		<div id="container">
+			<div class="mt-3"></div>
+			<h1 id="h1">The Great<br><span id="displayColor">RGB</span><br>Color game</h1>
+
+			<div id="stripe">
+				<div id="score-div">Score: <span id="score">0</span></div>
+				<span id="message"></span>
+				<button class="mode" value="easy">easy</button>
+				<button class="mode selected" value="hard">hard</button>
+			</div>
+
+			<div id="square-container">
+				<div class="squares"></div>
+				<div class="squares"></div>
+				<div class="squares"></div>
+				<div class="squares"></div>
+				<div class="squares"></div>
+				<div class="squares"></div>
+			</div>
+		</div>
+
+		<script type="application/javascript" src="script.js"></script>
+	</body>
+</html>

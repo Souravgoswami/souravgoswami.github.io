@@ -1,0 +1,157 @@
+html, body {
+	margin: 0 ;
+	padding: 0 ;
+}
+
+#dialog {
+	display: none ;
+}
+
+#container {
+	height: 90vh ;
+	overflow-y: auto ;
+	min-height: 480px ;
+	position: relative ;
+	background-color: #8EDBFF ;
+	padding: 24px ;
+	border-radius: 12px ;
+	box-shadow: 0px 4px 0px 0px #88f ;
+}
+
+#lives {
+	float: right ;
+}
+
+#status::after {
+	content: '' ;
+	display: block ;
+	clear: both ;
+}
+
+#lives > img {
+	width: 16px ;
+	height: 16px ;
+	margin: 0 3px ;
+}
+
+#score {
+	float: left ;
+}
+
+.centrify {
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
+}
+
+#playArea {
+	position: relative ;
+	width: 528px ;
+	height: 320px ;
+	background-color: #fff ;
+	box-shadow: 0px 4px 0px 0px #f55 ;
+	margin: 10px ;
+	border-radius: 4px ;
+	overflow: hidden ;
+}
+
+.fruits {
+	position: absolute ;
+	display: none ;
+	width: 100px ;
+	height: 100px ;
+}
+
+#gameOver {
+	font-size: 25px ;
+	width: 350px ;
+	height: 200px ;
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
+	flex-direction: column ;
+	background-color: #55f ;
+	color: #fff ;
+	border-radius: 8px ;
+	animation: myAnim1 0.5s ease-in ;
+}
+
+#instruction {
+	width: 480px ;
+	height: 50px ;
+	background-color: #ff5aab ;
+	color: #fff ;
+	margin: 10px auto ;
+	text-align: center ;
+	line-height: 50px ;
+	border-bottom: 1px dashed #fff ;
+	display: block ;
+	box-shadow: 0px 0px 4px 0px #fff ;
+	border-radius: 4px ;
+	animation: myAnim2 0.5s ease-out ;
+}
+
+.button, .hoverElements {
+	background-color: #fff ;
+	color: #000 ;
+	padding: 10px ;
+	display: inline-block ;
+	border-radius: 6px ;
+	cursor: pointer ;
+	transition: all 0.2s ease ;
+	animation: myAnim2 0.25s ease-out ;
+}
+
+.button:hover {
+	background-color: #74BB25 ;
+	color: #fff ;
+	box-shadow: 0px 0px 8px 0px #fff ;
+}
+
+.hoverElements {
+	box-shadow: 0px 4px 0px 0px #88f ;
+}
+
+.hoverElements:hover {
+	background-color: #FF5584 ;
+	color: #fff ;
+	box-shadow: 0px 4px 0px 0px #fff ;
+}
+
+.hearts {
+	animation: myAnim3 0.2s ease ;
+}
+
+#end {
+	text-align: center ;
+}
+
+@keyframes myAnim1 {
+	from {
+		opacity: 0 ;
+	}
+
+	to {
+		opacity: 1 ;
+	}
+}
+
+@keyframes myAnim2 {
+	from {
+		transform: scaleY(-1) ;
+	}
+
+	to {
+		transform: scaleY(1) ;
+	}
+}
+
+@keyframes myAnim3 {
+	from {
+		transform: scaleX(-1) ;
+	}
+
+	to {
+		transform: scaleX(1) ;
+	}
+}

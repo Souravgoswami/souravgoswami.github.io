@@ -5,6 +5,10 @@
 @import "resume_style.scss" ;
 @import "footer.scss" ;
 
+:focus {
+	outline: none ;
+}
+
 @font-face {
 	font-family: 'Alice' ;
 	font-style: normal ;

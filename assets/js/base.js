@@ -1,6 +1,6 @@
 $(function() {
 	// Tooltips
-	$(function () { $('[data-toggle="tooltip"]').tooltip() })
+	$('[data-toggle="tooltip"]').tooltip()
 
 	// Handle the navbar text animation
 	const codes = [
@@ -133,13 +133,19 @@ $(function() {
 	let mode = 1
 	const lamp = document.getElementById('lamp')
 	const night = document.getElementById('night')
+	const dMH = $('#darkModeHeader')
+
 
 	tdm.onclick = function() {
 		if (mode === 1) {
+			mode = 0
+
 			lamp.style.visibility = 'hidden'
 			night.style.visibility = 'visible'
+			dMH.tooltip('hide')
+			dMH.attr('data-original-title', 'Light Mode')
+			dMH.tooltip('show')
 
-			mode = 0
 			document.body.style.backgroundColor = '#000'
 
 			// to darken
@@ -185,8 +191,12 @@ $(function() {
 				i.style.filter = 'invert(100)'
 		} else {
 			mode = 1
+
 			lamp.style.visibility = 'visible'
 			night.style.visibility = 'hidden'
+			dMH.tooltip('hide')
+			dMH.attr('data-original-title', 'Dark Mode')
+			dMH.tooltip('show')
 
 			// to lighten
 			document.body.style.backgroundColor = '#fff'

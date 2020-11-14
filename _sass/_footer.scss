@@ -53,6 +53,21 @@
 	.icon-h-36 {
 		height: 36px ;
 	}
+
+}
+
+.btn-footer {
+	padding: 4px 6px ;
+	filter: drop-shadow(0 0 4px #0c0) ;
+	border: 2px solid #0c0 ;
+
+	& .contact {
+		color: #0c0 !important ;
+	}
+
+	&:hover {
+		background-color: #0c0 ;
+	}
 }
 
 

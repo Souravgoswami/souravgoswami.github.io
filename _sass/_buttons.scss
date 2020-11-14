@@ -1,0 +1,78 @@
+.btn-filled {
+	color: #fff !important ;
+	padding: 8px ;
+	background: linear-gradient(45deg, #7C6EFF, #978CFF, #E68CFF, #FF3799, #9B37FF, #FF37DF) ;
+	background-size: 300% ;
+	text-decoration: none !important ;
+	border-radius: 6px ;
+	transition: all 0.25s ease, filter 3s ease-in ;
+	box-shadow: 2px 3px 2px #222a ;
+	user-select: none ;
+
+	&:hover {
+		box-shadow: 4px 4px 4px #222a ;
+		background-position: 50% ;
+		color: #fff !important ;
+	}
+
+	&:active {
+		box-shadow: 4px 4px 6px #222a ;
+		background-position: 100% ;
+	}
+}
+
+.btn-blade-anim {
+	text-decoration: none !important ;
+	padding: 8px 12px ;
+	border: 3px solid #ff50a6 ;
+	position: relative ;
+	display: inline-block ;
+	overflow: hidden ;
+	transition: all 0.125s linear 0.25s, filter 3s ease !important;
+	border-radius: 6px ;
+	cursor: pointer ;
+	user-select: none ;
+
+	& .contact {
+		transition: all 0.25s ease 0.25s ;
+		color: #ff50a6 !important ;
+	}
+
+	&::before {
+		content: '' ;
+		background-color: #fff ;
+		position: absolute ;
+		top: 0 ;
+		left: 0 ;
+		width: 200% ;
+		height: 50% ;
+		filter: drop-shadow(0 0 8px #fff) ;
+		transform: translateX(-100%) rotate(45deg) ;
+		transition: all 0.25s linear ;
+	}
+
+	&:hover::before {
+		transform: translateX(100%) rotate(45deg) ;
+	}
+
+	&:hover {
+		background-color: #ff50a6 ;
+		box-shadow: 2px 3px 6px #0007 ;
+		transition-delay: 0s !important ;
+
+		& .contact {
+			filter: drop-shadow(0 0 4px #ffff) ;
+			color: #fff !important ;
+			transition-delay: 0s ;
+		}
+	}
+
+	&:active {
+		box-shadow: 2px 3px 4px #0007 ;
+	}
+
+	&:active .contact {
+		filter: drop-shadow(0 0 2px #ffff) ;
+		color: #fff !important ;
+	}
+}

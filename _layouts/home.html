@@ -42,7 +42,11 @@
 
 
 		{% if page.stylesheet %}
-			<link rel="stylesheet" type="text/css" href="{{ page.stylesheet }}.css">
+			{% assign stylesheets = page.stylesheet | split: "%" %}
+
+			{% for i in stylesheets %}
+				<link rel="stylesheet" type="text/css" href="{{ i }}.css">
+			{% endfor %}
 		{% endif %}
 	</head>
 
@@ -79,8 +83,9 @@
 		<script src="/assets/js/base.js"></script>
 
 		{% if page.js %}
-			<script src="{{ page.js }}"></script>
+			<script src="{{ page.js }}.js"></script>
 		{% endif %}
+
 		{% include analytics.js.html %}
 		<!-- End of loading all necessary files and libraries -->
 

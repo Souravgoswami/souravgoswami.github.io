@@ -32,6 +32,7 @@ github_username:  souravgoswami
 remote_theme: home
 plugins:
   - jekyll-feed
+  - jekyll-strip-html
 
 sass:
   style: compressed

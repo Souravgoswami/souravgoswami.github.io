@@ -40,12 +40,11 @@
 			}
 		</script>
 
-
 		{% if page.stylesheet %}
 			{% assign stylesheets = page.stylesheet | split: "%" %}
 
-			{% for i in stylesheets %}
-				<link rel="stylesheet" type="text/css" href="{{ i }}.css">
+			{% for stylesheet in stylesheets %}
+				<link rel="stylesheet" type="text/css" href="{{ stylesheet }}.css">
 			{% endfor %}
 		{% endif %}
 	</head>
@@ -67,7 +66,7 @@
 
 		<noscript>
 			This website depends on JavaScript, quite heavily...
-			Please make sure it's enabled and I promise that there will be no trackers and ads...
+			Please make sure it's enabled and I promise there will be no ads...
 		</noscript>
 
 		<script>
@@ -86,7 +85,6 @@
 			{% assign javascripts = page.js | split: "%" %}
 			{% for javascript in javascripts %}
 				<script src="{{ javascript }}.js"></script>
-
 			{% endfor %}
 		{% endif %}
 

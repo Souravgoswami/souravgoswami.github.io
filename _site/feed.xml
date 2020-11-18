@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://souravgoswami.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://souravgoswami.github.io/" rel="alternate" type="text/html" /><updated>2020-11-18T19:50:39+05:30</updated><id>https://souravgoswami.github.io/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">About this Website</title><link href="https://souravgoswami.github.io/about" rel="alternate" type="text/html" title="About this Website" /><published>2020-11-09T00:00:00+05:30</published><updated>2020-11-09T00:00:00+05:30</updated><id>https://souravgoswami.github.io/about</id><content type="html" xml:base="https://souravgoswami.github.io/about">&lt;div class=&quot;main&quot;&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
+			&lt;div class=&quot;div-dp-container&quot;&gt;
+				&lt;img src=&quot;/assets/images/jekyll.svg&quot; class=&quot;main-image&quot; width=&quot;80%&quot;&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;col-md-6 align-items-center justify-content-center head-content&quot;&gt;
+			&lt;div&gt;
+				&lt;h1 class=&quot;text-glow&quot;&gt;Thanks for visiting the about page!&lt;/h1&gt;
+				&lt;p class=&quot;text-glow&quot;&gt;
+					This page was created from scratch!
+				&lt;/p&gt;
+
+				&lt;p class=&quot;text-glow&quot;&gt;
+					No other themes were used...
+					But there's nothing to hide...
+				&lt;/p&gt;
+
+				&lt;p class=&quot;text-glow&quot;&gt;
+					Would you like to view the source code on&lt;img src=&quot;/assets/images/github.svg&quot; class=&quot;icon24 invert&quot;&gt;now?
+				&lt;/p&gt;
+
+				&lt;div class=&quot;justify-content-center&quot;&gt;
+					&lt;a href=&quot;//github.com/Souravgoswami/souravgoswami.github.io&quot; class=&quot;object-glow btn-blade-anim&quot;&gt;&lt;span class=&quot;contact&quot;&gt;Source Code&lt;/span&gt;&lt;/a&gt;
+				&lt;/div&gt;
+
+				&lt;rgb-splitter class=&quot;object-glow&quot;&gt;&lt;/rgb-splitter&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="about" /><summary type="html"></summary></entry><entry><title type="html">Sourav Goswami | Contact</title><link href="https://souravgoswami.github.io/contact" rel="alternate" type="text/html" title="Sourav Goswami | Contact" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>https://souravgoswami.github.io/contact</id><content type="html" xml:base="https://souravgoswami.github.io/contact">&lt;div class=&quot;main&quot;&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
+			&lt;div class=&quot;div-dp-container&quot;&gt;
+				&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; class=&quot;main-image&quot; x=&quot;0&quot; y=&quot;0&quot; viewBox=&quot;0 0 512 512&quot; xml:space=&quot;preserve&quot; id=&quot;svg92&quot;&gt;
+  &lt;path d=&quot;M284 23.1V56l-47.3 47.3H284v25.3a23.1 23.1 0 0023.2 23.1h152.4a23.1 23.1 0 0023.1-23.1V23A23.1 23.1 0 00459.6 0H307.2A23.1 23.1 0 00284 23.1z&quot; id=&quot;path2&quot; fill=&quot;#ffd15c&quot;/&gt;
+  &lt;g id=&quot;g10&quot; fill=&quot;#5c5e70&quot;&gt;
+    &lt;path d=&quot;M369.8 80.4h-28v35.8c0 3.3-4.2 5-8.1 5-4.2 0-8.2-1.7-8.2-5V35c0-3.5 4-5 8.2-5 4 0 8 1.5 8 5v32.5h28.1V35.1c0-3.5 4-5 8.1-5 4 0 8.2 1.5 8.2 5v81c0 3.4-4.2 5.2-8.2 5.2-4 0-8-1.8-8-5.1V80.4z&quot; id=&quot;path4&quot;/&gt;
+    &lt;path d=&quot;M401 35c0-3.4 4-5 8.1-5 4 0 8.2 1.6 8.2 5v81.2c0 3.3-4.2 5-8.2 5-4 0-8-1.7-8-5V35z&quot; id=&quot;path6&quot;/&gt;
+    &lt;path d=&quot;M447 113.6c0 4.4-4 8.4-8.5 8.4a8.5 8.5 0 010-17c4.6 0 8.4 4 8.4 8.6zm-2.5-22.3c0 3.4-3.7 4.8-6.2 4.8-3.2 0-6-1.4-6-4.8 0-16.4-1.7-38.4-1.7-54.9 0-4.3 3.4-6.8 7.7-6.8 4.3 0 7.9 2.5 7.9 6.8 0 16.5-1.7 38.5-1.7 55z&quot; id=&quot;path8&quot;/&gt;
+  &lt;/g&gt;
+  &lt;g id=&quot;g16&quot;&gt;
+    &lt;path d=&quot;M56 410.1a7.8 7.8 0 01-10-4.3c-4.4-11-7.7-21.5-10.3-31.6a198.3 198.3 0 01-3.9-81.8c4.7-27.3 14.2-43 14.6-43.7a7.7 7.7 0 1113.2 8c-.2.4-8.6 14.6-12.7 39.1-2.9 17.4-4 42.8 3.6 73.9a228 228 0 009.9 30.4c1.5 4-.4 8.4-4.4 10z&quot; id=&quot;path14&quot; fill=&quot;#34abe0&quot;/&gt;
+  &lt;/g&gt;
+  &lt;path d=&quot;M167 51.1l24.4 75.5H167v13.7a48.6 48.6 0 01-48.6 48.6h-1.6a50.2 50.2 0 01-50.2-50.2V51.1l58.7-28L167 51z&quot; id=&quot;path18&quot; fill=&quot;#ffdc8d&quot;/&gt;
+  &lt;path d=&quot;M129 187.8c-3.4.7-7 1.1-10.5 1.1H117a50.2 50.2 0 01-50.2-50.2V51.1l22.7-10.8v98.4c0 24.1 17 44.2 39.5 49z&quot; id=&quot;path20&quot; fill=&quot;#e8c57e&quot;/&gt;
+  &lt;path d=&quot;M113.4.2A51 51 0 0062.5 51V91c22 0 39.9-17.9 39.9-39.9h64.5a51 51 0 0051-51H113.4z&quot; id=&quot;path22&quot; fill=&quot;#f4a14e&quot;/&gt;
+  &lt;path d=&quot;M91.3 51.1a51 51 0 0151-51h-28.9a51 51 0 00-50.9 51V91c11.3 0 21.6-4.8 28.8-12.4V51.1z&quot; id=&quot;path24&quot; fill=&quot;#e28d40&quot;/&gt;
+  &lt;path d=&quot;M78 96a17.9 17.9 0 100 25.3&quot; id=&quot;path26&quot; fill=&quot;#e8c57e&quot;/&gt;
+  &lt;path class=&quot;man-teeth&quot; d=&quot;M143 156.8a29.8 29.8 0 01-29.8-29.7 7.7 7.7 0 0115.5 0c0 7.9 6.4 14.3 14.3 14.3a7.7 7.7 0 010 15.4z&quot; id=&quot;path28&quot; fill=&quot;#fff&quot;/&gt;
+  &lt;path class=&quot;man-eye&quot; d=&quot;M144.8 101.9a7.7 7.7 0 01-7.7-7.8V84a7.7 7.7 0 0115.5 0V94c0 4.3-3.5 7.8-7.8 7.8z&quot; id=&quot;path30&quot; fill=&quot;#494b5b&quot;/&gt;
+  &lt;path d=&quot;M191 263a405 405 0 01-6 57l-1.3 7.7c-11 66.9-33 158.5-59 174.2-2.6 1.6-5.2 2.4-7.8 2.4s-5.2-.8-7.7-2.4C83 486.2 61 394.6 50 327.7a1156.7 1156.7 0 01-2.4-15.4 405 405 0 01-5-49.3 74.1 74.1 0 01148.3 0z&quot; id=&quot;path32&quot; fill=&quot;#5c5e70&quot;/&gt;
+  &lt;path d=&quot;M116.9 504.3c-30.5 0-56.6-110.7-68-184.3-4-25.4-6.2-46.4-6.2-57C42.7 222 76 189 117 189c-22.1 0-40 33.2-40 74.1a825 825 0 003.3 57c6.2 73.6 20.3 184.3 36.7 184.3z&quot; id=&quot;path34&quot; fill=&quot;#494b5b&quot;/&gt;
+  &lt;path d=&quot;M191 263c0 10.6-2.1 31.6-6.1 57h-136c-4-25.4-6.2-46.4-6.2-57a74.1 74.1 0 01148.3 0z&quot; id=&quot;path36&quot; fill=&quot;#34abe0&quot;/&gt;
+  &lt;path d=&quot;M76.9 263a825 825 0 003.3 57H48.9c-4-25.4-6.2-46.4-6.2-57C42.7 222 76 189 117 189c-22.1 0-40 33.2-40 74.1z&quot; id=&quot;path38&quot; fill=&quot;#279fc9&quot;/&gt;
+  &lt;g id=&quot;g44&quot; fill=&quot;#78caef&quot;&gt;
+    &lt;path d=&quot;M72.3 203.8a73.8 73.8 0 0144.6-14.9l-23 45.2-21.6-30.3z&quot; id=&quot;path40&quot;/&gt;
+    &lt;path d=&quot;M161.4 203.8L140 234l-23-45.2c16.7 0 32.1 5.5 44.5 14.9z&quot; id=&quot;path42&quot;/&gt;
+  &lt;/g&gt;
+  &lt;path d=&quot;M124.6 362v140c-2.5 1.5-5.1 2.3-7.7 2.3s-5.2-.8-7.7-2.4V362a7.7 7.7 0 1115.4 0z&quot; id=&quot;path46&quot; fill=&quot;#494b5b&quot;/&gt;
+  &lt;path d=&quot;M186 312.3a839.3 839.3 0 01-2.3 15.4H50a1156.7 1156.7 0 01-2.4-15.4h138.4z&quot; id=&quot;path48&quot; fill=&quot;#797b89&quot;/&gt;
+  &lt;path d=&quot;M116.2 238.6c-7 0-10.4-9.1-5-13.7a7.8 7.8 0 019.2-.5 7.8 7.8 0 013.2 8.5c-.9 3.3-4 5.7-7.4 5.7z&quot; id=&quot;path50&quot; fill=&quot;#fff&quot;/&gt;
+  &lt;path d=&quot;M154.5 512H79.3a7.7 7.7 0 010-15.4h75.2a7.7 7.7 0 010 15.4z&quot; id=&quot;path52&quot; fill=&quot;#3a3c49&quot;/&gt;
+  &lt;path d=&quot;M56 410.1a7.8 7.8 0 01-10-4.3c-4.4-11-7.7-21.5-10.3-31.6l14.8-4.5a228 228 0 009.9 30.4c1.5 4-.4 8.4-4.4 10z&quot; id=&quot;path56&quot; fill=&quot;#ffdc8d&quot;/&gt;
+  &lt;g id=&quot;g930&quot;&gt;
+    &lt;path class=&quot;man-hand&quot; d=&quot;M271.4 190.4v38.3c0 .7-1.8 18.1-6.8 36.5-7.3 27-17.9 42-31.6 45.1a24 24 0 01-5.2.6c-15 0-31-14.4-48.6-43.9a7.7 7.7 0 0113.3-7.9c21.1 35.4 33 37.1 37.2 36.2 13.5-3 23.5-41 26.2-66.6V190.4a7.7 7.7 0 1115.5 0z&quot; id=&quot;path12&quot; fill=&quot;#34abe0&quot;/&gt;
+    &lt;g id=&quot;g878&quot;&gt;
+      &lt;g id=&quot;g888&quot;&gt;
+        &lt;g id=&quot;g879&quot;&gt;
+          &lt;path id=&quot;path54&quot; class=&quot;man-palm&quot; d=&quot;M263.7 182.7a7.7 7.7 0 00-7.7 7.7v20l-9-7.3a4.8 4.8 0 10-6 7.4l14.9 12.1v-.1 6.2h15.5v-38.3c0-4.3-3.4-7.7-7.7-7.7z&quot; fill=&quot;#ffdc8d&quot;/&gt;
+        &lt;/g&gt;
+      &lt;/g&gt;
+    &lt;/g&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;col-md-6 align-items-center justify-content-center head-content&quot;&gt;
+			&lt;div&gt;
+				&lt;h1 class=&quot;text-glow&quot;&gt;My Name is Sourav Goswami&lt;/h1&gt;
+				&lt;p class=&quot;text-glow&quot;&gt;
+					Thanks for taking interest in contacting me!
+				&lt;/p&gt;
+
+				&lt;p class=&quot;text-glow&quot;&gt;
+					How would you like to contact me?
+				&lt;/p&gt;
+
+				&lt;p class=&quot;text-glow&quot;&gt;
+					&lt;img src=&quot;/assets/images/user.svg&quot; class=&quot;icon24&quot;&gt;
+					Here are some of my social media and other sites that I use regularly...
+				&lt;/p&gt;
+
+				&lt;div class=&quot;py-2 social-icons justify-content-center head-content&quot;&gt;
+					&lt;a class=&quot;icon32-div object-glow&quot; data-content=&quot;linkedin&quot; href=&quot;//www.linkedin.com/in/sourav-goswami0/&quot; target=&quot;_blank&quot;&gt;
+						&lt;img src=&quot;/assets/images/linkedin.svg&quot;&gt;
+					&lt;/a&gt;
+
+					&lt;a class=&quot;icon32-div object-glow&quot; data-content=&quot;quora&quot; href=&quot;//www.quora.com/profile/Sourav-Goswami-17&quot; target=&quot;_blank&quot;&gt;
+						&lt;img src=&quot;/assets/images/quora.svg&quot; class=&quot;icon32-p&quot;&gt;
+					&lt;/a&gt;
+
+					&lt;a class=&quot;icon32-div object-glow&quot; data-content=&quot;github&quot; href=&quot;//github.com/souravgoswami/&quot; target=&quot;_blank&quot;&gt;
+						&lt;img src=&quot;/assets/images/github.svg&quot; class=&quot;icon32-p invert&quot;&gt;
+					&lt;/a&gt;
+
+					&lt;a class=&quot;icon32-div object-glow&quot; data-content=&quot;email&quot; href=&quot;mailto:souravgoswami@protonmail.com&quot; target=&quot;_blank&quot;&gt;
+						&lt;img src=&quot;/assets/images/email.svg&quot; class=&quot;icon32-p&quot;&gt;
+					&lt;/a&gt;
+
+					&lt;a class=&quot;icon32-div object-glow&quot; data-content=&quot;WhatsApp&quot; href=&quot;//wa.me/+918335830664&quot; target=&quot;_blank&quot;&gt;
+						&lt;img src=&quot;/assets/images/whatsapp.svg&quot; class=&quot;icon32-p&quot;&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+
+				&lt;rgb-splitter class=&quot;object-glow&quot;&gt;&lt;/rgb-splitter&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;main-arrow&quot;&gt;
+	&lt;div class=&quot;svg-arrow&quot;&gt;
+		&lt;img src=&quot;/assets/images/chevron-down.svg&quot; class=&quot;arrow&quot;&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="contact" /><summary type="html"></summary></entry><entry><title type="html">Sourav Goswami | Resume</title><link href="https://souravgoswami.github.io/resume" rel="alternate" type="text/html" title="Sourav Goswami | Resume" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>https://souravgoswami.github.io/resume</id><content type="html" xml:base="https://souravgoswami.github.io/resume">&lt;div class=&quot;main&quot;&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
+			&lt;div class=&quot;div-dp-container&quot;&gt;
+				&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; class=&quot;main-image&quot; x=&quot;0&quot; y=&quot;0&quot; viewBox=&quot;0 0 512 512&quot; xml:space=&quot;preserve&quot; id=&quot;svg92&quot;&gt;
+  &lt;path d=&quot;M284 23.1V56l-47.3 47.3H284v25.3a23.1 23.1 0 0023.2 23.1h152.4a23.1 23.1 0 0023.1-23.1V23A23.1 23.1 0 00459.6 0H307.2A23.1 23.1 0 00284 23.1z&quot; id=&quot;path2&quot; fill=&quot;#ffd15c&quot;/&gt;
+  &lt;g id=&quot;g10&quot; fill=&quot;#5c5e70&quot;&gt;
+    &lt;path d=&quot;M369.8 80.4h-28v35.8c0 3.3-4.2 5-8.1 5-4.2 0-8.2-1.7-8.2-5V35c0-3.5 4-5 8.2-5 4 0 8 1.5 8 5v32.5h28.1V35.1c0-3.5 4-5 8.1-5 4 0 8.2 1.5 8.2 5v81c0 3.4-4.2 5.2-8.2 5.2-4 0-8-1.8-8-5.1V80.4z&quot; id=&quot;path4&quot;/&gt;
+    &lt;path d=&quot;M401 35c0-3.4 4-5 8.1-5 4 0 8.2 1.6 8.2 5v81.2c0 3.3-4.2 5-8.2 5-4 0-8-1.7-8-5V35z&quot; id=&quot;path6&quot;/&gt;
+    &lt;path d=&quot;M447 113.6c0 4.4-4 8.4-8.5 8.4a8.5 8.5 0 010-17c4.6 0 8.4 4 8.4 8.6zm-2.5-22.3c0 3.4-3.7 4.8-6.2 4.8-3.2 0-6-1.4-6-4.8 0-16.4-1.7-38.4-1.7-54.9 0-4.3 3.4-6.8 7.7-6.8 4.3 0 7.9 2.5 7.9 6.8 0 16.5-1.7 38.5-1.7 55z&quot; id=&quot;path8&quot;/&gt;
+  &lt;/g&gt;
+  &lt;g id=&quot;g16&quot;&gt;
+    &lt;path d=&quot;M56 410.1a7.8 7.8 0 01-10-4.3c-4.4-11-7.7-21.5-10.3-31.6a198.3 198.3 0 01-3.9-81.8c4.7-27.3 14.2-43 14.6-43.7a7.7 7.7 0 1113.2 8c-.2.4-8.6 14.6-12.7 39.1-2.9 17.4-4 42.8 3.6 73.9a228 228 0 009.9 30.4c1.5 4-.4 8.4-4.4 10z&quot; id=&quot;path14&quot; fill=&quot;#34abe0&quot;/&gt;
+  &lt;/g&gt;
+  &lt;path d=&quot;M167 51.1l24.4 75.5H167v13.7a48.6 48.6 0 01-48.6 48.6h-1.6a50.2 50.2 0 01-50.2-50.2V51.1l58.7-28L167 51z&quot; id=&quot;path18&quot; fill=&quot;#ffdc8d&quot;/&gt;
+  &lt;path d=&quot;M129 187.8c-3.4.7-7 1.1-10.5 1.1H117a50.2 50.2 0 01-50.2-50.2V51.1l22.7-10.8v98.4c0 24.1 17 44.2 39.5 49z&quot; id=&quot;path20&quot; fill=&quot;#e8c57e&quot;/&gt;
+  &lt;path d=&quot;M113.4.2A51 51 0 0062.5 51V91c22 0 39.9-17.9 39.9-39.9h64.5a51 51 0 0051-51H113.4z&quot; id=&quot;path22&quot; fill=&quot;#f4a14e&quot;/&gt;
+  &lt;path d=&quot;M91.3 51.1a51 51 0 0151-51h-28.9a51 51 0 00-50.9 51V91c11.3 0 21.6-4.8 28.8-12.4V51.1z&quot; id=&quot;path24&quot; fill=&quot;#e28d40&quot;/&gt;
+  &lt;path d=&quot;M78 96a17.9 17.9 0 100 25.3&quot; id=&quot;path26&quot; fill=&quot;#e8c57e&quot;/&gt;
+  &lt;path class=&quot;man-teeth&quot; d=&quot;M143 156.8a29.8 29.8 0 01-29.8-29.7 7.7 7.7 0 0115.5 0c0 7.9 6.4 14.3 14.3 14.3a7.7 7.7 0 010 15.4z&quot; id=&quot;path28&quot; fill=&quot;#fff&quot;/&gt;
+  &lt;path class=&quot;man-eye&quot; d=&quot;M144.8 101.9a7.7 7.7 0 01-7.7-7.8V84a7.7 7.7 0 0115.5 0V94c0 4.3-3.5 7.8-7.8 7.8z&quot; id=&quot;path30&quot; fill=&quot;#494b5b&quot;/&gt;
+  &lt;path d=&quot;M191 263a405 405 0 01-6 57l-1.3 7.7c-11 66.9-33 158.5-59 174.2-2.6 1.6-5.2 2.4-7.8 2.4s-5.2-.8-7.7-2.4C83 486.2 61 394.6 50 327.7a1156.7 1156.7 0 01-2.4-15.4 405 405 0 01-5-49.3 74.1 74.1 0 01148.3 0z&quot; id=&quot;path32&quot; fill=&quot;#5c5e70&quot;/&gt;
+  &lt;path d=&quot;M116.9 504.3c-30.5 0-56.6-110.7-68-184.3-4-25.4-6.2-46.4-6.2-57C42.7 222 76 189 117 189c-22.1 0-40 33.2-40 74.1a825 825 0 003.3 57c6.2 73.6 20.3 184.3 36.7 184.3z&quot; id=&quot;path34&quot; fill=&quot;#494b5b&quot;/&gt;
+  &lt;path d=&quot;M191 263c0 10.6-2.1 31.6-6.1 57h-136c-4-25.4-6.2-46.4-6.2-57a74.1 74.1 0 01148.3 0z&quot; id=&quot;path36&quot; fill=&quot;#34abe0&quot;/&gt;
+  &lt;path d=&quot;M76.9 263a825 825 0 003.3 57H48.9c-4-25.4-6.2-46.4-6.2-57C42.7 222 76 189 117 189c-22.1 0-40 33.2-40 74.1z&quot; id=&quot;path38&quot; fill=&quot;#279fc9&quot;/&gt;
+  &lt;g id=&quot;g44&quot; fill=&quot;#78caef&quot;&gt;
+    &lt;path d=&quot;M72.3 203.8a73.8 73.8 0 0144.6-14.9l-23 45.2-21.6-30.3z&quot; id=&quot;path40&quot;/&gt;
+    &lt;path d=&quot;M161.4 203.8L140 234l-23-45.2c16.7 0 32.1 5.5 44.5 14.9z&quot; id=&quot;path42&quot;/&gt;
+  &lt;/g&gt;
+  &lt;path d=&quot;M124.6 362v140c-2.5 1.5-5.1 2.3-7.7 2.3s-5.2-.8-7.7-2.4V362a7.7 7.7 0 1115.4 0z&quot; id=&quot;path46&quot; fill=&quot;#494b5b&quot;/&gt;
+  &lt;path d=&quot;M186 312.3a839.3 839.3 0 01-2.3 15.4H50a1156.7 1156.7 0 01-2.4-15.4h138.4z&quot; id=&quot;path48&quot; fill=&quot;#797b89&quot;/&gt;
+  &lt;path d=&quot;M116.2 238.6c-7 0-10.4-9.1-5-13.7a7.8 7.8 0 019.2-.5 7.8 7.8 0 013.2 8.5c-.9 3.3-4 5.7-7.4 5.7z&quot; id=&quot;path50&quot; fill=&quot;#fff&quot;/&gt;
+  &lt;path d=&quot;M154.5 512H79.3a7.7 7.7 0 010-15.4h75.2a7.7 7.7 0 010 15.4z&quot; id=&quot;path52&quot; fill=&quot;#3a3c49&quot;/&gt;
+  &lt;path d=&quot;M56 410.1a7.8 7.8 0 01-10-4.3c-4.4-11-7.7-21.5-10.3-31.6l14.8-4.5a228 228 0 009.9 30.4c1.5 4-.4 8.4-4.4 10z&quot; id=&quot;path56&quot; fill=&quot;#ffdc8d&quot;/&gt;
+  &lt;g id=&quot;g930&quot;&gt;
+    &lt;path class=&quot;man-hand&quot; d=&quot;M271.4 190.4v38.3c0 .7-1.8 18.1-6.8 36.5-7.3 27-17.9 42-31.6 45.1a24 24 0 01-5.2.6c-15 0-31-14.4-48.6-43.9a7.7 7.7 0 0113.3-7.9c21.1 35.4 33 37.1 37.2 36.2 13.5-3 23.5-41 26.2-66.6V190.4a7.7 7.7 0 1115.5 0z&quot; id=&quot;path12&quot; fill=&quot;#34abe0&quot;/&gt;
+    &lt;g id=&quot;g878&quot;&gt;
+      &lt;g id=&quot;g888&quot;&gt;
+        &lt;g id=&quot;g879&quot;&gt;
+          &lt;path id=&quot;path54&quot; class=&quot;man-palm&quot; d=&quot;M263.7 182.7a7.7 7.7 0 00-7.7 7.7v20l-9-7.3a4.8 4.8 0 10-6 7.4l14.9 12.1v-.1 6.2h15.5v-38.3c0-4.3-3.4-7.7-7.7-7.7z&quot; fill=&quot;#ffdc8d&quot;/&gt;
+        &lt;/g&gt;
+      &lt;/g&gt;
+    &lt;/g&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;col-md-6 align-items-center justify-content-center head-content&quot;&gt;
+			&lt;div&gt;
+				&lt;h1 class=&quot;text-glow&quot;&gt;My Name is Sourav Goswami&lt;/h1&gt;
+				&lt;p class=&quot;text-glow&quot;&gt;
+					Thanks for taking interest in viewing my resume!
+				&lt;/p&gt;
+
+				&lt;p class=&quot;text-glow&quot;&gt;
+					Please feel free to contact me on demand...
+				&lt;/p&gt;
+
+				&lt;div class=&quot;justify-content-center&quot;&gt;
+					&lt;a href=&quot;/contact&quot; class=&quot;object-glow btn-blade-anim&quot;&gt;&lt;span class=&quot;contact&quot;&gt;Contact Me&lt;/span&gt;&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;rgb-splitter class=&quot;object-glow&quot;&gt;&lt;/rgb-splitter&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;main-arrow&quot;&gt;
+	&lt;div class=&quot;svg-arrow&quot;&gt;
+		&lt;img src=&quot;/assets/images/chevron-down.svg&quot; class=&quot;arrow&quot;&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="resume" /><summary type="html"></summary></entry><entry><title type="html">Games</title><link href="https://souravgoswami.github.io/games" rel="alternate" type="text/html" title="Games" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>https://souravgoswami.github.io/games</id><content type="html" xml:base="https://souravgoswami.github.io/games">&lt;div class=&quot;main&quot;&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
+			&lt;div class=&quot;div-dp-container object-glow&quot;&gt;
+				&lt;svg id=&quot;joypad&quot; class=&quot;main-image&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 59.93 59.93&quot;&gt;&lt;path d=&quot;M29.93 20.47V5.97c0-2.48 2.03-4.5 4.5-4.5h0c2.48 0 4.5 2.02 4.5 4.5v2.5c0 2.2 1.8 4 4 4h0c2.2 0 4-1.8 4-4v-8&quot; fill=&quot;none&quot; stroke=&quot;#839594&quot; stroke-width=&quot;2&quot; stroke-miterlimit=&quot;10&quot;/&gt;&lt;path d=&quot;M13.2 40.47c-4.35 0-8.14-2.32-10.23-5.78L1.74 52.5a6.96 6.96 0 0013.62 2l5.57-16.9a11.91 11.91 0 01-7.74 2.86zM46.9 40.47c4.34 0 8.13-2.32 10.23-5.78l1.22 17.82a6.96 6.96 0 01-13.62 2l-5.57-16.9a11.91 11.91 0 007.74 2.86z&quot; fill=&quot;#38454f&quot;/&gt;&lt;g fill=&quot;#38454f&quot;&gt;&lt;path d=&quot;M30.03 42.47c-.06-.33-.1-.66-.1-1 0 .34-.03.67-.1 1h.2zM39.73 39.36l-.57-1.74.26.2a11.9 11.9 0 01-.35-18.35H21.22a11.93 11.93 0 01-.01 18.05c.15.09.22.25.22.42.9-.9 2.13-1.47 3.5-1.47a5 5 0 014.99 4.85h.03a5 5 0 019.54-1.9.57.57 0 01.24-.06z&quot;/&gt;&lt;/g&gt;&lt;circle cx=&quot;12.97&quot; cy=&quot;28.5&quot; r=&quot;12.97&quot; fill=&quot;#546a79&quot;/&gt;&lt;circle cx=&quot;46.97&quot; cy=&quot;28.5&quot; r=&quot;12.97&quot; fill=&quot;#546a79&quot;/&gt;&lt;circle cx=&quot;24.93&quot; cy=&quot;41.47&quot; r=&quot;5&quot; fill=&quot;#283238&quot;/&gt;&lt;circle cx=&quot;34.93&quot; cy=&quot;41.47&quot; r=&quot;5&quot; fill=&quot;#283238&quot;/&gt;&lt;path fill=&quot;none&quot; stroke=&quot;#afb6bb&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-miterlimit=&quot;10&quot; d=&quot;M28.93 24.47h2&quot;/&gt;&lt;circle id=&quot;joypadButton2&quot; cx=&quot;53.43&quot; cy=&quot;27.97&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#dd352e&quot; stroke-width=&quot;2&quot; stroke-miterlimit=&quot;10&quot;/&gt;&lt;circle id=&quot;joypadButton4&quot; cx=&quot;40.43&quot; cy=&quot;27.97&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#bf4d90&quot; stroke-width=&quot;2&quot; stroke-miterlimit=&quot;10&quot;/&gt;&lt;path d=&quot;M18.22 26.47h-3.29v-3.29c0-.4-.32-.71-.71-.71h-2.57c-.4 0-.72.32-.72.71v3.29H7.65c-.4 0-.72.32-.72.71v2.57c0 .4.32.72.72.72h3.28v3.28c0 .4.32.72.72.72h2.57c.4 0 .71-.32.71-.72v-3.28h3.29c.4 0 .71-.32.71-.72v-2.57c0-.4-.32-.71-.71-.71z&quot; fill=&quot;#283238&quot; stroke=&quot;#38454f&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-miterlimit=&quot;10&quot;/&gt;&lt;circle id=&quot;joypadButton3&quot; cx=&quot;46.93&quot; cy=&quot;33.47&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#5d7bdb&quot; stroke-width=&quot;2&quot; stroke-miterlimit=&quot;10&quot;/&gt;&lt;circle id=&quot;joypadButton1&quot; cx=&quot;46.93&quot; cy=&quot;22.47&quot; r=&quot;2.5&quot; fill=&quot;none&quot; stroke=&quot;#20bee2&quot; stroke-width=&quot;2&quot; stroke-miterlimit=&quot;10&quot;/&gt;&lt;/svg&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;col-md-6 align-items-center justify-content-center head-content&quot;&gt;
+			&lt;div&gt;
+				&lt;h1 class=&quot;text-glow&quot;&gt;Welcome to the games page!&lt;/h1&gt;
+
+				&lt;p class=&quot;text-glow&quot;&gt;
+					&lt;img src=&quot;/assets/images/gamepad.webp&quot; class=&quot;icon24 object-glow&quot;&gt;
+					Here are some games that you might enjoy playing!
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;rgb-splitter&gt;&lt;/rgb-splitter&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="games" /><summary type="html"></summary></entry></feed>

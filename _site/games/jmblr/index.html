@@ -1,0 +1,495 @@
+<!Doctype HTML><html><head><meta charset="utf-8" /><title>Jmblr - Unscramble Jumbled Words!</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unscramble scrambled words"><meta name="author" content="Sourav Goswami"><meta name="keywords=" content="" lang="en-GB"><meta name="revisit-after" content="3days"><meta name="robots" content="all"><meta name="title" content="Jmblr"><meta property="og:description" content="Unscramble scrambled words"><meta property="og:title" content="Jmblr"><meta property="og:type" content="website"><meta property="og:url" content="https://souravgoswami.github.io/games"><meta property="og:image" itemprop="image" content="https://souravgoswami.github.io/assets/images/logo.webp"><link rel="shortcut icon" type="image/png" href="assets/jmblr64.png"><style type="text/css">::selection {
+color: #ff0 ;
+background-color: rgba(255, 255, 0, 0.125) ;
+}
+@font-face {
+font-family: 'Crimson Text' ;
+font-style: normal ;
+font-weight: 400 ;
+font-display: swap ;
+src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url(assets/crimsontext.woff2) format('woff2') ;
+}
+@font-face {
+font-family: 'Share Tech Mono' ;
+font-style: normal ;
+font-weight: 400 ;
+font-display: swap ;
+src: local('Share Tech Mono'), local('ShareTechMono-Regular'), url('assets/Share Tech Mono.woff2') ;
+}
+@keyframes rotateColours {
+0%, 100% {
+background-position: 0 0 ;
+}
+50% {
+background-position: 400% ;
+}
+}
+@keyframes rotateColoursRev {
+0%, 100% {
+background-position: 400% ;
+}
+50% {
+background-position: 0 0 ;
+}
+}
+@keyframes load {
+0%, 80%, 100% {
+box-shadow: 0 2.5em 0 -1.3em ;
+}
+40% {
+box-shadow: 0 2.5em 0 0 ;
+}
+}
+@keyframes fade {
+from {
+opacity: 0 ;
+filter: blur(12px) ;
+}
+to {
+opacity: 1 ;
+filter: blur(0px) ;
+}
+}
+@keyframes entrance {
+from {
+filter: blur(2px) ;
+}
+to {
+filter: blur(0px) ;
+}
+}
+@keyframes fade-in-out {
+0%, 100% {
+opacity: 0 ;
+}
+50% {
+opacity: 1 ;
+}
+}
+html, body {
+margin: 0 ;
+padding: 0 ;
+}
+body {
+background-color: #000 ;
+font-family: 'Crimson Text', serif !important ;
+}
+#github {
+position: absolute ;
+top: calc(1vh + 1vh) ;
+left: 100% ;
+margin-left: calc(0px - 3vw - 3vh) ;
+}
+#github-logo {
+width: calc(2vw + 2vh) ;
+height: calc(2vw + 2vh) ;
+cursor: url(assets/github.ico), auto ;
+transition: all 0.2s ease ;
+}
+#github-logo:hover {
+filter: drop-shadow(0px 0px calc(0.375vw + 0.375vh) #fa0) ;
+}
+#github-logo:active {
+filter: drop-shadow(0px 0px calc(0.375vw + 0.375vh) #fff) ;
+}
+#starfield-canvas {
+z-index: -1 ;
+position: fixed ;
+}
+#container {
+position: absolute ;
+width: 100% ;
+height: 100% ;
+display: grid ;
+place-items: center ;
+text-align: center ;
+color: #fff ;
+}
+#head {
+background: linear-gradient(45deg, #ff0, #3eb, #f55, #f5f, #55f, #50f, #f0f, #f55, #ff0) ;
+background-clip: text ;
+-webkit-background-clip: text ;
+-webkit-text-fill-color: transparent ;
+background-size: 400% ;
+font-size: calc(3vw + 3vh) ;
+user-select: none ;
+margin-bottom: calc(2vw + 2vh) ;
+animation: rotateColours 10s linear infinite ;
+cursor: url(assets/cursor_logo.ico), auto ;
+}
+.button-wrapper {
+margin: 0 auto calc(1vw + 1vh) auto ;
+width: calc(25vw + 25vh) ;
+height: calc(2vw + 2vh) ;
+border: 2px solid #fff ;
+border-radius: 4px ;
+}
+.button-wrapper input {
+background-color: transparent ;
+color: #fff ;
+font-family: 'Share Tech Mono', monospace ;
+margin: 0px ;
+border: none ;
+width: 74% ;
+height: 100% ;
+float: left ;
+font-size: calc(1vw + 1vh) ;
+}
+.button-wrapper #clear, .button-wrapper #random {
+float: right ;
+height: 100% ;
+background-color: #f55 ;
+border-radius: calc(0.05vw + 0.05vh) ;
+color: #fff ;
+border: none ;
+outline: none ;
+padding: 0px calc(0.75vw + 0.75vh) ;
+user-select: none ;
+font-size: calc(1vw + 1vh) ;
+line-height: calc(1.75vw + 1.75vh) ;
+cursor:pointer ;
+transition: all 0.125s linear ;
+}
+.button-wrapper #clear img {
+width: calc(1.5vw + 1.5vh) ;
+height: calc(1.5vw + 1.5vh) ;
+margin-top: calc(0.25vw + 0.25vh) ;
+}
+.button-wrapper #random {
+background-color: #fff ;
+color: #000 ;
+}
+.button-wrapper #random img {
+width: calc(1.5vw + 1.5vh) ;
+height: calc(1.5vw + 1.5vh) ;
+margin-top: calc(0.25vw + 0.25vh) ;
+}
+.button-wrapper #clear:hover, .button-wrapper #random:hover {
+background: #0b0 ;
+font-size: calc(1vw + 1vh) ;
+}
+#copy-results {
+user-select: none ;
+display: inline ;
+}
+#copy-results img {
+width: calc(1.5vw + 1.5vh) ;
+height: calc(1.5vw + 1.5vh) ;
+vertical-align: middle ;
+filter: drop-shadow(0px 0px 0px #fff) ;
+transition: all 0.25s ease ;
+animation: entrance 0.125s ease ;
+}
+#copy-results:hover {
+filter: drop-shadow(0px 0px calc(0.375vw + 0.375vh) #f5f) ;
+cursor: url(assets/copy.ico), auto ;
+transition: all 0.25s ease ;
+}
+#copy-results:active {
+filter: drop-shadow(0px 0px calc(0.375vw + 0.375vh) #ff0) ;
+}
+.button-wrapper #clear:active, .button-wrapper #random:active {
+background: #f90 ;
+}
+#textarea {
+width: 70% ;
+background-color: transparent ;
+min-height: 40vh ;
+margin: auto ;
+font-size: calc(1.5vw + 1.5vh) ;
+}
+#results-div {
+min-height: calc(2vw + 2vh) ;
+margin: auto ;
+user-select: none ;
+}
+#results-count {
+font-size: calc(1.5vw + 1.5vh) ;
+user-select: none ;
+vertical-align: middle ;
+display: inline-block ;
+}
+.counter {
+float: left ;
+background: linear-gradient(50deg, #0f0, #f5f, #f55, #55f, #55f, #f55, #f5f, #0f0) ;
+background-clip: text ;
+-webkit-background-clip: text ;
+color: transparent ;
+background-size: 400% ;
+animation: rotateColoursRev 2s linear infinite ;
+}
+.link {
+text-decoration: none ;
+text-shadow: none ;
+cursor: url(assets/duck_it.ico), auto ;
+transition: all 0.25s ease ;
+border-bottom: calc(0.075vw + 0.075vh) dotted rgba(0, 0, 0, 0) ;
+border-radius: calc(0.125vw + 0.125vh) ;
+}
+.link:hover {
+text-shadow: 0px 0px calc(0.5vw + 0.5vh) #ff0 ;
+border-bottom: calc(0.075vw + 0.075vh) dotted rgba(255, 255, 255, 1) ;
+border-radius: calc(0.125vw + 0.125vh) ;
+}
+.results {
+float: right ;
+background: linear-gradient(50deg, #ff0, #f5f, #f55, #55f, #55f, #f55, #f5f, #ff0) ;
+background-clip: text ;
+-webkit-background-clip: text ;
+-webkit-text-fill-color: transparent ;
+background-size: 400% ;
+animation: rotateColours 5s linear infinite ;
+}
+#challenge {
+user-select: none ;
+width: 100% ;
+font-size: calc(1.25vw + 1.25vh) ;
+}
+#q {
+color: #ff0 ;
+cursor: pointer ;
+font-size: calc(1.25vw + 1.25vh) ;
+padding: 8vh 0px ;
+transition: all 0.25s ease-in-out ;
+}
+#q:hover {
+color: #fa0 ;
+text-shadow: 0px 0px calc(0.5vw + 0.5vh) #ff0 ;
+}
+#q:active {
+color: #ff0 ;
+}
+a {
+outline: none ;
+}
+#c-a, #r-a {
+display: inline ;
+}
+#c-b, #r-b {
+display: none ;
+}
+#load-anim {
+background-color: #fff ;
+color: #fa0 ;
+font-size: calc(4vw + 4vh) ;
+position: fixed ;
+z-index: 1000 ;
+top: 0 ;
+left: 0 ;
+width: 100vw ;
+opacity: 1 ;
+height: 100vh ;
+animation: fade 0.5s ease ;
+transition: all 1s linear ;
+}
+#loading-caret, #loading-text {
+position: relative ;
+color: #000 ;
+display: inline ;
+}
+#nested-anim {
+display: block ;
+top: 50% ;
+left: 50% ;
+transform: translate(-50%, -50%) ;
+position: absolute ;
+}
+.loader, .loader:before, .loader:after {
+border-radius: 50% ;
+width: 2.5em ;
+height: 2.5em ;
+animation-fill-mode: both ;
+animation: load 1.5s infinite ease-in-out ;
+}
+.loader {
+color: #000 ;
+font-size: 6px ;
+margin: 0 auto ;
+position: relative ;
+animation-delay: -0.16s ;
+}
+.loader:before, .loader:after {
+content: '' ;
+position: absolute ;
+top: 0 ;
+}
+.loader:before {
+left: -3.5em;
+animation-delay: -0.32s ;
+}
+.loader:after {
+left: 3.5em ;
+}
+</style><link rel="preload" as="script" href="src/words.js"></head><body><canvas id="starfield-canvas"></canvas><div id="load-anim"><div id="nested-anim"><div id="loading-text">Loading...</div><span id="loading-caret">|</span><div class="loader"></div></div></div><div id="container"><div id="others"><div id="github"><a href="https://github.com/Souravgoswami/jmblr-web" target="_blank"><img src="assets/github.webp" id="github-logo"></a></div><div id="head" class="link">Jmblr - The Word Unscrambler</div><div class="button-wrapper"><input type="text" placeholder="Type a Scrambled Word" id="input" onkeyup="update()" name="search" maxlength=60/><a id="clear"><img src="assets/clear.webp" id="c-a"><img src="assets/clear-highlight.webp" id="c-b"></a><a id="random"><img src="assets/random.webp" id="r-a"><img src="assets/random-highlight.webp" id="r-b"></a></div><div id="results-div"><div id="results-count"></div><div id="copy-results"><img src="assets/clipboard.webp" id="cp-a"><img src="assets/clipboard-highlight.webp" id="cp-b"></div></div><div id="textarea"></div><div id="challenge">Can you uscramble the word <span id="q"></span>?</div></div></div><script>var lt = document.getElementById('loading-text')
+var caret = document.getElementById('loading-caret')
+var contents = lt.innerHTML
+lt.innerHTML = ''
+var c = contents.split('')
+var i = 0, date = Date.now()
+var j = contents.length
+var intervalLoading = setInterval(() => {
+if (i === c.length) {
+caret.style.animation = 'fade-in-out 0.5s ease-in-out infinite'
+if (lt.innerHTML === '') {
+i = 0
+j = contents.length
+lt.innerHTML = ''
+} else if (Date.now() - date > 2000) {
+lt.innerHTML = contents.slice(0, --j)
+caret.style.animation = 'none'
+}
+} else {
+lt.innerHTML += contents[i++ % contents.length]
+date = Date.now()
+caret.style.animation = 'none'
+}
+}, 100)
+document.addEventListener('DOMContentLoaded', () => { setTimeout(() => { clearInterval(intervalLoading) }, 2000) }, false)
+</script><script src="src/words.js"></script><script type="application/javascript">const inp = document.getElementById('input')
+const textarea = document.getElementById('textarea')
+const clearBtn = document.getElementById('clear')
+const resultsNumberInp = document.getElementById('results-number-inp')
+const resultsCount = document.getElementById('results-count')
+const table = document.getElementById('tb')
+const cpA = document.getElementById('cp-a')
+const cpB = document.getElementById('cp-b')
+const cpy = document.getElementById('copy-results')
+const cA = document.getElementById('c-a')
+const cB = document.getElementById('c-b')
+const random = document.getElementById('random')
+const rA = document.getElementById('r-a')
+const rB = document.getElementById('r-b')
+const q = document.getElementById('q')
+const loadAnim = document.getElementById('load-anim')
+setTimeout(() => {
+loadAnim.style.opacity = '0'
+loadAnim.style.filter = 'blur(12px)'
+}, 750)
+setTimeout(() => {
+loadAnim.style.display = 'none'
+}, 2000)
+cpA.style.display = 'none'
+cpB.style.display = 'none'
+clearBtn.onclick = () => {
+inp.value = ''
+cpA.style.display = 'none'
+cpB.style.display = 'none'
+cA.style.display = 'none'
+cB.style.display = 'inline'
+update()
+}
+clearBtn.onmouseover = () => {
+cA.style.display = 'none'
+cB.style.display = 'inline'
+}
+clearBtn.onmouseout = () => {
+cA.style.display = 'inline'
+cB.style.display = 'none'
+}
+function find(v) {
+var i = -1, x = [], f = v.split('').sort().join(''), sSize = SORTED.length
+while(++i < sSize) if (f == SORTED[i]) { x.push(UNSORTED[i]) } return x } inp.onchange = () => { inp.value = inp.value.toLowerCase().replace(/[^a-z]/g, '') }
+inp.onkeydown = () => { inp.value = inp.value.toLowerCase().replace(/[^a-z]/g, '') }
+let findResults = []
+function update() {
+textarea.innerHTML = ''
+let j = 0
+inp.value = inp.value.toLowerCase().replace(/[^a-z]/g, '')
+findResults = find(inp.value)
+if (inp.value !== '')
+resultsCount.innerHTML = `${findResults.length} result${findResults.length == 1 ? '' : 's'} found for ${inp.value}`
+else
+resultsCount.innerHTML = ''
+if (findResults.length > 0) {
+cpA.style.display = 'inline'
+cpB.style.display = 'none'
+for(let i of findResults)
+textarea.innerHTML += `<a href="https://www.duckduckgo.com/?q=${i}+definition" target="_blank" class="link"><div class="counter">${++j}</div>` +
+`<div class="results">${i}</a></div><br>`
+}
+else {
+cpA.style.display = 'none'
+cpB.style.display = 'none'
+}
+}
+// Starfield
+class Star {
+constructor(x, y, a = 0) {
+this.x = x
+this.y = y
+this.r = Math.floor(Math.random() * 256)
+this.g = Math.floor(Math.random() * 256)
+this.b = Math.floor(Math.random() * 256)
+this.a = a
+this.size = Math.random() * 2 + 0.5
+this.direction = Math.random() < 0.5 ? Math.random() * 7 + 1 : Math.random() * - 7 - 1 } } const N = 100, stars = []
+const starfield = document.getElementById('starfield-canvas')
+starfield.height = window.innerHeight
+starfield.width = window.innerWidth
+const ctx = starfield.getContext('2d')
+window.addEventListener('resize', () => {
+starfield.height = window.innerHeight
+starfield.width = window.innerWidth
+for(let i = 0 ; i < N ; ++i) stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height, 0.5) }) for(let i = 0 ; i < N ; ++i) stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height, 1) setInterval(() => {
+ctx.clearRect(0, 0, starfield.width, starfield.height)
+for(let i = 0 ; i < N ; ++i) { let star = stars[i] star.y += star.direction star.x += star.direction
+star.direction > 0 ? star.direction += 0.0125 : star.direction -= 0.0125
+if (star.a < 1) star.a += 0.025 if (star.x < 0 || star.x > starfield.width || star.y < 0 || star.y > starfield.height)
+stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height)
+for(let j = 0 ; j < Math.abs(star.direction) * 1.5 ; ++j) { let dx = star.direction > 0 ? star.x - j : star.x + j
+let dy = star.direction > 0 ? star.y - j : star.y + j
+let tr = j / (Math.abs(star.direction) * 2)
+ctx.beginPath()
+ctx.rect(dx, dy, star.size - tr, star.size - tr)
+ctx.fillStyle= `rgba(${star.r},${star.g},${star.b},${star.a - tr})`
+ctx.fill()
+}
+}
+}, 50)
+let activated = false
+q.onmouseover = () => { activated = true }
+q.onmouseout = () => { activated = false }
+generateQuestion = () => {
+let question = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)]
+q.innerHTML = question.split('').sort(() => 0.5 - Math.random()).join('')
+}
+q.onclick = () => {
+inp.value = q.innerHTML
+update()
+generateQuestion()
+}
+generateQuestion()
+setInterval(() => { if (inp.value !== q.innerHTML && !activated) generateQuestion() }, 10000)
+random.onmouseover = () => {
+rA.style.display = 'none'
+rB.style.display = 'inline'
+}
+random.onmouseout = () => {
+rA.style.display = 'inline'
+rB.style.display = 'none'
+}
+random.onclick = () => {
+rA.style.display = 'none'
+rB.style.display = 'inline'
+let question = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)]
+inp.value = question.split('').sort(() => 0.5 - Math.random()).join('')
+update()
+}
+cpy.onmouseover = () => {
+cpA.style.display = 'none'
+cpB.style.display = 'inline'
+}
+cpy.onmouseout = () => {
+cpA.style.display = 'inline'
+cpB.style.display = 'none'
+}
+cpy.onclick = () => {
+let copyHelper = document.createElement('input')
+copyHelper.className = 'copyhelper'
+document.body.appendChild(copyHelper)
+copyHelper.value = `${inp.value} => ${findResults.join(', ')}`
+copyHelper.select()
+document.execCommand('copy')
+document.body.removeChild(copyHelper)
+}
+</script></body></html>

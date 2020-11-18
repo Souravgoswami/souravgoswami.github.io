@@ -1,0 +1,154 @@
+body, html {
+	margin: 0 ;
+	padding: 0 ;
+}
+
+#math-magic-container {
+	height: 90vh ;
+	overflow-y: auto ;
+	min-height: 480px ;
+	position: relative ;
+	background-color: #8EDBFF ;
+	padding: 24px ;
+	border-radius: 12px ;
+	box-shadow: 0px 4px 0px 0px #88f ;
+}
+
+#status {
+	background: #fff ;
+	color: #000 ;
+	padding: 10px ;
+	float: right ;
+	border-radius: 4px ;
+	box-shadow: 0px 4px 0px 0px #88f ;
+	font-size: calc(1vw + 1vh) ;
+}
+
+#score {
+	position: relative ;
+	background: #fff ;
+	color: #000 ;
+	padding: 10px ;
+	float: left ;
+	border-radius: 4px ;
+	box-shadow: 0px 4px 0px 0px #88f ;
+	font-size: calc(1vw + 1vh) ;
+}
+
+#statusTop::after {
+	content: '' ;
+	display: block ;
+	clear: both ;
+}
+
+#question {
+	width: 100% ;
+	height: 30% ;
+	margin: 20px 0px ;
+	background-color: #8D99FF ;
+	box-shadow: 0px 4px 0px #6473FF ;
+	border-radius: 8px ;
+	font-size: calc(3vw + 3vh) ;
+	position: relative ;
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
+	color: #fff ;
+	font-family: "Lemonada", cursive ;
+}
+
+#instructionContainer {
+	overflow: hidden ;
+}
+
+#instruction {
+	background-color: #FFAAFB ;
+	margin: 10px auto 10px auto ;
+	box-shadow: 0px 4px 0px #FF7EF9 ;
+	text-align: center ;
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
+	border-top: 1px dashed #fff ;
+	color: #fff ;
+	padding: 18px 0px ;
+	display: none ;
+	animation: myAnim1 0.5s ease-out forwards ;
+}
+
+#choices {
+	margin: 6px 0px ;
+	width: 100% ;
+	display: block ;
+	display: none ;
+	text-align: center ;
+}
+
+.box {
+	width: 100px ;
+	height: 0 ;
+	font-size: calc(1vw + 1vh) ;
+	background-color: #fff ;
+	display: inline-flex ;
+	justify-content: center ;
+	align-items: center ;
+	margin: 10px ;
+	border-radius: 4px ;
+	cursor: pointer ;
+	animation: myAnim2 0.5s ease-out forwards ;
+	box-shadow: 0px 4px 0px #8D99FF ;
+	transform: scale(-1, 0) ;
+	transition: all 0.25s ease-out ;
+}
+
+#box4 {
+	margin-right: 0px ;
+}
+
+.centrify {
+	display: flex ;
+	align-items: center ;
+	justify-content: center ;
+}
+
+#startButton {
+	display: inline-block ;
+	padding: 16px ;
+	font-size: calc(1vw + 1vh) ;
+	background-color: #fff ;
+	text-align: center ;
+	border-radius: 4px ;
+	margin-top: 20px ;
+	transition: all 0.25s ease ;
+	cursor: pointer ;
+	user-select: none ;
+}
+
+#startButton:hover {
+	color: #fff ;
+	background-color: #8D99FF ;
+	box-shadow: 0px 4px 0px #fff ;
+}
+
+.box:active, #startButton:active {
+	filter: drop-shadow(0 0 4px #fff) ;
+}
+
+@keyframes myAnim1 {
+	from { transform: translateY(-100%) }
+	to { transform: translateY(0) }
+}
+
+@keyframes myAnim2 {
+	100% {
+		height: 85px ;
+		transform: scale(1, 1) ;
+	}
+}
+
+@keyframes myAnim3 {
+	to {
+		opacity: 1 ;
+		box-shadow: 0px 0px 8px 4px #fff ;
+	}
+}

@@ -30,6 +30,7 @@ github_username:  souravgoswami
 
 # Build settings
 remote_theme: home
+
 plugins:
   - jekyll-feed
   - jekyll-strip-html

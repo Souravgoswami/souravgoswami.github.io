@@ -83,7 +83,11 @@
 		<script src="/assets/js/base.js"></script>
 
 		{% if page.js %}
-			<script src="{{ page.js }}.js"></script>
+			{% assign javascripts = page.js | split: "%" %}
+			{% for javascript in javascripts %}
+				<script src="{{ javascript }}.js"></script>
+
+			{% endfor %}
 		{% endif %}
 
 		{% include analytics.js.html %}

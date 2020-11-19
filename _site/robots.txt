@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://souravgoswami.github.io/sitemap.xml

@@ -14,7 +14,11 @@
 		<meta property="og:title" content="{{ page.title }}">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://souravgoswami.github.io">
-		<meta property="og:image" itemprop="image" content="https://souravgoswami.github.io/assets/images/logo.png">
+		{% if page.ogimage %}
+			<meta property="og:image" itemprop="image" content="{{ page.ogimage }}">
+		{% else %}
+			<meta property="og:image" itemprop="image" content="https://souravgoswami.github.io/assets/images/logo.png">
+		{% endif %}
 		<meta name="ocs-site-verification" content="91e2be11bccf5d688b859efa44d4f5e7">
 
 		<link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">

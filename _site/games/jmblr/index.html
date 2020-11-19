@@ -388,7 +388,10 @@ cB.style.display = 'none'
 }
 function find(v) {
 var i = -1, x = [], f = v.split('').sort().join(''), sSize = SORTED.length
-while(++i < sSize) if (f == SORTED[i]) { x.push(UNSORTED[i]) } return x } inp.onchange = () => { inp.value = inp.value.toLowerCase().replace(/[^a-z]/g, '') }
+while(++i < sSize) if (f == SORTED[i]) { x.push(UNSORTED[i]) }
+return x
+}
+inp.onchange = () => { inp.value = inp.value.toLowerCase().replace(/[^a-z]/g, '') }
 inp.onkeydown = () => { inp.value = inp.value.toLowerCase().replace(/[^a-z]/g, '') }
 let findResults = []
 function update() {
@@ -422,17 +425,34 @@ this.g = Math.floor(Math.random() * 256)
 this.b = Math.floor(Math.random() * 256)
 this.a = a
 this.size = Math.random() * 2 + 0.5
-this.direction = Math.random() < 0.5 ? Math.random() * 7 + 1 : Math.random() * - 7 - 1 } } const N = 100, stars = [] const starfield = document.getElementById('starfield-canvas') starfield.height = window.innerHeight starfield.width = window.innerWidth
+this.direction = Math.random() < 0.5 ? Math.random() * 7 + 1 : Math.random() * - 7 - 1
+}
+}
+const N = 100, stars = []
+const starfield = document.getElementById('starfield-canvas')
+starfield.height = window.innerHeight
+starfield.width = window.innerWidth
 const ctx = starfield.getContext('2d')
 window.addEventListener('resize', () => {
 starfield.height = window.innerHeight
 starfield.width = window.innerWidth
-for(let i = 0 ; i < N ; ++i) stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height, 0.5) }) for(let i = 0 ; i < N ; ++i) stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height, 1) setInterval(() => {
+for(let i = 0 ; i < N ; ++i)
+stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height, 0.5)
+})
+for(let i = 0 ; i < N ; ++i)
+stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height, 1)
+setInterval(() => {
 ctx.clearRect(0, 0, starfield.width, starfield.height)
-for(let i = 0 ; i < N ; ++i) { let star = stars[i] star.y += star.direction star.x += star.direction star.direction > 0 ? star.direction += 0.0125 : star.direction -= 0.0125
-if (star.a < 1) star.a += 0.025 if (star.x < 0 || star.x > starfield.width || star.y < 0 || star.y > starfield.height)
+for(let i = 0 ; i < N ; ++i) {
+let star = stars[i]
+star.y += star.direction
+star.x += star.direction
+star.direction > 0 ? star.direction += 0.0125 : star.direction -= 0.0125
+if (star.a < 1) star.a += 0.025
+if (star.x < 0 || star.x > starfield.width || star.y < 0 || star.y > starfield.height)
 stars[i] = new Star(Math.random() * starfield.width, Math.random() * starfield.height)
-for(let j = 0 ; j < Math.abs(star.direction) * 1.5 ; ++j) { let dx = star.direction > 0 ? star.x - j : star.x + j
+for(let j = 0 ; j < Math.abs(star.direction) * 1.5 ; ++j) {
+let dx = star.direction > 0 ? star.x - j : star.x + j
 let dy = star.direction > 0 ? star.y - j : star.y + j
 let tr = j / (Math.abs(star.direction) * 2)
 ctx.beginPath()

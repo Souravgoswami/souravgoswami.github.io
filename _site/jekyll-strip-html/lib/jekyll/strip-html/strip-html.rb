@@ -18,7 +18,7 @@ def minify!(lines)
 			end
 
 			state1 = x[/^.*<\s*\/?.*>$/]
-			state2 = x[/<.*$/] && !x[/>/]
+			state2 = x[/^<.*$/] && !x[/>/]
 		end
 	end
 
@@ -36,7 +36,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
 			lines.reject!(&:empty?)
 
 			output = minify!(lines)
-			2.times { output.replace(minify!(output)) }
+			4.times { output.replace(minify!(output)) }
 
 			IO.write(file_name, output.join(?\n))
 		end

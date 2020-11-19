@@ -84,10 +84,9 @@
 		padding: 4px ;
 		background-color: #efefef ;
 
-		code { overflow: auto }
-
 		code {
 			counter-increment: listing ;
+			overflow: auto ;
 
 			&::before {
 				content: counter(listing) '. ' ;

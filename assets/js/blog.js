@@ -179,4 +179,9 @@ $(function() {
 	})
 
 	footerGlowAnim.forEach(_i => observer.observe(_i))
+
+		// Stripped pre and code tags
+	for(let i of document.querySelectorAll('pre')) {
+		i.innerHTML = i.innerHTML.split('\n').map(x => x.trim() + "\n").join('').trim()
+	}
 })

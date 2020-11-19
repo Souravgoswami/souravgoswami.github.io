@@ -1,6 +1,14 @@
 ---
 ---
 
+@font-face {
+	font-family: 'ABeeZee';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('ABeeZee'), url("/assets/fonts/abeezee.woff2") format('woff2');
+}
+
 .blog-contents {
 	max-width: 1080px !important ;
 	width: 90% ;

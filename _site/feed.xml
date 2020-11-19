@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://souravgoswami.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://souravgoswami.github.io/" rel="alternate" type="text/html" /><updated>2020-11-18T20:01:30+05:30</updated><id>https://souravgoswami.github.io/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">About this Website</title><link href="https://souravgoswami.github.io/about" rel="alternate" type="text/html" title="About this Website" /><published>2020-11-09T00:00:00+05:30</published><updated>2020-11-09T00:00:00+05:30</updated><id>https://souravgoswami.github.io/about</id><content type="html" xml:base="https://souravgoswami.github.io/about">&lt;div class=&quot;main&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://0:8080/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0:8080/" rel="alternate" type="text/html" /><updated>2020-11-19T11:53:45+05:30</updated><id>http://0:8080/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">About this Website</title><link href="http://0:8080/about" rel="alternate" type="text/html" title="About this Website" /><published>2020-11-09T00:00:00+05:30</published><updated>2020-11-09T00:00:00+05:30</updated><id>http://0:8080/about</id><content type="html" xml:base="http://0:8080/about">&lt;div class=&quot;main&quot;&gt;
 	&lt;div class=&quot;row&quot;&gt;
 		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
 			&lt;div class=&quot;div-dp-container&quot;&gt;
@@ -30,7 +30,7 @@
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="about" /><summary type="html"></summary></entry><entry><title type="html">Sourav Goswami | Contact</title><link href="https://souravgoswami.github.io/contact" rel="alternate" type="text/html" title="Sourav Goswami | Contact" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>https://souravgoswami.github.io/contact</id><content type="html" xml:base="https://souravgoswami.github.io/contact">&lt;div class=&quot;main&quot;&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="about" /><summary type="html"></summary></entry><entry><title type="html">Sourav Goswami | Contact</title><link href="http://0:8080/contact" rel="alternate" type="text/html" title="Sourav Goswami | Contact" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>http://0:8080/contact</id><content type="html" xml:base="http://0:8080/contact">&lt;div class=&quot;main&quot;&gt;
 	&lt;div class=&quot;row&quot;&gt;
 		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
 			&lt;div class=&quot;div-dp-container&quot;&gt;
@@ -127,7 +127,7 @@
 	&lt;div class=&quot;svg-arrow&quot;&gt;
 		&lt;img src=&quot;/assets/images/chevron-down.svg&quot; class=&quot;arrow&quot;&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="contact" /><summary type="html"></summary></entry><entry><title type="html">Sourav Goswami | Resume</title><link href="https://souravgoswami.github.io/resume" rel="alternate" type="text/html" title="Sourav Goswami | Resume" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>https://souravgoswami.github.io/resume</id><content type="html" xml:base="https://souravgoswami.github.io/resume">&lt;div class=&quot;main&quot;&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="contact" /><summary type="html"></summary></entry><entry><title type="html">Sourav Goswami | Resume</title><link href="http://0:8080/resume" rel="alternate" type="text/html" title="Sourav Goswami | Resume" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>http://0:8080/resume</id><content type="html" xml:base="http://0:8080/resume">&lt;div class=&quot;main&quot;&gt;
 	&lt;div class=&quot;row&quot;&gt;
 		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
 			&lt;div class=&quot;div-dp-container&quot;&gt;
@@ -200,7 +200,7 @@
 	&lt;div class=&quot;svg-arrow&quot;&gt;
 		&lt;img src=&quot;/assets/images/chevron-down.svg&quot; class=&quot;arrow&quot;&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="resume" /><summary type="html"></summary></entry><entry><title type="html">Games</title><link href="https://souravgoswami.github.io/games" rel="alternate" type="text/html" title="Games" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>https://souravgoswami.github.io/games</id><content type="html" xml:base="https://souravgoswami.github.io/games">&lt;div class=&quot;main&quot;&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="souravgoswami" /><category term="resume" /><summary type="html"></summary></entry><entry><title type="html">Games</title><link href="http://0:8080/games" rel="alternate" type="text/html" title="Games" /><published>2020-11-04T10:22:58+05:30</published><updated>2020-11-04T10:22:58+05:30</updated><id>http://0:8080/games</id><content type="html" xml:base="http://0:8080/games">&lt;div class=&quot;main&quot;&gt;
 	&lt;div class=&quot;row&quot;&gt;
 		&lt;div class=&quot;col-md-6 div-dp&quot;&gt;
 			&lt;div class=&quot;div-dp-container object-glow&quot;&gt;

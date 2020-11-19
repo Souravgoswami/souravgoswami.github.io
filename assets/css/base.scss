@@ -36,6 +36,10 @@ body, html {
 	color: #111 ;
 }
 
+body {
+	transition: background-color 0.25s ease ;
+}
+
 #logo {
 	width: 36px ;
 
@@ -121,6 +125,7 @@ body, html {
 	max-width: 1080px !important ;
 	width: 100% ;
 	margin: 0 auto ;
+	transition: background-color 0.25s ease !important ;
 }
 
 header::after {

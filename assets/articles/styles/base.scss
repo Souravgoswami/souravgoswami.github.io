@@ -1,0 +1,111 @@
+---
+---
+
+.blog-contents {
+	max-width: 1080px !important ;
+	width: 90% ;
+	margin: 0 auto ;
+	overflow: auto ;
+	word-wrap: break-word ;
+	transition: background-color 0.25s ease !important ;
+	margin-bottom: 48px ;
+
+	header {
+		font-size: 40px ;
+		line-height: normal ;
+		margin-bottom: 40px ;
+
+		author {
+			display: block ;
+			// font-weight: bold ;
+			font-size: 16px ;
+		}
+
+		date {
+			display: block ;
+			font-size: 14px ;
+		}
+	}
+
+	content {
+		font-size: 20px ;
+		line-height: 36px ;
+	}
+
+	initial {
+		font-size: 30px ;
+	}
+
+	break {
+		display: block ;
+		margin: 12px ;
+	}
+
+	img {
+		width: 100% ;
+		display: block ;
+		margin: 0 auto ;
+	}
+
+	red {
+		color: #f55 ;
+	}
+
+	blue {
+		color: #88f ;
+	}
+
+	orange {
+		color: #fa0 ;
+	}
+
+	green {
+		color: #0a0 ;
+	}
+
+	@for $i from 1 through 5 {
+		h#{$i} {
+			font-family: 'abeezee' ;
+			margin: 24px 0 ;
+		}
+	}
+
+	pre {
+		margin: 0 ;
+		text-align: justify ;
+		padding: 4px ;
+		background-color: #efefef ;
+
+		code { overflow: auto }
+
+		code {
+			counter-increment: listing ;
+
+			&::before {
+				content: counter(listing) '. ' ;
+				display: inline-block ;
+			}
+		}
+
+		file {
+			display: block ;
+			color: #000 ;
+			font-size: 12px ;
+			width: 100%;
+			font-weight: bold ;
+			position: relative ;
+		}
+
+		file::before {
+			content: '' ;
+			background: url("/assets/articles/base-images/text-x-generic.svg") no-repeat ;
+			background-size: cover ;
+			height: 24px ;
+			width: 24px ;
+			filter: drop-shadow(3px 3px 1px #0003) ;
+			margin-right: 8px ;
+			display: inline-flex ;
+			align-items: center ;
+		}
+	}
+}

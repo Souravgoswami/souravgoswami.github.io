@@ -1,0 +1,383 @@
+---
+active: "blogs"
+layout: blogs
+title:  "How to Make Archlinux Blazing Fast"
+date:   2020-11-19 10:22:58 +0530
+categories: souravgoswami blogs
+description: "Blogs"
+permalink: "articles/how-to-make-archlinux-blazing-fast"
+---
+
+<header class="text-glow">
+	<img src="/assets/articles/images/1/main.jpg">
+	How to Make Arch Linux Blazing Fast
+	<author>By Sourav Goswami</author>
+	<date>2020-11-19</date>
+</header>
+
+<break></break>
+<content class="text-glow">
+	<initial>M</initial>ost computer nerds are obsessed about performance.
+
+	<br>
+	I have come up with some tricks to deliver the maximum performance from Arch Linux and most other distribution.
+
+	<break></break>
+	That said, I won't be talking about installing lightweight WM/DE, etc. because those points make the look and feel different. Here's how to set up your new installation to make it super fast:
+
+	<h3>1. Choose your File System Wisely</h3>
+	Using XFS file system for HDD. F2FS for SSD. For thumb drive installation, F2FS with trim disabled.
+
+	<break></break>
+	XFS is a very robust journaling file system which is in servers. The RedHat's default file system is XFS.
+
+	<break></break>
+	F2FS is created by Samsung for flash storages. You see flash storages like SSD and thumb drives operates differently than traditional spinning HDDs. They have garbage collection, TRIM, over-provisioning, etc. F2FS takes care of them. It's the only file system dedicated exclusively for flash storages.
+
+	<break></break>
+	I have been using XFS on both of my SSDs for a couple of years now, no problems. So you can go with XFS or F2FS for flash storages. But for thumb drives with OS installed, must use F2FS with -t option to disable TRIM (because a majority of thumb drives don't support TRIM).
+
+	<h3>2. Use This Well-Tested Kernel Parameter (Also, Read the Warnings)</h3>
+
+	<pre>
+		<file>/etc/default/grub</file>
+		<code>
+			GRUB_CMDLINE_LINUX_DEFAULT="fsck.mode=skip quiet loglevel=0 rd.systemd.show_status=false nowatchdog mitigations=off libahci.ignore_sss=1"
+		</code>
+	</pre>
+
+	The info can be found here:
+	<a target="_blank" href="https://www.kernel.org/doc/html/v5.8/admin-guide/kernel-parameters.html">kernel-parameters</a>
+
+	<break></break>
+	<red>Mitigations=off</red>: improves performance but opens security risk, so you don't want to do that if you care about security.
+
+	Swap_on_zRAM_using_a_udev_rule
+	For me though, no one is interested in getting into my system inside a private network :) If that's similar for you, turn off mitigation to make the system faster.
+
+	<break></break>
+	<red>Only use fsck.mode=skip</red>: if you use XFS file system. fsck.xfs returns with status 0, so this step at boot is absolutely needless. For F2FS, EXT4 users I suggest to not use fsck.mode=skip, stay with default or use forced fsck in such case.
+
+	<break></break>
+	<red>libahci.ignore_sss=1</red>: this can load all the HDD at a single time if you specify this option. This decreases boot time if your system has multiple HDDs, but can cause peak power usage. This is not necessary if your system doesn't have multiple HDDs or SSDs. If you don't have a good power supply, don't use this.
+
+	<break></break>
+	<a target="_blank" href="https://wiki.archlinux.org/index.php/Improving_performance/Boot_process#Staggered_spin-up">Archwiki - Staggered_spin-up</a>
+
+	<break></break>
+	<red>quiet loglevel=0</red>: it should be in that order, but do not that this will disable warnings and logs on the TTY (because standard output / error to TTY is slow compared to terminal emulators).
+
+	<h3>3. Use ZRAM Instead of Disk-Swap</h3>
+	ZRAM is a compressed section in the RAM itself. You can utilize 6 - 7 GB memory (RAM) if your system has 4 GB.
+
+	<break></break>
+	Here's more about ZRAM:
+
+	<break></break>
+	<a target="_blank" href="https://wiki.archlinux.org/index.php/Improving_performance#Swap_on_zRAM_using_a_udev_rule">Swap_on_zRAM_using_a_udev_rule</a>
+
+	<break></break>
+	If you absolutely need to use disk-swapping, use Zswap.
+
+	<break></break>
+	<a target="_blank" href="https://wiki.archlinux.org/index.php/Improving_performance#Zram_or_zswap">Archwiki - Zram or zswap</a>
+
+	<h3>4. Use a Custom Kernel</h3>
+
+	Use Xanmod kernels or liquorix kernel or zen kernel instead of the stock kernel.
+	<break></break>
+	Xanmod is fastest for my benchmarks, liquorix is 2nd fastest, zen is not slower as the stock kernel.
+
+	<break></break>
+	Get the kernel here:
+
+	<break></break>
+	<a target="_blank" href="https://aur.archlinux.org/packages/linux-xanmod/">AUR (en) - linux-xanmod</a>
+
+	<break></break>
+	<a target="_blank" href="https://aur.archlinux.org/packages/linux-lqx/">AUR (en) - linux-lqx</a>
+
+	<break></break>
+	(header included, +2 hour compilation time on i3 4th gen desktop processor)
+
+	<break></break>
+	If you ever try xanmod, edit your <code>/etc/makepkg.conf</code> and in the CFLAGS add `-march=native -mtune=native -O3 -fno-plt -pipe` for best performance (-pipe only improves compile time, doesn't affect the quality of the output binary).
+
+	Compile with the option:
+	<pre>
+		env _microarchitecture=0 use_numa=n use_tracers=n use_pds=n use_ns=y use_cachy=y makepkg -si
+	</pre>
+
+	<break></break>
+	I suggest using GCC, as with Clang or other compiler, compiling dkms modules can get painful and time consuming.
+
+	<h3>5. Disable Watchdog</h3>
+
+	Add nowatchdog to your kernel parameter.
+	<br>
+	Run <code>wdctl</code> command as root, and check the module for watchdog, blacklist it.
+
+	<h3>6. Sort Services by Loading Time & Mask Unneeded Services</h3>
+	To sort services by loading time, run the command `systemd-analyze blame`
+	<br>
+	Now comes the part of masking. If you don't use lvm2-monitor, mask it. On the other hand, systemd-random-seed isn't that necessary for most systems.
+	<br>
+	For example:
+	<br>
+
+	<pre>
+		# systemctl mask lvm2-monitor # if you don't need lvm2-monitor
+		# systemctl mask systemd-random-seed # in most desktop systems, it's not needed
+	</pre>
+
+	You can also disable systemd-resolved if you have NetworkManager installed, make sure to add this to <blue>NetworkManager.conf</blue>:
+
+	<pre>
+		<file>/etc/NetworkManager/NetworkManager.conf</file>
+		[main]
+		dns=none
+		systemd-resolved=false
+	</pre>
+
+	<h3>7. Blacklist Unneeded Modules</h3>
+	Modules can hog memory and may slow down your system. You can list all the modules currently required by your system by issuing `lsmod` command as regular or root user. Blacklist modules that you don't need.
+
+	<br>
+	For me, the <blue>blacklist.conf</blue> goes like this:
+
+	<pre>
+		<file>etc/modprobe.d/blacklists.conf</file>
+		blacklist iTCO_wdt
+		blacklist pcspkr
+		blacklist joydev
+		blacklist mousedev
+		blacklist mac_hid
+		blacklist uvcvideo
+	</pre>
+
+	On my system, blacklisting:
+		<ul>
+
+			<li>iTCO_wdt: disables watchdog.</li>
+			<li>pcspkr disables mobo speaker sounds.</li>
+			<li>joydev: disables joystick, that I don't use.</li>
+			<li>mousedev: disables PS2 mouse support that my PC and laptop doesn't have a slot for.</li>
+			<li>mac_hid: I don't love apple products, and don't need one, so blacklisting this doesn't hurt.</li>
+			<li>uvcvideo: To disable the webcam.</li>
+		</ul>
+
+	This will differ for you obviously. It's for my laptop, but you can same approach with different module names that you don't need.
+	<br>
+	You can enable them with the command 'modprobe' when needed. For example, `modprobe joydev` in runtime and then plug a joystick to detect it.
+
+	<break></break>
+	Watch out! You don't want to disable your onboard WiFi or BlueTooth or touchpad, don't disable driver that you need.
+
+	<break></break>
+	Do note that disabling any random module, (for example, reiserfs or btrfs, amdgpu, etc.) will actually do nothing unless a device is there wants to load that driver. In most cases, there are a boatload of drivers (find /lib/modules/`uname -r`/ -type f -name '*ko') but they are not really loaded unless you have a device for that. Although they do consume storage, can be avoided during kernel compilation.
+
+	<h3>8. Access the Internet Faster</h3>
+	When you type a link to your browser's URL bar, you use a server called Domain Name Server (DNS) to resolve it into an IP address.
+
+	<break></break>
+	Chances are your resolve is done by the ISP, which isn't that fast in most cases.
+
+	<break></break>
+	Use google's and Cloudflare's Public DNS for faster resolve. Add this to your <blue>resolv.conf</blue>:
+
+	<pre>
+		<file>/etc/resolv.conf</file>
+		options timeout:1
+		options single-request
+
+		nameserver 8.8.8.8
+		nameserver 8.8.4.4
+		nameserver 1.1.1.1
+	</pre>
+
+	<a href="https://man7.org/linux/man-pages/man5/resolv.conf.5.html">man 5 resolv.conf</a>
+
+	<break></break>
+	Also try using dnsmasq with cache enabled!
+
+	<br>
+	Note that if you use the above, your system won't receive a ping from other computers on the same network (like `ping archinux` from another system on same network).
+
+	<br>
+	Oh, and to prevent NetworkManager from overwriting it:
+
+	<pre>
+		<file>/etc/NetworkManager/NetworkManager.conf</file>
+		[main]
+		dns=none
+		systemd-resolved=false
+	</pre>
+
+	There's a better way as well! resolv file can be overwritten by many app, just make it immutable!
+
+	<pre>
+		# chattr +i /etc/resolv.conf
+	</pre>
+
+	<break></break>
+	This may increase the resolve speed, if not, try using 1.1.1.1 (cloudflare's primary DNS) and 1.0.0.1 (cloudflare's secondary DNS) as your primary and secondary dns address, then use 8.8.8.8 (Google's primary DNS) in the third line.
+
+	<h3>9. Use GCC, Clang or Suitable Compiler for your Application</h3>
+
+	You see, there exists a Linux distribution called clear Linux. It's compiled with the intel compiler, as a result it's very fast.
+	<br>
+	To make your apps run even faster, use this flags (also discussed above in "Use a Custom Kernel" section!):
+
+	<pre>
+		-mtune=native -march=native -O3 -pipe
+	</pre>
+
+	<ul>
+		<li>
+			<green>mtune=native</green> and <green>-march=native</green> makes the package for your system. For most cases, we compile apps for ourselves, this will make them run significantly faster.
+		</li>
+
+		<li>
+			<green>-O3</green> optimizes the binary. There are levels beyond O3, like Ofast, but O3 is the max which won't break your apps and packages.
+		</li>
+
+		<li>
+			<green>-pipe</green> doesn't actually affect the quality of the binary, but it makes compile faster a bit, noticeable on low memory systems. To use these flags with makepkg, edit <code>/etc/makepkg.conf</code>, and add this to the CFLAGS and CXXFLAGS.
+		</li>
+	</ul>
+
+	Anyway, the Microsoft's Compiler is really worst, about 2x slower than GCC or Clang:
+	<br>
+	Linux is faster than Windows - Is it the compiler?
+
+	<br>
+	Slower compiler can denote that it's slow to compile (like Clang compiles faster than GCC), but the binary produced by them is kind of identical. But it's not the case in Microsoft Compiler, it's not optimized and it produces bad binary.
+
+	<h3>10. Noatime When Mounting Partitions</h3>
+	Appending or prepending noatime to fstab or passing as option during mount/remount will disable writing access time to it. This reduces write on the media, and improves the performance by a tiny tiny bit. This is also suggested for flash drive / SSD users.
+
+	<h3>11. Disable Journaling</h3>
+
+	While this is not suggested by professionals, but as a day to day user disabling journal helps a lot!
+	<br>
+	Journal logs help you debug your system. But for most of the time journaling may write a lot to your storage, and overtime the logs becomes huge. It's then truncated, but if that's not what you want, you can disable it by editing /etc/systemd/journald.conf, and set:
+	<br>
+
+	<pre>
+		<file>/etc/systemd/journald.conf</file>
+		Storage=none
+	</pre>
+
+	This doesn't disable the journal daemon, which is a terrible idea, but this disables logging overall. This will reduce disk write and make system more responsive. journal-flush service will also have less overhead and will not cause any additional delay during boot.
+
+	<br>
+	If you run `journalctl -xe`, you will see no new entries. If you see old entries, delete the directories from <code>/var/log/journal/</code>.
+
+	<br>
+	This is a necessity if you want to increase the lifespan of your SSD or thumb drive or any other flash storage. For HDD, this will speed up the system by a little bit.
+
+	<h3>12. Use Preload (For HDD Users)</h3>
+	As mentioned it's not for SSD users. If you installed Arch on an HDD or a thumb drive, this could be helpful.
+
+	<br>
+	If you have memory to cache your apps, you can use preload:
+
+	<br>
+	Archwiki - Preload
+
+	<br>
+	This uses Markov chain (by default located in <code>/var/lib/preload/preload.state</code>) to improve your app launch time by caching them.
+
+	<h3>13. Fast Video Playback (Only for Intel Users)</h3>
+	You might face slow loading 4K videos on VLC even on a high end desktop let alone laptops, which can't even load HD.
+
+	<br>
+	To overcome this issue (for intel), you need:
+
+	<br>
+	A) intel-media-driver
+	<br>
+	B) intel-media-sdk
+
+	<br>
+	Install them with:
+
+	<pre>
+		# pacman -S intel-media-driver intel-media-sdk
+	</pre>
+
+	Don't ever forget these packages if you need to watch videos on intel processor!
+
+	<h3>14. IO Scheduler</h3>
+	Schedulers can help to reduce your systems latency, but they will require a little more processing power.
+
+	<br>
+	If you are an HDD user, use BFQ IO scheduler.
+
+	<br>
+	Phoronix - Linux 5.0 HDD I/O Scheduler Benchmarks - BFQ Takes The Cake
+
+	<br>
+	If you are an SSD user, use <code>mq-deadline</code> IO scheduler.
+
+	<br>
+	If you use NVME SSD, use <code>none</code> IO scheduler.
+
+	<br>
+	To let your system select the scheduler automatically for you, use a udev rule for that!
+
+	<br>
+	1. For SSDs
+	<pre>
+		<file>/etc/udev/rules.d/60-ssd.rules</file>
+		ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
+	</pre>
+
+	2. For NVME SSDs
+	<pre>
+		<file>/etc/udev/rules.d/60-nvme.rules</file>
+		ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none"
+	</pre>
+
+	3. For HDDs
+	<pre>
+		<file>/etc/udev/rules.d/60-hdd.rules</file>
+		ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
+	</pre>
+
+	The following will set the IO scheduler for all the non-rotational block devices starting from sda to sdzzz or the maximum devices supported by your system.
+	<br>
+	If you use all of the storage devices or multiple type of storage devices, you can combine all of the rules into the single file:
+
+	<pre>
+		<file>/etc/udev/rules.d/60-ioschedulers.rules</file>
+
+		# SSDs
+		ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
+
+		# NVME
+		ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none"
+
+		# HDD
+		ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
+	</pre>
+
+	But I will suggest not using things that you don't use.
+
+	<br>
+	To confirm, check:
+
+	<pre>
+		$ cat /sys/block/sda/queue/scheduler
+		[mq-deadline] none
+	</pre>
+
+	Here sda (/dev/sda) is the device.
+
+	<hr>
+
+	These tips should increase performance significantly. It's not hard to see 25 - 50% boost in your boot time to system performance. Some will reduce the security to give you the best performance, those points are also mentioned above. Read the post carefully before using them if you have a production server. For regular desktop user, this is not a big deal.
+
+	Please let me know your thoughts below.
+
+</content>

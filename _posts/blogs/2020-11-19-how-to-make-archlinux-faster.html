@@ -1,11 +1,11 @@
 ---
-active: "blogs"
+active: "articles"
 layout: blogs
 title:  "How to Make Archlinux Blazing Fast"
 date:   2020-11-19 10:22:58 +0530
 categories: souravgoswami blogs
-description: "Blogs"
-permalink: "articles/how-to-make-archlinux-blazing-fast"
+description: "Tweak archlinux for the most performance"
+permalink: "/articles/how-to-make-archlinux-blazing-fast"
 ogimage: "/assets/articles/images/1/main.jpg"
 ---
 
@@ -100,11 +100,11 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	(header included, +2 hour compilation time on i3 4th gen desktop processor)
 
 	<break></break>
-	If you ever try xanmod, edit your <code>/etc/makepkg.conf</code> and in the CFLAGS add `-march=native -mtune=native -O3 -fno-plt -pipe` for best performance (-pipe only improves compile time, doesn't affect the quality of the output binary).
+	If you ever try xanmod, edit your <code>/etc/makepkg.conf</code> and in the CFLAGS add <code>-march=native -mtune=native -O3 -fno-plt -pipe</code> for best performance (-pipe only improves compile time, doesn't affect the quality of the output binary).
 
 	Compile with the option:
 	<pre>
-		env _microarchitecture=0 use_numa=n use_tracers=n use_pds=n use_ns=y use_cachy=y makepkg -si
+		<dollar>env _microarchitecture=42 use_numa=n use_tracers=n use_pds=n use_ns=y use_cachy=y makepkg -si</dollar>
 	</pre>
 
 	<break></break>
@@ -117,7 +117,7 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	Run <code>wdctl</code> command as root, and check the module for watchdog, blacklist it.
 
 	<h3>6. Sort Services by Loading Time & Mask Unneeded Services</h3>
-	To sort services by loading time, run the command `systemd-analyze blame`
+	To sort services by loading time, run the command <code>systemd-analyze blame</code>
 	<br>
 	Now comes the part of masking. If you don't use lvm2-monitor, mask it. On the other hand, systemd-random-seed isn't that necessary for most systems.
 	<br>
@@ -125,8 +125,8 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	<br>
 
 	<pre>
-		# systemctl mask lvm2-monitor # if you don't need lvm2-monitor
-		# systemctl mask systemd-random-seed # in most desktop systems, it's not needed
+		<hash>systemctl mask lvm2-monitor # if you don't need lvm2-monitor</hash>
+		<hash>systemctl mask systemd-random-seed # in most desktop systems, it's not needed</hash>
 	</pre>
 
 	You can also disable systemd-resolved if you have NetworkManager installed, make sure to add this to <blue>NetworkManager.conf</blue>:
@@ -139,7 +139,7 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	</pre>
 
 	<h3>7. Blacklist Unneeded Modules</h3>
-	Modules can hog memory and may slow down your system. You can list all the modules currently required by your system by issuing `lsmod` command as regular or root user. Blacklist modules that you don't need.
+	Modules can hog memory and may slow down your system. You can list all the modules currently required by your system by issuing <code>lsmod</code> command as regular or root user. Blacklist modules that you don't need.
 
 	<br>
 	For me, the <blue>blacklist.conf</blue> goes like this:
@@ -167,13 +167,13 @@ ogimage: "/assets/articles/images/1/main.jpg"
 
 	This will differ for you obviously. It's for my laptop, but you can same approach with different module names that you don't need.
 	<br>
-	You can enable them with the command 'modprobe' when needed. For example, `modprobe joydev` in runtime and then plug a joystick to detect it.
+	You can enable them with the command 'modprobe' when needed. For example, <code>modprobe joydev</code> in runtime and then plug a joystick to detect it.
 
 	<break></break>
 	Watch out! You don't want to disable your onboard WiFi or BlueTooth or touchpad, don't disable driver that you need.
 
 	<break></break>
-	Do note that disabling any random module, (for example, reiserfs or btrfs, amdgpu, etc.) will actually do nothing unless a device is there wants to load that driver. In most cases, there are a boatload of drivers (find /lib/modules/`uname -r`/ -type f -name '*ko') but they are not really loaded unless you have a device for that. Although they do consume storage, can be avoided during kernel compilation.
+	Do note that disabling any random module, (for example, reiserfs or btrfs, amdgpu, etc.) will actually do nothing unless a device is there wants to load that driver. In most cases, there are a boatload of drivers (<code>find /lib/modules/`uname -r`/ -type f -name '*ko'</code>) but they are not really loaded unless you have a device for that. Although they do consume storage, can be avoided during kernel compilation.
 
 	<h3>8. Access the Internet Faster</h3>
 	When you type a link to your browser's URL bar, you use a server called Domain Name Server (DNS) to resolve it into an IP address.
@@ -200,7 +200,7 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	Also try using dnsmasq with cache enabled!
 
 	<br>
-	Note that if you use the above, your system won't receive a ping from other computers on the same network (like `ping archinux` from another system on same network).
+	Note that if you use the above, your system won't receive a ping from other computers on the same network (like <code>ping archlinux</code> from another system on same network).
 
 	<br>
 	Oh, and to prevent NetworkManager from overwriting it:
@@ -270,7 +270,7 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	This doesn't disable the journal daemon, which is a terrible idea, but this disables logging overall. This will reduce disk write and make system more responsive. journal-flush service will also have less overhead and will not cause any additional delay during boot.
 
 	<br>
-	If you run `journalctl -xe`, you will see no new entries. If you see old entries, delete the directories from <code>/var/log/journal/</code>.
+	If you run <code>journalctl -xe</code>, you will see no new entries. If you see old entries, delete the directories from <code>/var/log/journal/</code>.
 
 	<br>
 	This is a necessity if you want to increase the lifespan of your SSD or thumb drive or any other flash storage. For HDD, this will speed up the system by a little bit.
@@ -350,7 +350,6 @@ ogimage: "/assets/articles/images/1/main.jpg"
 
 	<pre>
 		<file>/etc/udev/rules.d/60-ioschedulers.rules</file>
-
 		# SSDs
 		ACTION=="add|change", KERNEL=="sd[a-z]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
 
@@ -367,7 +366,7 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	To confirm, check:
 
 	<pre>
-		$ cat /sys/block/sda/queue/scheduler
+		<dollar>cat /sys/block/sda/queue/scheduler</dollar>
 		[mq-deadline] none
 	</pre>
 
@@ -376,7 +375,4 @@ ogimage: "/assets/articles/images/1/main.jpg"
 	<hr>
 
 	These tips should increase performance significantly. It's not hard to see 25 - 50% boost in your boot time to system performance. Some will reduce the security to give you the best performance, those points are also mentioned above. Read the post carefully before using them if you have a production server. For regular desktop user, this is not a big deal.
-
-	Please let me know your thoughts below.
-
 </content>

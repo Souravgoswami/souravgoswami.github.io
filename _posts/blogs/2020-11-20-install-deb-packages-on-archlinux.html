@@ -1,0 +1,347 @@
+---
+active: "articles"
+layout: blogs
+title:  "How to Install Deb Packages on Arch Linux Manually"
+date:   2020-11-19 10:22:58 +0530
+categories: souravgoswami blogs
+description: "Install Deb Packages on Arch Linux Manually"
+permalink: "/articles/how-to-install-deb-packages-on-arch-linux"
+ogimage: "/assets/articles/images/1/malek-dridi-0F7GRXNOG7g-unsplash"
+---
+
+<header class="text-glow">
+	<img src="/assets/articles/images/2/malek-dridi-0F7GRXNOG7g-unsplash.webp">
+	How to Install a Deb Package in Arch Linux
+	<author>By Sourav Goswami</author>
+	<date>2020-11-20</date>
+</header>
+
+<break></break>
+<content class="text-glow">
+	<initial>A</initial>rchlinux is based on Pacman. But many packages just comes as
+	Deb or RPM. The Edge browser from Microsoft or the Anydesk remote
+	desktop software are two common examples.
+
+	<break></break>
+	However most of them can be installed from the <a target="_blank" href="https://aur.archlinux.org/">AUR</a>.
+	It's the most simplistic way to install those debian apps. But if you look closer, most
+	PKGBUILD actually unpacks a deb file or rpm file and copies the content over to the
+	place where it should be.
+
+	<break></break>
+	Unpacking debian package and manually copying files is very simple and the
+	most straight forward way to run any debian package that is not available be in the
+	AUR.
+
+	A debian package contains either binary files or source code for an application to run.
+	We also need to install the dependency if there's any.
+
+	<h3>1. Downloading the Package</h3>
+	Download the deb package. Let's download the <a href="https://www.microsoftedgeinsider.com/en-us/" target="_blank">Microsoft Edge browser</a> (deb) for this tutorial.
+
+	<h3>2. Extracting the Package</h3>
+	After we have downloaded the debian package,
+	create a new folder with anyname you want. It will make sure
+	the things we extract are inside the directory.
+	<break></break>
+
+	Now we will extract it with the command <code>ar x</code>, for example:
+	<pre>
+		<dollar>ar x microsoft-edge-dev_88.0.702.0-1_amd64.deb</dollar>
+	</pre>
+
+	<break></break>
+	The version will be different for you.
+
+	<break></break>
+	We have the following files now:
+
+	<pre>
+		<dollar>command ls -l</dollar>
+		total 173004
+		-rw-r--r-- 1 sourav sourav     6254 Nov 20 13:31 control.tar.gz
+		-rw-r--r-- 1 sourav sourav 88564352 Nov 20 13:31 data.tar.xz
+		-rw-r--r-- 1 sourav sourav        4 Nov 20 13:31 debian-binary
+		-rw-r--r-- 1 sourav sourav      492 Nov 20 13:31 _gpgorigin
+		-rw-r--r-- 1 sourav sourav 88571350 Nov 20 13:29 microsoft-edge-dev_88.0.702.0-1_amd64.deb
+	</pre>
+
+	 The data is generally located in data.tar.xz.
+	<break></break>
+
+	 The control.tar.xz has a file called control where dependencies info and other info are stored.
+	 We genrally don't have to do anything with that file except installing the dependencies ourselves.
+
+	<break></break>
+	The next step is to extract the data.tar.xz:
+
+	<pre>
+		<dollar>tar -xvf data.tar.xz</dollar>
+		./
+		./opt/
+		./opt/microsoft/
+		./opt/microsoft/msedge-dev/
+		./opt/microsoft/msedge-dev/product_logo_256_dev.png
+		./opt/microsoft/msedge-dev/v8_context_snapshot.bin
+		./opt/microsoft/msedge-dev/libtelclient.so
+		./opt/microsoft/msedge-dev/msedge-sandbox
+		./opt/microsoft/msedge-dev/crashpad_handler
+		./opt/microsoft/msedge-dev/msedge_200_percent.pak
+		./opt/microsoft/msedge-dev/WidevineCdm/
+		./opt/microsoft/msedge-dev/WidevineCdm/_platform_specific/
+		./opt/microsoft/msedge-dev/WidevineCdm/_platform_specific/linux_x64/
+		./opt/microsoft/msedge-dev/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
+		./opt/microsoft/msedge-dev/WidevineCdm/manifest.json
+		./opt/microsoft/msedge-dev/product_logo_48_dev.png
+		./opt/microsoft/msedge-dev/nacl_helper_bootstrap
+		./opt/microsoft/msedge-dev/nacl_irt_x86_64.nexe
+		./opt/microsoft/msedge-dev/cron/
+		./opt/microsoft/msedge-dev/cron/microsoft-edge-dev
+		./opt/microsoft/msedge-dev/default-app-block
+		./opt/microsoft/msedge-dev/libsmartscreen.so
+		./opt/microsoft/msedge-dev/resources.pak
+		./opt/microsoft/msedge-dev/xdg-mime
+		./opt/microsoft/msedge-dev/product_logo_32_dev.png
+		./opt/microsoft/msedge-dev/liboneds.so
+		./opt/microsoft/msedge-dev/product_logo_32_dev.xpm
+		./opt/microsoft/msedge-dev/product_logo_16_dev.png
+		./opt/microsoft/msedge-dev/xdg-settings
+		./opt/microsoft/msedge-dev/msedge_100_percent.pak
+		./opt/microsoft/msedge-dev/icudtl.dat
+		./opt/microsoft/msedge-dev/nacl_helper
+		./opt/microsoft/msedge-dev/product_logo_128_dev.png
+		./opt/microsoft/msedge-dev/libGLESv2.so
+		./opt/microsoft/msedge-dev/product_logo_24_dev.png
+		./opt/microsoft/msedge-dev/microsoft-edge-dev
+		./opt/microsoft/msedge-dev/locales/
+		./opt/microsoft/msedge-dev/locales/ro.pak
+		./opt/microsoft/msedge-dev/locales/km.pak
+		./opt/microsoft/msedge-dev/locales/mi.pak
+		./opt/microsoft/msedge-dev/locales/mk.pak
+		./opt/microsoft/msedge-dev/locales/bn-IN.pak
+		./opt/microsoft/msedge-dev/locales/sr-Cyrl-BA.pak
+		./opt/microsoft/msedge-dev/locales/zh-TW.pak
+		./opt/microsoft/msedge-dev/locales/eu.pak
+		./opt/microsoft/msedge-dev/locales/fr.pak
+		./opt/microsoft/msedge-dev/locales/pt-PT.pak
+		./opt/microsoft/msedge-dev/locales/en-GB.pak
+		./opt/microsoft/msedge-dev/locales/or.pak
+		./opt/microsoft/msedge-dev/locales/nn.pak
+		./opt/microsoft/msedge-dev/locales/id.pak
+		./opt/microsoft/msedge-dev/locales/sl.pak
+		./opt/microsoft/msedge-dev/locales/es-419.pak
+		./opt/microsoft/msedge-dev/locales/ka.pak
+		./opt/microsoft/msedge-dev/locales/pl.pak
+		./opt/microsoft/msedge-dev/locales/uk.pak
+		./opt/microsoft/msedge-dev/locales/ms.pak
+		./opt/microsoft/msedge-dev/locales/kok.pak
+		./opt/microsoft/msedge-dev/locales/cy.pak
+		./opt/microsoft/msedge-dev/locales/da.pak
+		./opt/microsoft/msedge-dev/locales/kn.pak
+		./opt/microsoft/msedge-dev/locales/te.pak
+		./opt/microsoft/msedge-dev/locales/gd.pak
+		./opt/microsoft/msedge-dev/locales/hr.pak
+		./opt/microsoft/msedge-dev/locales/mt.pak
+		./opt/microsoft/msedge-dev/locales/fa.pak
+		./opt/microsoft/msedge-dev/locales/th.pak
+		./opt/microsoft/msedge-dev/locales/devtools/
+		./opt/microsoft/msedge-dev/locales/devtools/zh-TW.pak
+		./opt/microsoft/msedge-dev/locales/devtools/fr.pak
+		./opt/microsoft/msedge-dev/locales/devtools/ru.pak
+		./opt/microsoft/msedge-dev/locales/devtools/zh-CN.pak
+		./opt/microsoft/msedge-dev/locales/devtools/ja.pak
+		./opt/microsoft/msedge-dev/locales/devtools/en-US.pak
+		./opt/microsoft/msedge-dev/locales/devtools/ko.pak
+		./opt/microsoft/msedge-dev/locales/devtools/de.pak
+		./opt/microsoft/msedge-dev/locales/devtools/pt-BR.pak
+		./opt/microsoft/msedge-dev/locales/devtools/es.pak
+		./opt/microsoft/msedge-dev/locales/devtools/it.pak
+		./opt/microsoft/msedge-dev/locales/lb.pak
+		./opt/microsoft/msedge-dev/locales/am.pak
+		./opt/microsoft/msedge-dev/locales/lt.pak
+		./opt/microsoft/msedge-dev/locales/as.pak
+		./opt/microsoft/msedge-dev/locales/tr.pak
+		./opt/microsoft/msedge-dev/locales/lo.pak
+		./opt/microsoft/msedge-dev/locales/nb.pak
+		./opt/microsoft/msedge-dev/locales/he.pak
+		./opt/microsoft/msedge-dev/locales/ta.pak
+		./opt/microsoft/msedge-dev/locales/ru.pak
+		./opt/microsoft/msedge-dev/locales/zh-CN.pak
+		./opt/microsoft/msedge-dev/locales/hi.pak
+		./opt/microsoft/msedge-dev/locales/bs.pak
+		./opt/microsoft/msedge-dev/locales/sv.pak
+		./opt/microsoft/msedge-dev/locales/sk.pak
+		./opt/microsoft/msedge-dev/locales/ar.pak
+		./opt/microsoft/msedge-dev/locales/et.pak
+		./opt/microsoft/msedge-dev/locales/ja.pak
+		./opt/microsoft/msedge-dev/locales/fil.pak
+		./opt/microsoft/msedge-dev/locales/is.pak
+		./opt/microsoft/msedge-dev/locales/fr-CA.pak
+		./opt/microsoft/msedge-dev/locales/ne.pak
+		./opt/microsoft/msedge-dev/locales/bg.pak
+		./opt/microsoft/msedge-dev/locales/sq.pak
+		./opt/microsoft/msedge-dev/locales/mr.pak
+		./opt/microsoft/msedge-dev/locales/ga.pak
+		./opt/microsoft/msedge-dev/locales/en-US.pak
+		./opt/microsoft/msedge-dev/locales/ml.pak
+		./opt/microsoft/msedge-dev/locales/ug.pak
+		./opt/microsoft/msedge-dev/locales/lv.pak
+		./opt/microsoft/msedge-dev/locales/az.pak
+		./opt/microsoft/msedge-dev/locales/ur.pak
+		./opt/microsoft/msedge-dev/locales/ko.pak
+		./opt/microsoft/msedge-dev/locales/vi.pak
+		./opt/microsoft/msedge-dev/locales/sr.pak
+		./opt/microsoft/msedge-dev/locales/kk.pak
+		./opt/microsoft/msedge-dev/locales/gl.pak
+		./opt/microsoft/msedge-dev/locales/ca.pak
+		./opt/microsoft/msedge-dev/locales/gu.pak
+		./opt/microsoft/msedge-dev/locales/cs.pak
+		./opt/microsoft/msedge-dev/locales/el.pak
+		./opt/microsoft/msedge-dev/locales/hu.pak
+		./opt/microsoft/msedge-dev/locales/ca-Es-VALENCIA.pak
+		./opt/microsoft/msedge-dev/locales/nl.pak
+		./opt/microsoft/msedge-dev/locales/tt.pak
+		./opt/microsoft/msedge-dev/locales/de.pak
+		./opt/microsoft/msedge-dev/locales/af.pak
+		./opt/microsoft/msedge-dev/locales/sr-Latn-RS.pak
+		./opt/microsoft/msedge-dev/locales/pt-BR.pak
+		./opt/microsoft/msedge-dev/locales/fi.pak
+		./opt/microsoft/msedge-dev/locales/pa.pak
+		./opt/microsoft/msedge-dev/locales/qu.pak
+		./opt/microsoft/msedge-dev/locales/es.pak
+		./opt/microsoft/msedge-dev/locales/it.pak
+		./opt/microsoft/msedge-dev/MEIPreload/
+		./opt/microsoft/msedge-dev/MEIPreload/preloaded_data.pb
+		./opt/microsoft/msedge-dev/MEIPreload/manifest.json
+		./opt/microsoft/msedge-dev/liblearning_tools.so
+		./opt/microsoft/msedge-dev/swiftshader/
+		./opt/microsoft/msedge-dev/swiftshader/libGLESv2.so
+		./opt/microsoft/msedge-dev/swiftshader/libEGL.so
+		./opt/microsoft/msedge-dev/msedge
+		./opt/microsoft/msedge-dev/libmicrosoft_apis.so
+		./opt/microsoft/msedge-dev/product_logo_64_dev.png
+		./opt/microsoft/msedge-dev/libEGL.so
+		./etc/
+		./etc/cron.daily/
+		./usr/
+		./usr/bin/
+		./usr/share/
+		./usr/share/gnome-control-center/
+		./usr/share/gnome-control-center/default-apps/
+		./usr/share/gnome-control-center/default-apps/microsoft-edge-dev.xml
+		./usr/share/menu/
+		./usr/share/menu/microsoft-edge-dev.menu
+		./usr/share/doc/
+		./usr/share/doc/microsoft-edge-dev/
+		./usr/share/doc/microsoft-edge-dev/changelog.gz
+		./usr/share/applications/
+		./usr/share/applications/microsoft-edge-dev.desktop
+		./usr/share/appdata/
+		./usr/share/appdata/microsoft-edge-dev.appdata.xml
+		./usr/share/man/
+		./usr/share/man/man1/
+		./usr/share/man/man1/microsoft-edge-dev.1.gz
+		./opt/microsoft/msedge-dev/microsoft-edge
+		./etc/cron.daily/microsoft-edge-dev
+		./usr/bin/microsoft-edge-dev
+	</pre>
+
+	<h3>3. Execute the Binary</h3>
+	Right, now we have all the files we need. We can execute MSEdge right now without doing anything much.
+	<break></break>
+
+	In our case, we can execute MSEdge from the current working directory:
+	<break></break>
+	<img src="/assets/articles/images/2/Screenshot from 2020-11-20 13-53-38.webp">
+	<break></break>
+
+	Most of the packages can be run this way unless the software itself contain the absolute path
+	in itself. In that case we need to move the directories in the proper place.
+
+	<h3>4. Installing</h3>
+	The extracted files have the info where each file should go.
+	In general:
+
+	<break></break>
+	<blue>move the ./opt/* to /opt/</blue>
+	<break></break>
+	<blue>move the ./etc/* to /etc/</blue>
+	<break></break>
+	<blue>move the ./usr/* to /usr/</blue>
+	<break></break>
+	<blue>move the ./bin/* to /bin/</blue>
+	<break></break>
+
+	...You get it.
+	<break></break>
+
+	Make sure to have <code>chown root:root</code> to all the files, and proper read permission.
+
+	<break></break>
+	For binaries, you need to have <code>chmod 755</code>.
+
+	But you should probably look more closely in files and see if there's any behaviour that you don't want.
+	For example, running the app in background isn't something you want.
+
+	<h3>5. Creating the /bin/ File Manually</h3>
+	If you don't have a /bin/ entry, make sure you have one, in case of MSEdge:
+
+	<break></break>
+	<pre>
+		<file>/bin/msedge</file>
+		/opt/microsoft/msedge-dev/msedge &>/dev/null &
+	</pre>
+
+	<h3>6. Creating Desktop Entry Manually</h3>
+	In most cases, <code>./usr/share/applications/</code> should have a desktop entry (ending with .desktop) extension.
+
+	That allows your DE to show your app in the menu:
+
+	<img src="/assets/articles/images/2/menu.webp">
+
+	You won't see your app unless you create the desktop entry. With MSEdge though, you will put this:
+	<break></break>
+	<pre>
+		<file>/usr/share/applications/msedge.desktop</file>
+		[Desktop Entry]
+		Type=Application
+		Name=Edge
+		GenericName=Edge Browser Dev
+		Comment=Microsoft Edge Browser
+		Exec=/opt/microsoft/msedge-dev/msedge %u
+		Icon=/opt/microsoft/msedge-dev/product_logo_48_dev.png
+		MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+		Categories=Network;WebBrowser;
+		Keywords=web;browser;internet;
+		Actions=new-window;new-private-window;
+
+		[Desktop Action new-window]
+		Name=New Window
+		Exec=/opt/microsoft/msedge-dev/msedge %u
+
+		[Desktop Action new-private-window]
+		Name=New Incognito Window
+		Exec=/opt/microsoft/msedge-dev/msedge --inprivate %u
+	</pre>
+	In my case, I have moved edge to /opt/, but haven't moved any contents from /etc/ and /usr/.
+
+	If you want to know more:
+	<a href="https://specifications.freedesktop.org/menu-spec/menu-spec-1.0.html#desktop-entry-extensions-examples">Desktop Menu Specification</a>
+
+	<break></break>
+	<break></break>
+	Now you will have an icon showing in the menu, you can add it to your desktop or panel for quicker access:
+	<img src="/assets/articles/images/2/menu2.webp">
+	<break></break>
+	<break></break>
+
+	Some packages like AnyDesktop for example, requires a systemd unit.
+	<break></break>
+	You can either copy the contents from data.tar.xz or create that file manually.
+
+	<break></break>
+	<break></break>
+	<break></break>
+	<break></break>
+	Now you have a working manual installation of your favourite debian package on Arch Linux!
+</content>

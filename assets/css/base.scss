@@ -292,12 +292,12 @@ li.active > a.nav-link {
 
 rgb-splitter {
 	display: block ;
-	text-align: center ;
-	height: 3px ;
+	margin: 8px auto ;
+	position: relative ;
+	height: 4px ;
 	width: 90% ;
 	border-radius: 4px ;
 	background: linear-gradient(45deg, #ff5, #f55, #55f) ;
-	margin: 8px ;
 }
 
 .slide-intersect-it {
@@ -407,6 +407,7 @@ rgb-splitter {
 }
 
 ul.navbar-nav {
+	font-family: 'Alice' !important ;
 	display: flex ;
 	align-items: center ;
 	justify-content: center ;

@@ -2,21 +2,56 @@
 ---
 
 @font-face {
-	font-family: 'ABeeZee';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: local('ABeeZee'), url("/assets/fonts/abeezee.woff2") format('woff2');
+	font-family: 'ABeeZee' ;
+	font-style: normal ;
+	font-weight: 400 ;
+	font-display: swap ;
+	src: local('ABeeZee'), url("/assets/fonts/abeezee.woff2") format('woff2') ;
 }
 
-author {
-	display: block ;
+@font-face {
+	font-family: 'Ubuntu' ;
+	font-style: normal ;
+	font-weight: 300 ;
+	font-display: swap ;
+	src: local('Ubuntu'), url("/assets/fonts/ubuntu.woff2") format('woff2') ;
+}
+
+html, body {
+	font-family: 'Ubuntu' !important ;
+}
+
+.author-details {
+	display: inline-flex ;
 	font-size: 16px ;
+	margin: 8px 0 ;
+	align-items: center ;
+	flex-direction: row ;
+
+	author-image {
+		width: 64px !important ;
+		height: 64px !important ;
+		position: relative ;
+		display: inline-block ;
+		overflow: hidden ;
+		border-radius: 50% ;
+		margin-right: 12px ;
+
+		img {
+			height: 100% ;
+			width: 100% ;
+		}
+	}
+
+	about-post {
+		display: inline-block ;
+	}
 }
 
 date {
 	display: block ;
 	font-size: 14px ;
+	margin: 8px 0 ;
 }
 
 .blog-contents {
@@ -36,7 +71,7 @@ date {
 
 	content {
 		font-size: 20px ;
-		line-height: 36px ;
+		line-height: 48px ;
 	}
 
 	initial {

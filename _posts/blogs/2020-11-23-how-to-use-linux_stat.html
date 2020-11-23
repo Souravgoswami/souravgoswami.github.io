@@ -319,18 +319,36 @@ ogimage: "/assets/articles/images/4/pexels-larissa-barbosa-1870376.jpg"
 	There's a script that can do that all for you... It can even calculate the time
 	each method takes to execute and also generate readme type of file!
 
+	Here's the file:
+	<a target="_blank" href="https://github.com/Souravgoswami/linux_stat/blob/master/run_all_methods.rb">
+		run_all_methods.rb
+	</a>
+
 	<break></break>
 
 	<h3>Caveats</h3>
-	This gem offers a lot of stuff. But the biggest caveat is that it doesn't check
-	what the host OS is. If you run this on Windows or Mac or even any Unix that is not Linux
-	this gem may crash directly. Hence the name <strong>linux</strong>_stat
+	<ol>
+		<li>
+			This gem offers a lot of stuff. But the biggest caveat is that it doesn't check
+			what the host OS is. If you run this on Windows or Mac or even any Unix that is not Linux
+			this gem may crash directly. Hence the name <strong>linux</strong>_stat.
 
-	<break></break>
-	To prevent this, the user has to check the host OS and load the gem accordingly. For example:
-	<pre>
-		require 'linux_stat' if RbConfig::CONFIG['host_os'].to_s[/linux/]
-	</pre>
+			<break></break>
+			To prevent this, the user has to check the host OS and load the gem accordingly. For example:
+			<pre>
+				require 'linux_stat' if RbConfig::CONFIG['host_os'].to_s[/linux/]
+			</pre>
+		</li>
+
+		<li>
+			The 2nd problem is that it only supports from Ruby 2.5. The current version of Ruby in 2020.
+			<break></break>
+			It looks like that it will probably keep supporting Ruby 2.5 for some time now,
+			but if you are using Ruby < 2.5, you might not be able to use this gem at all...
+		</li>
+	</ol>
+
+
 
 	<h4>Let me know your thoughts about this gem below!</h4>
 </content>

@@ -21,7 +21,7 @@ ogimage: "/assets/articles/images/3/main.jpg"
 
 			<about-post>
 				Sourav Goswami
-				<date>2020/11/23</date>
+				<date>23/11/2020</date>
 			</about-post>
 		</div>
 	</author>
@@ -162,12 +162,15 @@ ogimage: "/assets/articles/images/3/main.jpg"
 
 	<h3>If you want to create native binary using rvm, follow this:</h3>
 	1. You need RVM first.
+
+	<break></break>
 	2. Add CFLAGS that Should be Passed:
 	<pre>
 		<dollar>CC=gcc CFLAGS="-O3 -pipe -fPIC -fno-plt -march=native -mtune=native" ~/.rvm/bin/rvm install ruby-2.7.1</dollar>
 	</pre>
 	Your RVM Ruby is built with the defined CC and CFlags!
 
+	<break></break>
 	3. Confirm (after installation)
 	<pre>
 		<dollar>~/.rvm/rubies/ruby-2.7.1/bin/ruby -e "puts RbConfig::CONFIG.then { |x| %Q(\n\e[1;33mCFLAGS\e[0m => #{x['CFLAGS']}\n\n\e[1;34mCXXFLAGS\e[0m => #{x['CXXFLAGS']}) }"</dollar>

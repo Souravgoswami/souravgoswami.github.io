@@ -1,0 +1,336 @@
+---
+active: "articles"
+layout: article
+title:  "How to use LinuxStat Rubygem"
+date:   2020-11-19 10:22:58 +0530
+categories: souravgoswami blogs
+description: "How to use LinuxStat Ruby Gem"
+permalink: "/articles/how-to-use-linuxstat-gem"
+ogimage: "/assets/articles/images/4/pexels-larissa-barbosa-1870376.jpg"
+---
+
+<header class="text-glow">
+	<img src="/assets/articles/images/4/pexels-larissa-barbosa-1870376.jpg">
+	<break></break>
+	How to Use LinuxStat Ruby Gem
+	<author>
+		<div class="author-details">
+			<author-image>
+				<img src="/assets/articles/authors/souravgoswami.webp">
+			</author-image>
+
+			<about-post>
+				Sourav Goswami
+				<date>24/11/2020</date>
+			</about-post>
+		</div>
+	</author>
+</header>
+
+<break></break>
+<content class="text-glow">
+	<initial>L</initial>inuxStat is a Linux statistics reporting gem. Which is really handy when you
+	want to know the state of a linux system for which you are developing a software.
+
+	<div class="align-items-center">
+		<img src="/assets/articles/images/4/linuxstat.webp">
+	</div>
+
+	For example, your script can be very heavy, so you need to check the available memory before running the script,
+	this is simple, and you can do that yourself by reading <code>/proc/meminfo</code> and <code>/proc/swaps</code> for sure, but
+	LinuxStat::Memory will let you do that very easily.
+
+	LinuxStat reads some files that are available to users. So it can work without any root privilege.
+
+	<break></break>
+	Stuff like checking CPU usage can be a bit more time consuming though, you need to write a script to do some calculation
+	to do that. But with LinuxStat::CPU, it's very trivial.
+
+	LinuxStat can do these things pretty efficiently. It could save you a lot of time if you ever need to work with such stuff.
+
+	<h3>Installation</h3>
+	Installing the gem is very simple. It doesn't require you root permission.
+
+	Installing for the current user:
+	<pre>
+		<dollar>gem install linux_stat --user</dollar>
+	</pre>
+
+	For root installation:
+	<pre>
+		<hash>gem install linux_stat</hash>
+	</pre>
+
+	You might prefer seeing the source code for this gem. Which can be found <a target="_blank" href="//github.com/souravgoswami/linux_stat">here</a>.
+	It's also conveniently under open-source MIT licence, and it's free to redistribute as you like.
+
+	<h3>Usage</h3>
+	Using the gem is quite simple, too...
+
+	For example, if you need to check the available memory in the current system:
+
+	<pre>
+	<dollar>irb</dollar>
+		irb(main):001:0> require 'linux_stat'
+		=> true
+		irb(main):002:0> LinuxStat::Memory.available
+		=> 327820
+		irb(main):003:0> LinuxStat::Memory.percent_available
+		=> 8.52
+		irb(main):004:0> LinuxStat::Memory.used
+		=> 3509708
+		irb(main):005:0> LinuxStat::Memory.percent_used
+		=> 91.49
+		LinuxStat::Memory.total
+		=> 3836264
+	</pre>
+
+	Checking the CPU usage is easy peasy! I have a 4 thread CPU:
+
+	<pre>
+		<dollar>irb</dollar>
+		irb(main):001:0> require 'linux_stat'
+		=> true
+		irb(main):002:0> LinuxStat::CPU.usages
+		=> {0=>3.33, 1=>0.0, 2=>12.5, 3=>0.0, 4=>12.5}
+		irb(main):003:0> LinuxStat::CPU.count
+		=> 4
+		irb(main):004:0> LinuxStat::CPU.model
+		=> "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz"
+	</pre>
+
+
+	But hold on a moment! <code>LinuxStat::CPU.stat()</code> returns 5 values you might wonder.
+
+
+	The reason being the first one is aggregated CPU usage reported by the Linux kernel.
+	In most cases, you don't need the per thread usage but the total CPU usage...
+	In that case, you can do:
+
+	<pre>
+		<dollar>irb</dollar>
+		irb(main):001:0> require 'linux_stat'
+		=> true
+		irb(main):002:0> LinuxStat::CPU.usage
+		=> 3.33
+	</pre>
+
+	<h3>All Methods and Constants</h3>
+	<break></break>
+	Apart from CPU and Memory LinuxStat has other methods too! Just look at the constants:
+
+	<pre>
+		<dollar>irb</dollar>
+		irb(main):001:0> require 'linux_stat'
+		=> true
+		irb(main):002:0> LinuxStat.constants.sort
+		[:BIOS, :Battery, :CPU, :Kernel, :Memory, :Net, :OS, :Process, :StatUnavailable, :Swap, :VERSION]
+	</pre>
+
+	So if you run all the methods... On my laptop, at the moment it looks like...:
+	<pre>
+		### LinuxStat::BIOS
+		LinuxStat::BIOS.date
+		=> "04/10/2017"
+
+		LinuxStat::BIOS.model
+		=> "Inspiron 5567"
+
+		LinuxStat::BIOS.vendor
+		=> "Dell Inc."
+
+		LinuxStat::BIOS.version
+		=> "1.1.2"
+
+
+		### LinuxStat::Battery
+		LinuxStat::Battery.charge
+		=> 100.0
+
+		LinuxStat::Battery.charging?
+		=> true
+
+		LinuxStat::Battery.discharging?
+		=> false
+
+		LinuxStat::Battery.full?
+		=> true
+
+		LinuxStat::Battery.manufacturer
+		=> "Samsung SDI"
+
+		LinuxStat::Battery.model
+		=> "DELL CYMGM77"
+
+		LinuxStat::Battery.present?
+		=> true
+
+		LinuxStat::Battery.stat
+		=> {:model=>"DELL CYMGM77", :manufacturer=>"Samsung SDI", :technology=>"Li-ion", :status=>"Full", :charge=>100.0, :charging=>true, :discharging=>false, :full=>true}
+
+		LinuxStat::Battery.status
+		=> "Full"
+
+		LinuxStat::Battery.technology
+		=> "Li-ion"
+
+
+		### LinuxStat::CPU
+		LinuxStat::CPU.count
+		=> 4
+
+		LinuxStat::CPU.cur_freq
+		=> [2000047, 2000029, 2000190, 2000025]
+
+		LinuxStat::CPU.max_freq
+		=> [2000000, 2000000, 2000000, 2000000]
+
+		LinuxStat::CPU.model
+		=> "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz"
+
+		LinuxStat::CPU.stat
+		=> {0=>3.45, 1=>0.0, 2=>12.5, 3=>0.0, 4=>0.0}
+
+		LinuxStat::CPU.total_usage
+		=> 3.33
+
+		LinuxStat::CPU.usage
+		=> 9.68
+
+		LinuxStat::CPU.usages
+		=> {0=>6.9, 1=>0.0, 2=>14.29, 3=>12.5, 4=>12.5}
+
+
+		### LinuxStat::Kernel
+		LinuxStat::Kernel.build_date
+		=> 2020-10-21 01:11:20 +0000
+
+		LinuxStat::Kernel.build_user
+		=> "souravgoswami@archlinux"
+
+		LinuxStat::Kernel.compiler
+		=> [:gcc, "10.2.0"]
+
+		LinuxStat::Kernel.compiler_version
+		=> "10.2.0"
+
+		LinuxStat::Kernel.string
+		=> "Linux version 5.9.1-xanmod1-1 (souravgoswami@archlinux) (gcc (GCC) 10.2.0, GNU ld (GNU Binutils) 2.35.1) #1 SMP PREEMPT Wed, 21 Oct 2020 01:11:20 +0000"
+
+		LinuxStat::Kernel.version
+		=> "5.9.1-xanmod1-1"
+
+
+		### LinuxStat::Memory
+		LinuxStat::Memory.available
+		=> 418860
+
+		LinuxStat::Memory.percent_available
+		=> 10.92
+
+		LinuxStat::Memory.percent_used
+		=> 89.08
+
+		LinuxStat::Memory.stat
+		=> {:total=>3836264, :used=>3417404, :available=>418860, :percent_used=>89.08, :percent_available=>10.92}
+
+		LinuxStat::Memory.total
+		=> 3836264
+
+		LinuxStat::Memory.used
+		=> 3417404
+
+
+		### LinuxStat::Net
+		LinuxStat::Net.ipv4_private
+		=> "192.168.0.106"
+
+
+		### LinuxStat::OS
+		LinuxStat::OS.bits
+		=> 64
+
+		LinuxStat::OS.distribution
+		=> "Arch Linux"
+
+		LinuxStat::OS.hostname
+		=> "archlinux"
+
+		LinuxStat::OS.lsb_release
+		=> {:LSB_VERSION=>"1.4", :DISTRIB_ID=>"Arch", :DISTRIB_RELEASE=>"rolling", :DISTRIB_DESCRIPTION=>"Arch Linux"}
+
+		LinuxStat::OS.os_release
+		=> {:NAME=>"Arch Linux", :PRETTY_NAME=>"Arch Linux", :ID=>"arch", :BUILD_ID=>"rolling", :ANSI_COLOR=>"38;2;23;147;209", :HOME_URL=>"https://www.archlinux.org/", :DOCUMENTATION_URL=>"https://wiki.archlinux.org/", :SUPPORT_URL=>"https://bbs.archlinux.org/"...
+
+		LinuxStat::OS.uptime
+		=> {:hour=>12, :minute=>39, :second=>35.09}
+
+
+		### LinuxStat::Process
+		LinuxStat::Process.count
+		=> 211
+
+		LinuxStat::Process.idle
+		=> [3, 4, 6, 9, 12, 23, 30, 37, 39, 49, 102, 103, 104, 106, 107, 108, 109, 110, 117, 118, 119, 121, 131, 134, 140, 152, 153, 170, 172, 174, 177, 179, 180, 184, 185, 186, 187, 188, 189, 227, 274, 285, 293, 316, 1918, 1919, 1920, 1921, 1922, 1923, 66708, 6...
+
+		LinuxStat::Process.list
+		=> [1, 2, 3, 4, 6, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 46, 47, 48, 49, 50, 51, 52, 102, 103, 104, 106, 107, 108, 109, 110, 111, 114, 115, 117, 118, 119, 121, 131, 134,...
+
+		LinuxStat::Process.names
+		=> {1=>"systemd", 2=>"kthreadd", 3=>"rcu_gp", 4=>"rcu_par_gp", 6=>"kworker/0:0H", 9=>"mm_percpu_wq", 10=>"ksoftirqd/0", 11=>"rcuc/0", 12=>"rcu_preempt", 13=>"rcub/0", 14=>"migration/0", 15=>"idle_inject/0", 16=>"cpuhp/0", 17=>"cpuhp/1", 18=>"idle_inject/...
+
+		LinuxStat::Process.running
+		=> [67810]
+
+		LinuxStat::Process.sleeping
+		=> [1, 2, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 38, 40, 41, 42, 46, 47, 48, 50, 51, 52, 111, 114, 115, 169, 171, 190, 217, 228, 284, 291, 311, 322, 334, 335, 336, 346, 349, 350, 353, 362, 365, 367, 369, 382,...
+
+		LinuxStat::Process.types
+		=> {1=>:sleeping, 2=>:sleeping, 3=>:idle, 4=>:idle, 6=>:idle, 9=>:idle, 10=>:sleeping, 11=>:sleeping, 12=>:idle, 13=>:sleeping, 14=>:sleeping, 15=>:sleeping, 16=>:sleeping, 17=>:sleeping, 18=>:sleeping, 19=>:sleeping, 20=>:sleeping, 21=>:sleeping, 23=>:i...
+
+		LinuxStat::Process.zombie
+		=> []
+
+
+		### LinuxStat::Swap
+		LinuxStat::Swap.available
+		=> 3169440
+
+		LinuxStat::Swap.list
+		=> {"/dev/zram0"=>[:partition, 4194300, 1024860, -2]}
+
+		LinuxStat::Swap.percent_available
+		=> 75.57
+
+		LinuxStat::Swap.percent_used
+		=> 24.43
+
+		LinuxStat::Swap.stat
+		=> {:total=>4194300, :used=>1024860, :available=>3169440, :percent_used=>24.43, :percent_available=>75.57}
+
+		LinuxStat::Swap.total
+		=> 4194300
+
+		LinuxStat::Swap.used
+		=> 1024860
+	</pre>
+
+	Seeing the list, you might think I ran all methods and typed them all... Actually no...
+	There's a script that can do that all for you... It can even calculate the time
+	each method takes to execute and also generate readme type of file!
+
+	<break></break>
+
+	<h3>Caveats</h3>
+	This gem offers a lot of stuff. But the biggest caveat is that it doesn't check
+	what the host OS is. If you run this on Windows or Mac or even any Unix that is not Linux
+	this gem may crash directly. Hence the name <strong>linux</strong>_stat
+
+	<break></break>
+	To prevent this, the user has to check the host OS and load the gem accordingly. For example:
+	<pre>
+		require 'linux_stat' if RbConfig::CONFIG['host_os'].to_s[/linux/]
+	</pre>
+
+	<h4>Let me know your thoughts about this gem below!</h4>
+</content>

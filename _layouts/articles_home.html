@@ -1,0 +1,114 @@
+<!Doctype HTML>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="{{ page.description }}">
+		<meta name="author" content="Sourav Goswami">
+		<meta name="keywords=" content="" lang="en-GB">
+		<meta name="revisit-after" content="3days">
+		<meta name="robots" content="all">
+		<meta name="title" content="{{ page.title }}">
+		<meta property="og:description" content="{{ page.description }}">
+		<meta property="og:title" content="{{ page.title }}">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://souravgoswami.github.io">
+		{% if page.ogimage %}
+			<meta property="og:image" itemprop="image" content="{{ page.ogimage }}">
+		{% else %}
+			<meta property="og:image" itemprop="image" content="https://souravgoswami.github.io/assets/images/logo.png">
+		{% endif %}
+		<meta name="ocs-site-verification" content="91e2be11bccf5d688b859efa44d4f5e7">
+
+		<link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
+		<title>{{ page.title }}</title>
+
+		{% include loaderCSS.css.html %}
+
+		<link rel="preload" as="style" href="/assets/css/bootstrap.min.css">
+		<link rel="preload" as="style" href="/assets/css/base.css">
+		<link rel="preload" as="style" href="/assets/articles/styles/base.css">
+		<link rel="preload" as="script" href="/assets/js/jquery-3.5.1.min.js">
+		<link rel="preload" as="script" href="/assets/js/bootstrap.min.js">
+		<link rel="preload" as="script" href="/assets/js/blog.js">
+
+		<!-- Loading CSS while animating the loader -->
+		<script>
+			const cssFiles = `
+			/assets/css/base
+			/assets/css/bootstrap.min
+			/assets/articles/styles/base
+			`.split('\n').map(x => x.trim())
+
+			for(let _cssFile of cssFiles) {
+				if (_cssFile) {
+					let _link = document.createElement('link')
+					_link.rel = 'stylesheet'
+					_link.type = 'text/css'
+					_link.href = `${_cssFile}.css`
+					document.head.appendChild(_link)
+				}
+			}
+		</script>
+
+		{% if page.stylesheet %}
+			{% assign stylesheets = page.stylesheet | split: "%" %}
+
+			{% for stylesheet in stylesheets %}
+				<link rel="stylesheet" type="text/css" href="{{ stylesheet }}.css">
+			{% endfor %}
+		{% endif %}
+	</head>
+
+	<body>
+		<div id="loader-head">
+			<div id="loader">
+				<div class="loaders" style="animation-delay: 0ms"></div>
+				<div class="loaders" style="animation-delay: 700ms"></div>
+				<div class="loaders" style="animation-delay: 1400ms"></div>
+			</div>
+
+			<p>Loading...</p>
+
+			<div id="loaderHider">
+				{% include arrow_down.svg.html %}
+			</div>
+		</div>
+
+		<noscript>
+			This website depends on JavaScript, quite heavily...
+			Please make sure it's enabled and I promise there will be no ads...
+		</noscript>
+
+		<script>
+			let lh = document.getElementById('loader-head')
+			document.getElementById('loaderHider').onclick = function() { lh.remove() }
+			window.onload = function() { if (lh) lh.remove() }
+		</script>
+
+		<!-- Load all necessary js files and libraries -->
+		<script src="/assets/js/jquery-3.5.1.min.js"></script>
+		<script src="/assets/js/popper.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/blog.js"></script>
+
+		{% if page.js %}
+			{% assign javascripts = page.js | split: "%" %}
+			{% for javascript in javascripts %}
+				<script src="{{ javascript }}.js"></script>
+			{% endfor %}
+		{% endif %}
+
+		{% include analytics.js.html %}
+		<!-- End of loading all necessary files and libraries -->
+
+		<div class="container-fluid z-1000">
+			{% include navbar.html %}
+
+			<div class="blog-contents">
+				{{ page.content }}
+			</div>
+		</div>
+	</body>
+</html>

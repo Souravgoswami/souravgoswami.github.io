@@ -128,13 +128,12 @@ $(function() {
 		observer.observe(i)
 	}
 
-	// SVG bulb / lamp Animation
+	// Change colours on dark / light mode
 	const tdm = document.getElementById('toggleDarkMode')
 	let mode = 1
 	const lamp = document.getElementById('lamp')
 	const night = document.getElementById('night')
 	const dMH = $('#darkModeHeader')
-
 
 	tdm.onclick = function() {
 		if (mode === 1) {

@@ -292,8 +292,9 @@ li.active > a.nav-link {
 
 rgb-splitter {
 	display: block ;
+	text-align: center ;
 	height: 3px ;
-	width: 100% ;
+	width: 90% ;
 	border-radius: 4px ;
 	background: linear-gradient(45deg, #ff5, #f55, #55f) ;
 	margin: 8px ;

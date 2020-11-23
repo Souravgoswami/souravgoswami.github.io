@@ -93,6 +93,8 @@
 		<script src="/assets/js/bootstrap.min.js"></script>
 		<script src="/assets/js/blog.js"></script>
 
+		{% include disqus.js.html %}
+
 		{% if page.js %}
 			{% assign javascripts = page.js | split: "%" %}
 			{% for javascript in javascripts %}
@@ -101,6 +103,7 @@
 		{% endif %}
 
 		{% include analytics.js.html %}
+		<script id="dsq-count-scr" src="//https-souravgoswami-github-io.disqus.com/count.js" async></script>
 		<!-- End of loading all necessary files and libraries -->
 
 		<div class="container-fluid z-1000">
@@ -108,8 +111,26 @@
 
 			<div class="blog-contents">
 				{{ page.content }}
+
+				<div class="endline">
+					<rgb-splitter class="object-glow"></rgb-splitter>
+				</div>
+
+				<div id="disqusHead">
+					<ul>
+						<li style="background: linear-gradient(90deg, #f55, #f5f)"></li>
+						<li style="background: linear-gradient(90deg, #f5f, #55f)"></li>
+						<li style="background: linear-gradient(90deg, #55f, #3eb)"></li>
+					</ul>
+					<span id="commentTextTop">Comments</span>
+					<img id="commentIconTop" src="/assets/articles/base-images/chat.svg">
+
+					<div id="disqus_thread"></div>
+				</div>
 			</div>
 		</div>
+
+		<link rel="stylesheet" type="text/css" href="/assets/articles/styles/disqus.css">
 
 		{% include footer.html %}
 	</body>

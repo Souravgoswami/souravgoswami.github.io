@@ -106,23 +106,21 @@ ogimage: "/assets/articles/images/3/main.jpg"
 	<break></break>
 	<h4>⚠️⚠️⚠️ Warning!</h4>
 
-	<div class="row">
-		<div class="col-md-6 justify-content-center-col">
+	<div class="floaters">
+		<div class="justify-content-center-col">
 			Using different flags like -ffast-math or -Ofast will make ruby fail to round numbers, say 3.14159.round(2) will return 3.139999999999999.
 		</div>
-		<div class="col-md-6">
-			<img src="/assets/articles/images/3/ffast-math.jpg">
-		</div>
+
+		<img src="/assets/articles/images/3/ffast-math.jpg">
 	</div>
 
 	<break></break>
-	<div class="row">
-		<div class="col-md-6 justify-content-center-col">
+	<div class="floaters">
+		<div class="justify-content-center-col">
 			Here's how Rails looks after using Ofast optimization level! 🤦‍♂️🤦‍♂️
 		</div>
-		<div class="col-md-6">
-			<img src="/assets/articles/images/3/ffast-math-rails.jpg">
-		</div>
+
+		<img src="/assets/articles/images/3/ffast-math-rails.jpg">
 	</div>
 
 	This can be problematic! Don't go beyond <code>-O3</code> optimization level, you can also use <code>-O2</code> (that's the default) flags if you don't have time to experiment.

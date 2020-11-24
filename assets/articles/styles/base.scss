@@ -176,3 +176,14 @@ date {
 	margin-bottom: 5vh ;
 	margin-top: 5vh ;
 }
+
+.floaters {
+	display: grid ;
+	grid-template-columns: 1fr 1fr ;
+}
+
+@media(max-width: 1079px) {
+	.floaters {
+		grid-template-columns: 1fr ;
+	}
+}

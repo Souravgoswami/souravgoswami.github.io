@@ -99,10 +99,9 @@ ogimage: "/assets/articles/images/4/pexels-larissa-barbosa-1870376.jpg"
 		=> "Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz"
 	</pre>
 
+	But hold on a moment! <code>LinuxStat::CPU.usages()</code> returns 5 values you might wonder.
 
-	But hold on a moment! <code>LinuxStat::CPU.stat()</code> returns 5 values you might wonder.
-
-
+	<break></break>
 	The reason being the first one is aggregated CPU usage reported by the Linux kernel.
 	In most cases, you don't need the per thread usage but the total CPU usage...
 	In that case, you can do:

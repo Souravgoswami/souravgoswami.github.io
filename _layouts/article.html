@@ -39,6 +39,7 @@
 			/assets/css/base
 			/assets/css/bootstrap.min
 			/assets/articles/styles/base
+			/assets/articles/styles/disqus
 			`.split('\n').map(x => x.trim())
 
 			for(let _cssFile of cssFiles) {
@@ -122,15 +123,13 @@
 						<li style="background: linear-gradient(90deg, #f5f, #55f)"></li>
 						<li style="background: linear-gradient(90deg, #55f, #3eb)"></li>
 					</ul>
-					<span id="commentTextTop">Comments</span>
+					<div id="commentTextTop">Comments</div>
 					<img id="commentIconTop" src="/assets/articles/base-images/chat.svg">
 
 					<div id="disqus_thread"></div>
 				</div>
 			</div>
 		</div>
-
-		<link rel="stylesheet" type="text/css" href="/assets/articles/styles/disqus.css">
 
 		{% include footer.html %}
 	</body>

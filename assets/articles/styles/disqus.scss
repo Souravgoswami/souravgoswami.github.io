@@ -11,6 +11,7 @@ $background-color: #222 ;
 }
 
 #disqusHead {
+	width: 100% ;
 	position: relative ;
 	user-select: none ;
 
@@ -25,6 +26,22 @@ $background-color: #222 ;
 			margin: 20px 0 20px 16px ;
 			z-index: 1 ;
 			border-radius: 50% ;
+			position: relative ;
+		}
+
+		li::after {
+			content: '' ;
+			position: absolute ;
+			top: 0 ;
+			left: 0 ;
+			color: #fff ;
+			filter: blur(4px) ;
+			opacity: 0.5 ;
+			height: 100% ;
+			width: 100% ;
+			border-radius: 50% ;
+			background: inherit ;
+			z-index: 0 ;
 		}
 	}
 
@@ -34,10 +51,12 @@ $background-color: #222 ;
 		right: 0 ;
 		margin: 20px 16px ;
 		width: 32px ;
+		filter: drop-shadow(0 0 4px #fa06) ;
 	}
 
 	&::before {
 		content: '' ;
+		color: #fff ;
 		position: absolute ;
 		top: 0 ;
 		left: 0 ;
@@ -49,15 +68,15 @@ $background-color: #222 ;
 	}
 
 	#commentTextTop {
-		content: 'Comments' ;
+		margin: 16px 32px ;
 		color: #fff ;
-		filter: drop-shadow(0 0 4px currentColor) ;
-		font-size: 24px ;
+		text-shadow: 0 0 4px currentColor ;
+		font-size: 20px ;
 		text-align: center ;
 		position: absolute ;
 		top: 0 ;
 		left: 0 ;
-		margin-top: 14px ;
-		width: 100% ;
+		display: block ;
+		width: calc(100% - 32px) ;
 	}
 }

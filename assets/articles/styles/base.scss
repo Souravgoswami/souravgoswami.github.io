@@ -82,29 +82,35 @@ date {
 		text-shadow: 0 0 6px #fffd ;
 		z-index: 10000 ;
 
-		#cookieClose {
-			padding: 14px 18px ;
-			margin: 0 30px ;
-			position: absolute ;
-			height: 90% ;
-			right: 0 ;
-			display: inline-flex ;
-			align-items: center ;
-			justify-content: center ;
-			cursor: pointer ;
+		.cookie-consent-container {
+			margin: 0 auto ;
+			max-width: 1280px !important ;
+			position: relative;
 
-			div {
-				display: inline-block ;
+			#cookieClose {
+				padding: 14px 18px ;
+				margin: 0 30px ;
+				position: absolute ;
+				height: 90% ;
+				right: 0 ;
+				display: inline-flex ;
+				align-items: center ;
+				justify-content: center ;
+				cursor: pointer ;
+
+				div {
+					display: inline-block ;
+				}
+
+				img {
+					width: 24px ;
+					display: inline-block ;
+					padding: 4px ;
+					filter: brightness(10) drop-shadow(0 0 4px #fff) ;
+				}
 			}
 
-			img {
-				width: 24px ;
-				display: inline-block ;
-				padding: 4px ;
-				filter: brightness(10) drop-shadow(0 0 4px #fff) ;
-			}
 		}
-
 		&::before {
 			content: '' ;
 			position: absolute ;

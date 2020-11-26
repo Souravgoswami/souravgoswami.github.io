@@ -186,12 +186,53 @@ $(function() {
 
 	// Cookie Consent
 	const cookieConsent = document.getElementById('cookieConsent')
-	const cookieClose = document.getElementById('cookieClose')
 
-	cookieClose.onclick = function() {
+	function hideCookieMessage() {
 		cookieConsent.style.animation = 'hiding 750ms ease forwards'
 		setTimeout(() => {
 			cookieConsent.style.visibility = 'hidden'
 		}, 2000)
+
+	}
+
+	const cookieAll = document.getElementById('cookieAll')
+	const noCookie = document.getElementById('noCookie')
+	disqusWindow = document.getElementById('disqusWindow')
+
+	function loadDisqus() {
+		disqusWindow.innerHTML = `<div id="disqus_thread"></div>`
+		let disqusJs = document.createElement('script')
+		disqusJs.src = "/assets/js/disqus.js"
+		document.head.appendChild(disqusJs)
+	}
+
+	function loadGoogleAnalytics() {
+		let analytics1 = document.createElement('script')
+		analytics1.src = "https://www.googletagmanager.com/gtag/js?id=G-1PKE8LZDL4"
+		document.head.appendChild(analytics1)
+
+		let analytics2 = document.createElement('script')
+		analytics2.src = "/assets/js/analytics.js"
+		document.head.appendChild(analytics2)
+	}
+
+	cookieAll.onclick = function() {
+		hideCookieMessage()
+		loadDisqus()
+		loadGoogleAnalytics()
+	}
+
+	noCookie.onclick = function() {
+		hideCookieMessage()
+
+		disqusWindow.innerHTML = `
+			<div id="noDisqusWindow">
+				You have rejected cookies.
+				<break></break>
+				<div class="btn-filled" id="loadDisqus">Reload Disqus</div>
+			</div>
+		`.trim()
+
+		$('#loadDisqus').click(() => loadDisqus())
 	}
 })

@@ -63,6 +63,8 @@
 	</head>
 
 	<body>
+		{% include cookie_consent.html %}
+
 		<div id="loader-head">
 			<div id="loader">
 				<div class="loaders" style="animation-delay: 0ms"></div>
@@ -94,7 +96,7 @@
 		<script src="/assets/js/bootstrap.min.js"></script>
 		<script src="/assets/js/blog.js"></script>
 
-		{% include disqus.js.html %}
+		<!-- % include disqus.js.html %} -->
 
 		{% if page.js %}
 			{% assign javascripts = page.js | split: "%" %}
@@ -103,7 +105,7 @@
 			{% endfor %}
 		{% endif %}
 
-		{% include analytics.js.html %}
+		<!-- { include analytics.js.html } -->
 		<script id="dsq-count-scr" src="//https-souravgoswami-github-io.disqus.com/count.js" async></script>
 		<!-- End of loading all necessary files and libraries -->
 
@@ -112,33 +114,6 @@
 
 			<div class="blog-contents">
 				{{ page.content }}
-
-				<div id="cookieConsent">
-					<div class="cookie-consent-container">
-						<div class="floaters">
-							<div>
-								Sorry for the interruption!
-								We want to let you know that this site uses cookies to make sure the followings are working:
-
-								<break></break>
-								<ol>
-									<li>Google Analytics (for collecting anonymous user statistics)</li>
-									<li>Disqus (for the comment section)</li>
-								</ol>
-
-								If you agree, please close this message and continue using our site!
-								Using an ad-blocker is also fine!
-							</div>
-
-							<div id="cookieClose">
-								<div class="btn-filled">
-									<img src="/assets/images/chevron-down.svg">
-									<div>Accept & Close</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
 				<div class="endline">
 					<rgb-splitter class="object-glow"></rgb-splitter>
@@ -152,9 +127,9 @@
 					</ul>
 					<div id="commentTextTop">Comments</div>
 					<img id="commentIconTop" src="/assets/articles/base-images/chat.svg">
-
-					<div id="disqus_thread"></div>
 				</div>
+
+				<div id="disqusWindow"></div>
 			</div>
 		</div>
 

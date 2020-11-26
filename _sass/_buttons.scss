@@ -1,13 +1,14 @@
-.btn-filled {
+@mixin btn-filled($background) {
 	color: #fff !important ;
 	padding: 8px ;
-	background: linear-gradient(45deg, #7C6EFF, #978CFF, #E68CFF, #FF3799, #9B37FF, #FF37DF) ;
+	background: $background ;
 	background-size: 300% ;
 	text-decoration: none !important ;
 	border-radius: 6px ;
 	transition: all 0.25s ease, filter 3s ease-in !important ;
 	box-shadow: 2px 3px 2px #222a ;
 	user-select: none ;
+	cursor: pointer ;
 
 	&:hover {
 		box-shadow: 4px 4px 4px #222a ;
@@ -19,6 +20,18 @@
 		box-shadow: 4px 4px 6px #222a ;
 		background-position: 100% ;
 	}
+}
+
+.btn-filled {
+	@include btn-filled(linear-gradient(45deg, #7C6EFF, #978CFF, #E68CFF, #FF3799, #9B37FF, #FF37DF))
+}
+
+.btn-filled-green {
+	@include btn-filled(linear-gradient(45deg, #7CCE6F, #978CFF, #FF8CFF, #FF3799, #3BAFBB, #5B87FF))
+}
+
+.btn-filled-red {
+	@include btn-filled(linear-gradient(45deg,  #FF37DF,  #9B37FF,  #FF3799,  #E68CFF,  #978CFF, #7C6EFF))
 }
 
 .btn-blade-anim {

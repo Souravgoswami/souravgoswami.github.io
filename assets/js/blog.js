@@ -202,6 +202,7 @@ $(function() {
 	function loadDisqus() {
 		let script = document.createElement('script')
 		script.src = "//https-souravgoswami-github-io.disqus.com/count.js"
+		script.async = true
 		document.head.appendChild(script)
 
 		disqusWindow.innerHTML = `<div id="disqus_thread"></div>`
@@ -213,10 +214,12 @@ $(function() {
 
 	function loadGoogleAnalytics() {
 		let analytics1 = document.createElement('script')
+		analytics1.async = true
 		analytics1.src = "https://www.googletagmanager.com/gtag/js?id=G-1PKE8LZDL4"
 		document.head.appendChild(analytics1)
 
 		let analytics2 = document.createElement('script')
+		analytics2.async = true
 		analytics2.src = "/assets/js/analytics.js"
 		document.head.appendChild(analytics2)
 	}

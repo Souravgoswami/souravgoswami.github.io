@@ -183,4 +183,15 @@ $(function() {
 	for(let i of document.querySelectorAll('pre')) {
 		i.innerHTML = i.innerHTML.split('\n').map(x => x.trim() + "\n").join('').trim()
 	}
+
+	// Cookie Consent
+	const cookieConsent = document.getElementById('cookieConsent')
+	const cookieClose = document.getElementById('cookieClose')
+
+	cookieClose.onclick = function() {
+		cookieConsent.style.animation = 'hiding 750ms ease forwards'
+		setTimeout(() => {
+			cookieConsent.style.visibility = 'hidden'
+		}, 2000)
+	}
 })

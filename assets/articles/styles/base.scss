@@ -67,6 +67,59 @@ date {
 	transition: background-color 0.25s ease !important ;
 	margin-bottom: 48px ;
 
+	#cookieConsent {
+		display: inline-block ;
+		position: fixed ;
+		overflow: auto ;
+		padding: 8px 16px ;
+		background-color: #000000df ;
+		color: #fff ;
+		border-top-left-radius: 8px ;
+		border-top-right-radius: 8px ;
+		width: 100% ;
+		bottom: 0 ;
+		left: 0 ;
+		text-shadow: 0 0 6px #fffd ;
+		z-index: 10000 ;
+
+		#cookieClose {
+			padding: 14px 18px ;
+			margin: 0 30px ;
+			position: absolute ;
+			height: 90% ;
+			right: 0 ;
+			display: inline-flex ;
+			align-items: center ;
+			justify-content: center ;
+			cursor: pointer ;
+
+			div {
+				display: inline-block ;
+			}
+
+			img {
+				width: 24px ;
+				display: inline-block ;
+				padding: 4px ;
+				filter: brightness(10) drop-shadow(0 0 4px #fff) ;
+			}
+		}
+
+		&::before {
+			content: '' ;
+			position: absolute ;
+			top: 0 ;
+			left: 0 ;
+			background-color: #55f ;
+			width: 100% ;
+			height: 8px ;
+			padding: 4px ;
+			border-top-left-radius: 8px ;
+			border-top-right-radius: 8px ;
+			background: linear-gradient(45deg, #f55, #ff0, #55f, #3eb) ;
+		}
+	}
+
 	header {
 		font-size: 40px ;
 		line-height: normal ;
@@ -189,5 +242,9 @@ date {
 @media(max-width: 1079px) {
 	.floaters {
 		grid-template-columns: 1fr ;
+	}
+
+	#cookieClose {
+		position: relative !important ;
 	}
 }

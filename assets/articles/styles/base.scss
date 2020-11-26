@@ -200,6 +200,7 @@ break {
 	display: inline-block ;
 	position: fixed ;
 	overflow: auto ;
+	font-size: 14px ;
 	padding: 8px 16px ;
 	background-color: #000000df ;
 	color: #fff ;
@@ -209,7 +210,7 @@ break {
 	max-height: 400px ;
 	bottom: 0 ;
 	left: 0 ;
-	text-shadow: 0 0 6px #fffd ;
+	text-shadow: 0 0 6px #fff6 ;
 	z-index: 10000 ;
 
 	.cookie-consent-container {
@@ -217,15 +218,22 @@ break {
 		max-width: 1280px !important ;
 		position: relative;
 
-		.button {
+		.buttons {
 			padding: 14px 18px ;
 			margin: 0 30px ;
 			position: absolute ;
 			height: 90% ;
 			right: 0 ;
 			display: inline-flex ;
+			text-shadow: 0 0 4px #ffff ;
 			align-items: center ;
 			justify-content: center ;
+
+			.button {
+				display: inline ;
+				text-align: center ;
+				margin-right: 12px ;
+			}
 
 			div {
 				display: inline-block ;

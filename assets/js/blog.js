@@ -200,9 +200,14 @@ $(function() {
 	disqusWindow = document.getElementById('disqusWindow')
 
 	function loadDisqus() {
+		let script = document.createElement('script')
+		script.src = "//https-souravgoswami-github-io.disqus.com/count.js"
+		document.head.appendChild(script)
+
 		disqusWindow.innerHTML = `<div id="disqus_thread"></div>`
 		let disqusJs = document.createElement('script')
 		disqusJs.src = "/assets/js/disqus.js"
+
 		document.head.appendChild(disqusJs)
 	}
 

@@ -29,7 +29,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
 	site.each_site_file do |x|
 		file_name = x.destination(site.dest)
 
-		if %w(html svg).include? file_name.split('.')[-1]
+		if %w(html svg).include? file_name.split(?..freeze)[-1]
 			lines = IO.readlines(file_name)
 
 			lines.each(&:strip!)

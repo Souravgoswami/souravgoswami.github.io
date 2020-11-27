@@ -2,91 +2,25 @@
 layout: articles_home
 title:  "Articles"
 date:   2020-11-04 10:22:58 +0530
-categories: souravgoswami blogs
+categories: souravgoswami blogs articles
 description: "Sourav Goswami | Articles"
 permalink: "articles"
 active: "articles"
 stylesheet: "/assets/css/articles"
 ---
-
 <div class="row">
-	<div class="col-md-4">
-		<div class="card shadowed rounded">
-			<a href="/articles/how-to-make-archlinux-blazing-fast">
-				<div class="content-image" data-content="Read">
-					<img class="card-img-top" src="/assets/articles/images/1/main.webp">
+	{% for i in site.articles %}
+			<div class="col-md-4">
+				<div class="card shadowed rounded">
+					<a href="{{ i.url }}">
+						<div class="content-image" data-content="Read"><img class="card-img-top" src="{{ i.ogimage }}"></div>
+					</a>
+					<div class="card-body">
+						<a href="{{ i.url }}"><h5>{{ i.title }}</h5></a>
+						<date>{{ i.date | date: "%d %B, %Y" }}</date>
+						<a href="{{ i.url }}">Read article</a>
+					</div>
 				</div>
-			</a>
-
-			<div class="card-body">
-				<a href="/articles/how-to-make-archlinux-blazing-fast">
-					<h5>
-						How to Make Arch Linux Blazing Fast
-					</h5>
-				</a>
-				<date>19/11/2020</date>
-				<a href="/articles/how-to-make-archlinux-blazing-fast">Read article</a>
 			</div>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="card shadowed rounded">
-			<a href="/articles/how-to-install-deb-packages-on-arch-linux">
-				<div class="content-image" data-content="Read">
-					<img class="card-img-top" src="/assets/articles/images/2/pexels-pixabay-209037.webp">
-				</div>
-			</a>
-
-			<div class="card-body">
-				<a href="/articles/how-to-install-deb-packages-on-arch-linux">
-					<h5>
-						How to Install a Deb Package in Arch Linux
-					</h5>
-				</a>
-				<date>20/11/2020</date>
-				<a href="/articles/how-to-install-deb-packages-on-arch-linux">Read article</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="card shadowed rounded">
-			<a href="/articles/how-to-make-ruby-fast-with-gcc-optimization">
-				<div class="content-image" data-content="Read">
-					<img class="card-img-top" src="/assets/articles/images/3/main.webp">
-				</div>
-			</a>
-
-			<div class="card-body">
-				<a href="/articles/how-to-make-ruby-fast-with-gcc-optimization">
-					<h5>
-						How to Make Ruby Fast with GCC Optimization
-					</h5>
-				</a>
-				<date>23/11/2020</date>
-				<a href="/articles/how-to-make-ruby-fast-with-gcc-optimization">Read article</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="card shadowed rounded">
-			<a href="/articles/how-to-use-linuxstat-gem">
-				<div class="content-image" data-content="Read">
-					<img class="card-img-top" src="/assets/articles/images/4/pexels-larissa-barbosa-1870376.jpg">
-				</div>
-			</a>
-
-			<div class="card-body">
-				<a href="/articles/how-to-use-linuxstat-gem">
-					<h5>
-						How to Use LinuxStat Ruby Gem
-					</h5>
-				</a>
-				<date>24/11/2020</date>
-				<a href="/articles/how-to-make-ruby-fast-with-gcc-optimization">Read article</a>
-			</div>
-		</div>
-	</div>
+	{% endfor %}
 </div>

@@ -70,13 +70,12 @@ $(function() {
 
 			lamp.style.visibility = 'hidden'
 			night.style.visibility = 'visible'
+
 			dMH.tooltip('hide')
 			dMH.attr('data-original-title', 'Light Mode')
 			dMH.tooltip('show')
 
-			document.body.style.backgroundColor = '#000'
-
-			// to darken
+			// // to darken
 			document.body.style.backgroundColor = '#111'
 			for(let i of Array.from(document.getElementsByClassName('other-container')))
 				i.style.backgroundColor = '#111'
@@ -117,6 +116,33 @@ $(function() {
 
 			for(let i of Array.from(document.getElementsByClassName('invert')))
 				i.style.filter = 'invert(100)'
+
+			for(let i of Array.from(document.querySelectorAll('pre *'))) {
+				i.style.color = '#fff'
+			}
+
+			for(let i of Array.from(document.querySelectorAll('pre'))) {
+				let _s = i.style
+				_s.backgroundColor = '#333'
+				_s.color = '#fff'
+			}
+
+			for(let i of document.querySelectorAll('.card')) {
+				let _s = i.style
+				_s.boxShadow = '0 0 12px #e9f'
+				_s.backgroundColor = '#434'
+			}
+
+			for(let i of document.querySelectorAll('.card-body')) {
+				let _s = i.style
+				_s.textShadow = '0 0 12px currentColor'
+				_s.color = '#fff'
+			}
+
+			for(let i of document.querySelectorAll('.card a')) {
+				let _s = i.style
+				_s.color = '#c8f'
+			}
 		} else {
 			mode = 1
 
@@ -164,6 +190,33 @@ $(function() {
 
 			for(let i of Array.from(document.getElementsByClassName('invert')))
 				i.style.filter = 'invert(0)'
+
+			for(let i of Array.from(document.querySelectorAll('pre *'))) {
+				i.style.color = '#000'
+			}
+
+			for(let i of Array.from(document.querySelectorAll('pre'))) {
+				let _s = i.style
+				_s.backgroundColor = '#efefef'
+				_s.color = '#000'
+			}
+
+			for(let i of document.querySelectorAll('.card')) {
+				let _s = i.style
+				_s.boxShadow = 'none'
+				_s.backgroundColor = '#fff'
+			}
+
+			for(let i of document.querySelectorAll('.card-body')) {
+				let _s = i.style
+				_s.textShadow = 'none'
+				_s.color = '#000'
+			}
+
+			for(let i of document.querySelectorAll('.card a')) {
+				let _s = i.style
+				_s.color = '#55f'
+			}
 		}
 	}
 

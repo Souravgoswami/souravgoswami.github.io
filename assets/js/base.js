@@ -145,8 +145,6 @@ $(function() {
 			dMH.attr('data-original-title', 'Light Mode')
 			dMH.tooltip('show')
 
-			document.body.style.backgroundColor = '#000'
-
 			// to darken
 			document.body.style.backgroundColor = '#111'
 			for(let i of Array.from(document.getElementsByClassName('other-container')))

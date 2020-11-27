@@ -192,9 +192,9 @@ $(function() {
 		setTimeout(() => {
 			cookieConsent.style.visibility = 'hidden'
 		}, 2000)
-
 	}
 
+	// Cookies and trackers
 	const cookieAll = document.getElementById('cookieAll')
 	const noCookie = document.getElementById('noCookie')
 	disqusWindow = document.getElementById('disqusWindow')
@@ -224,23 +224,27 @@ $(function() {
 		document.head.appendChild(analytics2)
 	}
 
-	cookieAll.onclick = function() {
-		hideCookieMessage()
-		loadDisqus()
-		loadGoogleAnalytics()
+	if (cookieAll) {
+		cookieAll.onclick = function() {
+			hideCookieMessage()
+			loadDisqus()
+			loadGoogleAnalytics()
+		}
 	}
 
-	noCookie.onclick = function() {
-		hideCookieMessage()
+	if (noCookie) {
+		noCookie.onclick = function() {
+			hideCookieMessage()
 
-		disqusWindow.innerHTML = `
-			<div id="noDisqusWindow">
-				You have rejected cookies.
-				<break></break>
-				<div class="btn-filled" id="loadDisqus">Reload Disqus</div>
-			</div>
-		`.trim()
+			disqusWindow.innerHTML = `
+				<div id="noDisqusWindow">
+					You have rejected cookies.
+					<break></break>
+					<div class="btn-filled" id="loadDisqus">Reload Disqus</div>
+				</div>
+			`.trim()
 
-		$('#loadDisqus').click(() => loadDisqus())
+			$('#loadDisqus').click(() => loadDisqus())
+		}
 	}
 })

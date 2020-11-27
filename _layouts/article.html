@@ -14,8 +14,8 @@
 		<meta property="og:title" content="{{ page.title }}">
 		<meta property="og:type" content="website">
 		<meta property="og:url" content="https://souravgoswami.github.io">
-		{% if page.ogimage %}
-			<meta property="og:image" itemprop="image" content="{{ site.url }}{{ page.ogimage }}">
+		{% if page.image %}
+			<meta property="og:image" itemprop="image" content="{{ site.url }}{{ page.image }}">
 		{% else %}
 			<meta property="og:image" itemprop="image" content="https://souravgoswami.github.io/assets/images/logo.png">
 		{% endif %}
@@ -108,6 +108,33 @@
 			{% include navbar.html %}
 
 			<div class="blog-contents">
+				<header class="text-glow">
+					<img src="{{ page.image }}">
+					<break></break>
+					{{ page.title }}
+					<author>
+						<div class="author-details">
+							<author-image>
+								{% if page.author_image %}
+									<img src="/assets/articles/authors/{{ page.author_image }}">
+								{% else %}
+									<img src="/assets/articles/authors/souravgoswami.webp">
+								{% endif %}
+							</author-image>
+
+							<about-post>
+								{% if page.author_name %}
+									{{ page.author_name }}
+								{% else %}
+									Sourav Goswami
+								{% endif %}
+								<date>{{ page.date | date: "%d %B, %Y | %H:%M:%S %Z (%z)" }}</date>
+							</about-post>
+						</div>
+					</author>
+				</header>
+
+				<break></break>
 				{{ page.content }}
 
 				<div class="endline">

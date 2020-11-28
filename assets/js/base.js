@@ -135,105 +135,119 @@ $(function() {
 	const night = document.getElementById('night')
 	const dMH = $('#darkModeHeader')
 
+	function darkMode() {
+		lamp.style.visibility = 'hidden'
+		night.style.visibility = 'visible'
+		dMH.attr('data-original-title', 'Light Mode')
+
+		// to darken
+		document.body.style.backgroundColor = '#111'
+		for(let i of Array.from(document.getElementsByClassName('other-container')))
+			i.style.backgroundColor = '#111'
+
+		for(let i of Array.from(document.getElementsByClassName('head')))
+			i.style.backgroundColor = '#111'
+
+		for(let i of Array.from(document.getElementsByClassName('background')))
+			i.style.backgroundColor = "#222"
+
+		// to whiten
+		for(let i of Array.from(document.getElementsByClassName('text')))
+			i.style.color = "#fff"
+
+		for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
+			let _s = i.style
+			_s.color = "#fff"
+			_s.textShadow = "0 0 8px #fff8"
+		}
+
+		for(let i of Array.from(document.getElementsByClassName('text-glow-current'))) {
+			i.style.textShadow = "0 0 8px currentColor"
+		}
+
+		for(let i of Array.from(document.getElementsByClassName('object-glow'))) {
+			let _gc = i.getAttribute('glow-color') || '#3eb8'
+			i.style.filter = `drop-shadow(0 0 4px ${_gc})`
+		}
+
+		for(let i of Array.from(document.getElementsByClassName('text-code'))) {
+			let _s = i.style
+			_s.textShadow = `0 0 4px #3eba`
+			_s.color = 'transparent'
+			_s.background = 'linear-gradient(45deg, #ff0, #f55, #55f)'
+			_s.backgroundClip = 'text'
+			_s.webkitBackgroundClip = 'text'
+		}
+
+		for(let i of Array.from(document.getElementsByClassName('invert')))
+			i.style.filter = 'invert(100)'
+	}
+
+	function lightMode() {
+		lamp.style.visibility = 'visible'
+		night.style.visibility = 'hidden'
+		dMH.attr('data-original-title', 'Dark Mode')
+
+		// to lighten
+		document.body.style.backgroundColor = '#fff'
+		for(let i of Array.from(document.getElementsByClassName('other-container')))
+			i.style.backgroundColor = '#fff'
+
+		for(let i of Array.from(document.getElementsByClassName('head')))
+			i.style.backgroundColor = '#f5f5f5'
+
+		for(let i of Array.from(document.getElementsByClassName('background')))
+			i.style.backgroundColor = "#efeff5"
+
+		// to darken
+		for(let i of Array.from(document.getElementsByClassName('text')))
+			i.style.color = "#000"
+
+		for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
+			let _s = i.style
+			_s.color = "#111"
+			_s.textShadow = "none"
+		}
+
+		for(let i of Array.from(document.getElementsByClassName('text-glow-current'))) {
+			i.style.textShadow = 'none'
+		}
+
+
+		for(let i of Array.from(document.getElementsByClassName('object-glow')))
+			i.style.filter = `none`
+
+		for(let i of Array.from(document.getElementsByClassName('text-code'))) {
+			let _s = i.style
+			_s.textShadow = `none`
+			_s.color = '#888'
+			_s.background = 'transparent'
+		}
+
+		for(let i of Array.from(document.getElementsByClassName('invert')))
+			i.style.filter = 'invert(0)'
+	}
+
 	tdm.onclick = function() {
-		if (mode === 1) {
+		if (mode === 1 || localStorage.mode == 1) {
+			if (localStorage.cookieAll)
+				localStorage.mode = 0
 			mode = 0
-
-			lamp.style.visibility = 'hidden'
-			night.style.visibility = 'visible'
-			dMH.tooltip('hide')
-			dMH.attr('data-original-title', 'Light Mode')
-			dMH.tooltip('show')
-
-			// to darken
-			document.body.style.backgroundColor = '#111'
-			for(let i of Array.from(document.getElementsByClassName('other-container')))
-				i.style.backgroundColor = '#111'
-
-			for(let i of Array.from(document.getElementsByClassName('head')))
-				i.style.backgroundColor = '#111'
-
-			for(let i of Array.from(document.getElementsByClassName('background')))
-				i.style.backgroundColor = "#222"
-
-			// to whiten
-			for(let i of Array.from(document.getElementsByClassName('text')))
-				i.style.color = "#fff"
-
-			for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
-				let _s = i.style
-				_s.color = "#fff"
-				_s.textShadow = "0 0 8px #fff8"
-			}
-
-			for(let i of Array.from(document.getElementsByClassName('text-glow-current'))) {
-				i.style.textShadow = "0 0 8px currentColor"
-			}
-
-			for(let i of Array.from(document.getElementsByClassName('object-glow'))) {
-				let _gc = i.getAttribute('glow-color') || '#3eb8'
-				i.style.filter = `drop-shadow(0 0 4px ${_gc})`
-			}
-
-			for(let i of Array.from(document.getElementsByClassName('text-code'))) {
-				let _s = i.style
-				_s.textShadow = `0 0 4px #3eba`
-				_s.color = 'transparent'
-				_s.background = 'linear-gradient(45deg, #ff0, #f55, #55f)'
-				_s.backgroundClip = 'text'
-				_s.webkitBackgroundClip = 'text'
-			}
-
-			for(let i of Array.from(document.getElementsByClassName('invert')))
-				i.style.filter = 'invert(100)'
+			darkMode()
 		} else {
 			mode = 1
-
-			lamp.style.visibility = 'visible'
-			night.style.visibility = 'hidden'
-			dMH.tooltip('hide')
-			dMH.attr('data-original-title', 'Dark Mode')
-			dMH.tooltip('show')
-
-			// to lighten
-			document.body.style.backgroundColor = '#fff'
-			for(let i of Array.from(document.getElementsByClassName('other-container')))
-				i.style.backgroundColor = '#fff'
-
-			for(let i of Array.from(document.getElementsByClassName('head')))
-				i.style.backgroundColor = '#f5f5f5'
-
-			for(let i of Array.from(document.getElementsByClassName('background')))
-				i.style.backgroundColor = "#efeff5"
-
-			// to darken
-			for(let i of Array.from(document.getElementsByClassName('text')))
-				i.style.color = "#000"
-
-			for(let i of Array.from(document.getElementsByClassName('text-glow'))) {
-				let _s = i.style
-				_s.color = "#111"
-				_s.textShadow = "none"
-			}
-
-			for(let i of Array.from(document.getElementsByClassName('text-glow-current'))) {
-				i.style.textShadow = 'none'
-			}
-
-
-			for(let i of Array.from(document.getElementsByClassName('object-glow')))
-				i.style.filter = `none`
-
-			for(let i of Array.from(document.getElementsByClassName('text-code'))) {
-				let _s = i.style
-				_s.textShadow = `none`
-				_s.color = '#888'
-				_s.background = 'transparent'
-			}
-
-			for(let i of Array.from(document.getElementsByClassName('invert')))
-				i.style.filter = 'invert(0)'
+			if (localStorage.cookieAll)
+				localStorage.mode = 1
+			lightMode()
 		}
+	}
+
+	if (localStorage.mode == 0) {
+		darkMode()
+		mode = 0
+	} else {
+		lightMode()
+		mode = 1
 	}
 
 	// Handle footer animation on intersection

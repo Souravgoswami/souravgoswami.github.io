@@ -30,7 +30,8 @@
 
 		<!-- Loading CSS while animating the loader -->
 		<script>
-			const cssFiles = `base bootstrap.min`.split(' ')
+			const cssFiles = `base bootstrap.min cookie_consent`.split(' ')
+
 			for(let _cssFile of cssFiles) {
 				let _link = document.createElement('link')
 				_link.rel = 'stylesheet'
@@ -50,6 +51,8 @@
 	</head>
 
 	<body>
+		{% include cookie_consent.html %}
+
 		<div id="loader-head">
 			<div id="loader">
 				<div class="loaders" style="animation-delay: 0ms"></div>
@@ -80,6 +83,7 @@
 		<script src="/assets/js/popper.min.js"></script>
 		<script src="/assets/js/bootstrap.min.js"></script>
 		<script src="/assets/js/base.js"></script>
+		<script src="/assets/js/cookie-consent.js"></script>
 
 		{% if page.js %}
 			{% assign javascripts = page.js | split: "%" %}

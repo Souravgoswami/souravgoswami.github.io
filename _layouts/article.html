@@ -38,6 +38,7 @@
 			const cssFiles = `
 			/assets/css/base
 			/assets/css/bootstrap.min
+			/assets/css/cookie_consent
 			/assets/articles/styles/base
 			/assets/articles/styles/disqus
 			`.split('\n').map(x => x.trim())
@@ -95,6 +96,7 @@
 		<script src="/assets/js/popper.min.js"></script>
 		<script src="/assets/js/bootstrap.min.js"></script>
 		<script src="/assets/js/blog.js"></script>
+		<script src="/assets/js/cookie-consent.js"></script>
 
 		{% if page.js %}
 			{% assign javascripts = page.js | split: "%" %}
@@ -156,5 +158,6 @@
 		</div>
 
 		{% include footer.html %}
+
 	</body>
 </html>

@@ -38,6 +38,7 @@
 			const cssFiles = `
 			/assets/css/base
 			/assets/css/bootstrap.min
+			/assets/css/cookie_consent
 			/assets/articles/styles/base
 			`.split('\n').map(x => x.trim())
 
@@ -62,6 +63,8 @@
 	</head>
 
 	<body>
+		{% include cookie_consent.html %}
+
 		<div id="loader-head">
 			<div id="loader">
 				<div class="loaders" style="animation-delay: 0ms"></div>
@@ -92,6 +95,7 @@
 		<script src="/assets/js/popper.min.js"></script>
 		<script src="/assets/js/bootstrap.min.js"></script>
 		<script src="/assets/js/blog.js"></script>
+		<script src="/assets/js/cookie-consent.js"></script>
 
 		{% if page.js %}
 			{% assign javascripts = page.js | split: "%" %}

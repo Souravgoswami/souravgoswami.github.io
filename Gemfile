@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.1.1"
+gem 'pathname', '0.2.0'
+gem 'webrick'
 # gem "home"
 
 group :jekyll_plugins do
